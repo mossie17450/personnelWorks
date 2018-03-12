@@ -1,0 +1,177 @@
+@font-face {
+
+font-family: 'Century Gothic';
+
+src: url('Century Gothic Normal.eot');
+
+src: url('Century Gothic Normal.eot?#iefix') format('embedded-opentype'),
+
+url('Century Gothic Normal.woff') format('woff'),
+
+url('Century Gothic Normal.ttf') format('truetype'),
+
+url('Century Gothic Normal.svg#LHANDW') format('svg');
+
+font-weight: normal;
+
+font-style: normal;
+
+}
+
+#menu, #menu ul{
+padding:1px;
+margin:0;
+list-style:none;
+text-align:center;
+font-family:"Century Gothic"; /* police choisit par Marlène le 18 Janvier 2018 */
+font-size:80%; /* diminution de la taille de la police...  */
+}
+
+#menu li{
+display:inline-block;
+position:relative;
+border-radius:6px 6px 0 0;
+}
+#menu ul li{
+display:inherit;
+border-radius:0;
+}
+#menu ul li:hover{
+border-radius:0;
+}
+#menu ul li:last-child{
+border-radius:0;
+}
+#menu ul{
+position:absolute;
+z-index: 1000;
+max-height:0;
+
+left: 0;
+right: 0;
+overflow:hidden;
+-moz-transition: .5s all .2s;
+-webkit-transition: .5s all .2s;
+transition: .5s all .2s;
+}
+#menu li:hover ul{
+max-height:60em;
+
+}
+/* background des liens menus */
+#menu li:first-child{
+width:30%;
+background-color: #65537A;
+background-image:-webkit-linear-gradient(top, #65537A 0%, #2A2333 100%);
+background-image:linear-gradient(to bottom, #65537A 0%, #2A2333 100%);
+}
+#menu li:nth-child(2){
+width:30%;
+background-color: #729EBF;
+background-image: -webkit-linear-gradient(top, #729EBF 0%, #333A40 100%);
+background-image:linear-gradient(to bottom, #729EBF 0%, #333A40 100%);
+}
+#menu li:nth-child(3){
+/*
+background-color: #00e6e6;
+background-image:-webkit-linear-gradient(top, #00e6e6 0%, #003333 100%);
+background-image:linear-gradient(to bottom, #00e6e6 0%, #003333 100%);
+*/
+width:30%;
+background-color: #87c4c4;
+background-image:-webkit-linear-gradient(top, #87c4c4 0%, #254b4b 100%);
+background-image:linear-gradient(to bottom, #87c4c4 0%, #254b4b 100%);
+}
+#menu li:nth-child(4){
+width:30%;
+background-color:  #ccccb3;
+background-image: -webkit-linear-gradient(top, #ccccb3 0%,#4d4d33 100%);
+background-image:linear-gradient(to bottom, #ccccb3  0%, #4d4d33 100%);
+}
+/* à faire */
+#menu li:nth-child(5){
+width:30%;
+background-color:#ace600;
+background-image: -webkit-linear-gradient(top, #CFFF6A 0%, #677F35 100%);
+background-image:linear-gradient(to bottom,#CFFF6A; 0%, #677F35 100%);
+}
+#menu li:last-child{
+/* orange */
+width:30%;
+background-color: #F6AD1A;
+background-image:-webkit-linear-gradient(top, #F6AD1A 0%, #9F391A 100%);
+background-image:linear-gradient(to bottom, #F6AD1A 0%, #9F391A 100%);
+
+/* rose rouge: pas tres joli...
+background-color: #ff8080;
+background-image:-webkit-linear-gradient(top, #ff8080 0%,#800000 100%);
+background-image:linear-gradient(to bottom, #ff8080 0%, #800000 100%);
+*/
+}
+/* background des liens sous menus */
+#menu li:first-child li{
+width:100%;
+background:#2A2333;
+}
+#menu li:nth-child(2) li{
+width:100%;
+background:#333A40;
+}
+#menu li:nth-child(3) li{
+width:100%;
+background:#254b4b;
+}
+#menu li:nth-child(4) li{
+width:100%;
+background:#4d4d33;
+}
+/* ...   */
+#menu li:nth-child(5) li{
+width:100%;
+background: #677F35;
+}
+#menu li:last-child li{
+width:100%;
+background:#9F391A; 
+}
+/* background des liens menus et sous menus au survol */
+#menu li:first-child:hover, #menu li:first-child li:hover{
+background:#65537A;
+}
+#menu li:nth-child(2):hover, #menu li:nth-child(2) li:hover{
+background:#729EBF;
+}
+#menu2 li:nth-child(3):hover, #menu li:nth-child(3) li:hover{
+background:#87c4c4;
+}
+#menu li:nth-child(4):hover, #menu li:nth-child(4) li:hover{
+background: #ccccb3;
+}
+/*  ... */
+#menu li:nth-child(5):hover, #menu li:nth-child(5) li:hover{
+background: #CFFF6A;
+}
+#menu li:last-child:hover, #menu li:last-child li:hover{
+background: #F6AD1A ;/*   #CFFF6A; */
+}
+/* les a href */
+#menu a{
+text-decoration:none;
+display:block;
+padding:2px 2px;
+color:#fff;
+font-family:"Century Gothic"; /* police choisit par Marlène le 18 Janvier 2018 */
+font-size:110%;
+}
+
+#menu ul a{
+padding:1px 1px;
+}
+#menu li:hover li a{
+color:#fff;
+text-transform:inherit;
+}
+#menu li:hover a, #menu li li:hover a{
+color:#000;
+}
+#menu{margin-top:20px; margin-bottom:0px; margin-left:0px;}
