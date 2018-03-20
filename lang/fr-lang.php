@@ -42,16 +42,16 @@
 	//suppression de l'entete. devient un image.
 	//define('TXT_EnTete',"<h1 style=\"color:#0059b3; text-align:center; \"><strong>CENTRE D’INVESTIGATION CLINIQUE</strong></h1><h1 style=\"color:red; text-align:center;  \"><strong>INNOVATION TECHNOLOGIQUE</strong></h1><h1 style=\"color:#0059b3; text-align:center; \"><strong>BIOMATERIAUX ET DISPOSITIFS MEDICAUX IMPLANTABLES</strong></h1>");
 	 define('TXT_Titre', "Le CIC-IT de Bordeaux");
-	 define('TXT_Pied', "<ul><a href=\"html/sitemap.php\" title=\"Plan du site\">Plan du site  | </a><a href=\"html/mentions-legales.php\">Mentions légales | </a>|<a href=\"html/coordonnees.php\" title=\"Contact\">Contact</a></ul>");
+	 define('TXT_Pied', "<ul><a href=\"html/sitemap.php\" title=\"Plan du site\">Plan du site  | </a><a href=\"html/mentions-legales.php\">Mentions légales | </a><a href=\"html/coordonnees.php\" title=\"Contact\">Contact</a></ul>");
 	 define('TXT_SSTitre', "Un guichet unique pour amener votre innovation au lit du patient");
-	 define('TXT_Article', "<br><div style=\"margin-left:5%; margin-right:5%; text-align:left; \"><h6>Le CIC-IT de Bordeaux est un service du CHU dédié à l'innovation biomédicale et la recherche translationnelle dans le domaine des Biomatériaux et Dispositifs Médicaux Implantables (DMI).<br><br>
-			Il est issu de la collaboration entre l'Inserm, le CHU de Bordeaux, l'Institut Bergonié et l'Université de Bordeaux pour structurer efficacement le transfert des innovations technologiques :<br> le CIC-IT aborde de manière intégrée l'évaluation préclinique et clinique des biomatériaux et DMI dans un environnement scientifique et clinique de pointe.</h6></div>");	
+	 define('TXT_Article', "<br><h6>Le CIC-IT de Bordeaux est un service du CHU dédié à l'innovation biomédicale et la recherche translationnelle dans le domaine des Biomatériaux et Dispositifs Médicaux Implantables (DMI).<br><br>
+			Il est issu de la collaboration entre l'Inserm, le CHU de Bordeaux, l'Institut Bergonié et l'Université de Bordeaux pour structurer efficacement le transfert des innovations technologiques :<br> le CIC-IT aborde de manière intégrée l'évaluation préclinique et clinique des biomatériaux et DMI dans un environnement scientifique et clinique de pointe.</h6>");	
 	 define('TXT_IE',"<p><strong>Note:</strong>animation non supportée par Internet Explorer 9 et les précédantes versions.</p>");
 	//---------------------------------------------------------
   	 // html/Histoire.php
   	 //---------------------------------------------------------
 	//define('TXT_HPT',"<h2 style=\"font-weight:bolder; text-align:center;\">Histoire et partenaires<br></h2>");
-	define('TXT_histoire',"<br><div style=\"margin-left:5%; margin-right:5%; text-align:justify; \"><h6><br>Le Centre d'Innovations Technologiques créé en 2001 sur le thème des Biomatériaux au 
+	define('TXT_histoire',"<br><div style=\"text-align:justify; \"><h6><br>Le Centre d'Innovations Technologiques créé en 2001 sur le thème des Biomatériaux au 
 	CHU de Bordeaux a été labellisé en CIC-IT Biomatériaux par 
 	<a target=\"_blank\" href=\" http://social-sante.gouv.fr/ministere/organisation/directions/article/dgos-direction-generale-de-l-offre-de-soins\">l'INSERM/DGOS </a> en 2008.<br>
 	Il a été renouvelé en 2011, a rejoint le périmètre de l'Université de Bordeaux ainsi que l'Institut Bergonié 
@@ -209,15 +209,15 @@ define('TXT_secreteriat',"Claire Darcos<br>Secretaire Gestionnaire");
 	//define('TXT_QualiteTitre',"<h1 align=\"center\">Le sytème qualité au CIC-IT</h1>");
 	define('TXT_A1Qualite',"Le CIC-IT organise ses activités dans le respect de son système de management qualité en conformité avec la norme ISO 9001. Il s’est engagé dès 2016 dans une démarche de certification selon la nouvelle version 2015 de la Norme.");
 
-	define('TXT_SuiteA1Q',"<h3 style=\"margin-left:10px;\">Ce travail autour de notre système de management qualité se traduit par :</h3>
+	define('TXT_SuiteA1Q',"<h3>Ce travail autour de notre système de management qualité se traduit par :</h3>
 	<h6><ul id=\"puces\"><li>la mise en place de documents qualité qui encadrent les pratiques et organisent les activités</li>
 	<li>le suivi des actions face aux dysfonctionnements ou des actions pour l’amélioration des processus </li>
 	<li>les évaluations de nos processus à plusieurs niveaux (revues de processus, audits de processus et de projets) afin d’assurer leur mise en application selon les termes prévus.</li></ul></h6>
 	");
 	
-	define('TXT_SuiteA2Q',"<h3 style=\"margin-left:10px;\">Le système qualité a été mis en place selon les préconisations des systèmes qualité des organismes de tutelle suivants :</h3>
+	define('TXT_SuiteA2Q',"<h3>Le système qualité a été mis en place selon les préconisations des systèmes qualité des organismes de tutelle suivants :</h3>
 <h6><ul id=\"puces\"><li>le CHU de Bordeaux et notamment son Département Qualité et Performance (DQP) pour ce qui concerne les consignes et modèles pour l’élaboration des documents qualité, et la Direction de la Recherche Clinique et de l'Innovation (DRCI), pour les éléments propres à la recherche clinique,</li>
-<li>l'INSERM, en raison de son intégration au Réseau National des CIC et de sa participation au groupe « Harmonisation des procédures des CIC » (HP-CIC). </li></h6></ul>");
+<li>l'INSERM, en raison de son intégration au Réseau National des CIC et de sa participation au groupe « Harmonisation des procédures des CIC » (HP-CIC). </li></ul></h6>");
 	
 	define('TXT_A3Qualite',"Les activités du CIC-IT sont réalisées dans le respect des Normes et le cadre législatif en vigueur en France, Europe et au niveau International.<br>
 Tout le personnel du CIC-IT est impliqué dans la démarche qualité de la structure et est garant, à son niveau, de son bon fonctionnement afin d’aboutir à un travail conforme aux atteintes des clients et des autres parties intéressées.<br>
@@ -225,8 +225,8 @@ Pour tout renseignement concernant le système qualité, vous pouvez contacter l
 ");
 	
 	
-	define('TXT_TexteImage',"<h3 style=\"margin-left:10px;\">Objectifs du CIC-IT</h3><h6>
-<ul><li>Se référer à la CONVENTION RELATIVE AU CENTRE D'INVESTIGATION CLINIQUE DE BORDEAUX N°074.2010.RC et au Règlement intérieur du CIC-IT.</li></h6>
+	define('TXT_TexteImage',"<h3>Objectifs du CIC-IT</h3><h6>
+<ul id=\"puces\"><li>Se référer à la CONVENTION RELATIVE AU CENTRE D'INVESTIGATION CLINIQUE DE BORDEAUX N°074.2010.RC et au Règlement intérieur du CIC-IT.</li></h6>
 	<li class=\"blink_me\" style=\"color:red; text-align:center; list-style-type:none; \" ><h3>Obtenir la certification ISO 9001 version 2015 en 2018.</h3></li></ul>");
 	define ('TXT_TitreImg',"CIC-IT : processus de management, réalisation et support");
 	//define ('TXT_Vara',"Dans le souci de produire un travail de qualité, un service qualité à été mis en place en 2010. Celui-ci veille à la bonne application de ces réglementations et procédures. Pour y parvenir, le CIC-IT s'engage à accomplir la politique qualité et à mettre en place des outils de mesure d'efficacité des processus et d'atteinte des objectifs, ainsi que des ressources dédiées au système qualité: la chef de projet assure le fonctionnement des processus et la coordination fonctionnelle.<p>Le service qualité est à l\'origine, sous ma responsabilité, de la rédaction et de la révision des procédures et de la formation du personnel à celles-ci par des moyens divers (réunions, préparation de brochures, séances de révision...). Dans la continuité, le service qualité s\'assure de la mise en application de l\'organisation et des actions définies dans les documents qualité.</p><p>La formation du personnel aux modifications réglementaires et aux changements pratiques qui en résultent est également une priorité du CIC-IT.</p><p>Chaque membre du CIC-IT est donc responsable à son niveau de la garantie que son activité s\'inscrit dans une démarche qualité ce qui permet d\'assurer que le CIC-IT travaille dans un souci de développement d\'études de qualité scientifique maximale.</p><p>Dans cet esprit, en tant que coordinatrice du CIC-IT, j'attends un engagement fort du personnel à améliorer de façon continue nos performances pour satisfaire et anticiper les attentes de nos clients et partenaires.</p><p>La volonté du CIC-IT est d\'assurer à ses clients et aux parties intéressées la qualité de ses prestations, le meilleur service possible et les meilleurs conseils afin de répondre parfaitement à leurs besoins et aux exigences définies dans leurs demandes.</p><div>Pr Laurence BORDENAVE</div> ");
@@ -327,11 +327,9 @@ Responsable du Plateau Histologie de la PTIB<br>
 <div style=\"display:inline\">
 Tél. :  05 57 10 28 61 / Fax. : 05 57 10 28 63
 <br>Courriel:<a href=\"mailto:samantha.delmond@chu-bordeaux.fr\"> samantha.delmond@chu-bordeaux.fr </a></div>");
-define('TXT_CH',"<br><a href=\"LionelCouraud.php\">Lionel Coureaud</a>: consultant en anatomo-histologie vétérinaire.");
-	define('TXT_HST',"<h1 align=\"center\"><strong>Activités</strong></h1>");
-	define('TXT_HT1',"<h3 align=\"justify\">Inclusion de tissus mous (paraffine) et calcifiés (résine méthacrylate, technovit 9100)</h3>  
-<br>
-<h4>Coupes de petits et gros échantillons</h4>
+define('TXT_CH',"<br><a href=\"LionelCouraud.php\">Lionel Couraud</a>: consultant en anatomo-histologie vétérinaire.");
+	//define('TXT_HST',"<h1 align=\"center\"><strong>Activités</strong></h1>");
+	define('TXT_HT1',"<h2 align=\"justify\">Inclusion de tissus mous (paraffine) et calcifiés (résine méthacrylate, technovit 9100)</h2>  
  <br>"); 
 	//define('TXT_HT11',"Automate de traitement des tissus: Leica TP1020<br>mis à diposition par la PTIB.");
 	define('TXT_HT11',"Automate de traitement des tissus");
@@ -414,11 +412,11 @@ define('TXT_HTC1',"<h2>Colorations sur tissu mou et décalcifié </h2><em>(HES, 
 	define('TXT_BLI5',"<strong>GRAM sur coupe histologique</strong>");
 	
 	
-	define('TXT_BEA1',"Etuve à Bactéries.");
-	define('TXT_BEA2',"Spectrophotomètre.");
-	define('TXT_BEA3',"Lecteur de plaque.");
-	define('TXT_BEA4',"PSM.");
-	define('TXT_BEC5',"Microscope Ni-U Nikon.");
+	define('TXT_BEA1',"Etuve à Bactéries");
+	define('TXT_BEA2',"Spectrophotomètre");
+	define('TXT_BEA3',"Lecteur de plaque");
+	define('TXT_BEA4',"PSM");
+	define('TXT_BEC5',"Microscope Ni-U Nikon");
 	//---------------------------------------------------------
   	// page  hemocompatibilité
   	//---------------------------------------------------------
@@ -437,7 +435,7 @@ define('TXT_HTC1',"<h2>Colorations sur tissu mou et décalcifié </h2><em>(HES, 
 		define('TXT_HTI7',"<strong>Numération sanguine</strong>");
 	
 	define('TXT_HST1',"<h3><strong>Hémolyse</strong></h3>");
-	define('TXT_HST2',"<h3><strong>Plaquettes</strong></h3>");
+	//define('TXT_HST2',"<h3><strong>Plaquettes</strong></h3>");
 	
 	define('TXT_HLI4',"<strong>Agrégation</strong>");
 	define('TXT_HLI2',"<strong>Activation plaquettaire<br> T=0min</strong>");
@@ -469,19 +467,19 @@ define('TXT_HTC1',"<h2>Colorations sur tissu mou et décalcifié </h2><em>(HES, 
 <li><h3>Caractérisation cellulaire</h3></li>
 </ul></div>");
 	define('TXT_EAT',"Equipements associés");
-	define('TXT_CCTM',"<div id=\"section-article\"><h2><strong>Activités</strong></h2>");
+	//define('TXT_CCTM',"<div id=\"section-article\"><h2><strong>Activités</strong></h2>");
 	define('TXT_CCTM1',"<h3><strong>Cytocompatibilité</strong></h3>");
 	define ('TXT_CCMM1', "<div style=\"width:100%; text-align:left;\"><li>Tests selon la norme ISO 10993-5 :<br>cytotoxicité directe par extraits et par contact direct</li><li>tests MTT</li><li>tests Rouge Neutre</li></ul><li>Attachement et prolifération de cellules sur matériaux</li></div>");
 	define('TXT_AEQ'," <div id=\"section-article\"><h3><strong>Autres équipements</strong></h3>");
 	define('TXT_CCT',"<h2 style=\"text-align:center\">Plateforme de culture cellulaire</h2>");
-	define('TXT_LegCytoCellules',"Ensemencement de dispositif medicale ( étape pour l'isolement de veine saphéne ?).");
+	define('TXT_LegCytoCellules',"Ensemencement de dispositif medicale (étape pour l'isolement de veine saphéne ?).");
 	define('TXT_CCEA1',"PSM");
 	define('TXT_CCEA2',"Microscope inversé");
 	define('TXT_CCEA3',"Etuve à CO2");
-	define('TXT_IlegCC1',"<strong>Cellules endothèliales.</strong>");
-	define('TXT_IlegCC2',"<strong>Isolement de cellules.</strong>");
-	define('TXT_IlegCC3',"<strong>Attachement et <br>prolifération de cellules.</strong>");
-	define('TXT_IlegCC4',"<strong>Test au rouge neutre.</strong>");
+	define('TXT_IlegCC1',"<strong>Cellules endothèliales</strong>");
+	define('TXT_IlegCC2',"<strong>Isolement de cellule.</strong>");
+	define('TXT_IlegCC3',"<strong>Attachement et <br>prolifération de cellules</strong>");
+	define('TXT_IlegCC4',"<strong>Test au rouge neutre</strong>");
 	//---------------------------------------------------------
   	// page    tests precliniques in vivo...
   	//---------------------------------------------------------
@@ -595,16 +593,15 @@ Les compétences réglementaires ont été renforcées ces dernieres années.</l
 	//---------------------------------------------------------
   	// candidature spontanées
   	//---------------------------------------------------------
-	define('TXT_TitreSpon',"<h1 style=\"text-align:center\">Vous souhaitez travailler avec nous, au CIC-IT de Bordeaux!</h1><br/><h6>Déposez votre CV et remplissez le formulaire ici,<br/> Nous pourrons vous contacter dés qu'une offre en rapport avec nos besoins et vos compétences sera disponible.</h6>
-<div style=\"text-align:center\"></div>");
-	define('TXT_Spon',"<h3>Merci de bien vouloire compléter le formulaire ci-dessous:</h3>");
+	define('TXT_TitreSpon',"<h1 style=\"text-align:center\">Vous souhaitez travailler avec nous, au CIC-IT de Bordeaux!</h1><div style=\"text-align:center\"></div>");
+	define('TXT_Spon',"<h3>Merci de bien vouloire compléter le formulaire ci-dessous,</h3><h6> Nous pourrons vous contacter dés qu'une offre en rapport avec nos besoins et vos compétences sera disponible.</h6>");
 	
 	define('TXT_Tel',"Téléphone:");
 	define('TXT_Int',"Intitulé: <span title=\"Ce champ est obligatoire.\">");
 	define('TXT_Competences',"Vos compétences :");
 	define('TXT_Donnees',"Envoyez-nous les données.");
 	
-	define('TXT_Note',"<h3>A noter</h3><strong>Les fichier pouvant être transferé sont au format .doc, .pdf, .jpg, .zip, .rar, .ppt et .txt .");
+	define('TXT_Note',"<h3>A noter</h3><strong>Les fichier pouvant être transferé sont au format doc, pdf, jpg, zip, rar, ppt et txt.");
 	define('TXT_Max',"Attention: la taille maximum autorisée est de 8 Mo");
 	define('TXT_CV',"CV :");
 	define('TXT_Motiv'," Lettre de motivation : ");
@@ -647,16 +644,16 @@ Fax: +33 (0) 557 102 863</p>");
   	// mention légales
   	//---------------------------------------------------------
 	define('TXT_TML',"Mentions légales");
-	define('TXT_AML',"<h3 style=\"margin-left:5%;margin-rigth:5%;\"><strong>Hébergeur : hyperion</strong></h3><br>
-<strong>Protection des informations nominatives</strong> <br>
+	define('TXT_AML',"<h3 style=\"margin-left:5%;margin-rigth:5%;\"><strong>Hébergeur du site: <a href=\"mailto:direction@gsi-network.com\">GSI Network</strong></a> <em> solidDigital Basement</em></h3>
+<h6 style=\"margin-left:5%;margin-rigth:5%; text-align:left;\"><strong>Protection des informations nominatives</strong><br>
 Ce site Web comporte des informations nominatives concernant notamment les personnels du CIC-IT de Bordeaux et de ses partenaires. Conformément à la loi n° 78-17 du 6 janvier 1978, relative à l'Informatique, aux fichiers et aux Libertés (articles 38, 39, 40), vous disposez d'un droit d'accès, de rectification et de suppression des données vous concernant, en ligne sur ce site. 
-<br>Pour exercer ce droit, vous pouvez vous adresser au webmaster:<a href=\"mailto:cecile.raymond@inserm.fr\">Cécile Raymond</a><br>
+<br>Pour exercer ce droit, vous pouvez vous adresser au webmaster: <a href=\"mailto:cecile.raymond@inserm.fr\">Cécile Raymond</a><br>
 <br><strong>Clause de non-responsabilité </strong><br>
 La responsabilité du CIC-IT de Bordeaux ne peut, en aucune manière, être engagée quant au contenu des informations figurant sur ce site ou aux conséquences pouvant résulter de leur utilisation ou interprétation. 
 <br><br><strong>Propriété intellectuelle</strong><br>
 Le site du CIC-IT de Bordeaux est une oeuvre de création, propriété exclusive du CIC-IT de bordeaux, protégé par la législation française et internationale sur le droit de la propriété intellectuelle. Aucune reproduction ou représentation ne peut être réalisée en contravention avec les droits du CIC-IT de Bordeaux issus de la législation susvisée. 
 <br><br><strong>Liens hypertextes</strong><br>
-La mise en place de liens hypertextes par des tiers vers des pages ou des documents diffusés sur le site du CIC-IT de Bordeaux, est autorisée sous réserve que les liens ne contreviennent pas aux intérêts du CIC-IT de Bordeaux, et, qu'ils garantissent la possibilité pour l'utilisateur d'identifier l'origine et l'auteur du document.
+La mise en place de liens hypertextes par des tiers vers des pages ou des documents diffusés sur le site du CIC-IT de Bordeaux, est autorisée sous réserve que les liens ne contreviennent pas aux intérêts du CIC-IT de Bordeaux, et, qu'ils garantissent la possibilité pour l'utilisateur d'identifier l'origine et l'auteur du document.</h6>
 	");
 	// voire le site du CNRS
 	
@@ -674,13 +671,13 @@ La mise en place de liens hypertextes par des tiers vers des pages ou des docume
 	
 	define('TXT_PlanSite',"
 	<h1>Plan du site</h1>  
-    <h2 class=\"title\">Premiere page</h2><a href=\"../index.php\">index ou page d'acceuil du site:<em>CIC-IT Bordeaux</em></a>     
-	<h2 class=\"title\">navigation au pied de la page</h2><div><ul><li><a href=\"sitemap.php\" title=\"Plan du site\">Plan du site</a></li>
+    <h2 class=\"title\">Premiere page</h2><h6><a href=\"../index.php\">index ou page d'acceuil du site:<em>CIC-IT Bordeaux</em></a></h6>     
+	<h2 class=\"title\">navigation au pied de la page</h2><div><h6><ul><li><a href=\"sitemap.php\" title=\"Plan du site\">Plan du site</a></li>
 	<li><a href=\"mentions-legales.php\">Mentions légales</a></li>
-	<li><a href=\"fiche-de-contact.php\" title=\"Contact\">Contact</a></li></ul></div>
+	<li><a href=\"coordonnees.php\" title=\"Contact\">Contact</a></li></ul></h6></div>
 	
 	<h2 class=\"title\">Navigation principale : le menu</h2>
-	<div><li><a href=\"..\index.php\">Accueil</a><ul>
+	<div><h6><li><a href=\"..\index.php\">Accueil</a><ul>
 	<li><a href=\"histoire.php\">Histoire et partenaires</a></li>
 	</li><li><a href=\"missions.php\">Missions</a></li>
 	<li><a href=\"environnement-de-pointe.php\">Environnement de pointe</a></li>
@@ -705,15 +702,15 @@ La mise en place de liens hypertextes par des tiers vers des pages ou des docume
 	<li><a href=\"cic-it-stages.php\">Offres de stages</a></li>
 	<li><a href=\"cic-it-spontanee.php\">Dépôt de CV et candidatures spontanées</a></li></ul></li>
 	
-	<li><a href=\"fiche-de-contact.php\">Contact/Infos pratiques</a><ul>
-	<li><a href=\"coordonnees.php\">Coordonnées</a></li></ul></li></ul>
 	
-	<ul><li><a href=\"actualites.php\">Evenements</a></li></ul>
+	<ul><li><a href=\"coordonnees.php\">Coordonnées</a></li></ul>
+	
+	<ul><li><a href=\"actualites.php\">Evenements</a></li></ul></h6>
 	
 	
 	<h2>avec mot de passe et login : espace privé d'administration du site.</h2>
-	<li><a href=\"admin.php\">intranet</a><ul><li><a href=\"admin.php\">acces à l'intranet</a></li>
-	</ul>
+	<h6><li><a href=\"admin.php\">intranet</a><ul><li><a href=\"admin.php\">acces à l'intranet</a></li>
+	</ul></h6>
 </div><br>
 	");	
 	

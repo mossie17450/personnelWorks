@@ -4,7 +4,7 @@
  	 // index.php
  	 //---------------------------------------------------------
   	 define('TXT_indexA', 'The CIC-IT: one stop to bring innovation to the bedside.');
-	define('TXT_EnTete',"<h4 style=\"color:#0059b3; text-align:center;\">CLINICAL INVESTIGATION CENTER</h4><h4 style=\"color:red; text-align:center;\">TECHNOLOGICAL INNOVATION</h4><h4 style=\"color:#0059b3; text-align:center;\">BIOMATERIALS AND IMPLANTABLE MEDICAL DEVICES</h4>");
+	//define('TXT_EnTete',"<h4 style=\"color:#0059b3; text-align:center;\">CLINICAL INVESTIGATION CENTER</h4><h4 style=\"color:red; text-align:center;\">TECHNOLOGICAL INNOVATION</h4><h4 style=\"color:#0059b3; text-align:center;\">BIOMATERIALS AND IMPLANTABLE MEDICAL DEVICES</h4>");
 
 	
 	 define('TXT_Menu', "<li><a href=\"index.php\">Welcome to CIC-IT</a>
@@ -47,9 +47,9 @@
 	 define('TXT_Resume', "The Clinical Investigation Centre - Technological Innovation (CIC-IT) Biomaterials Bordeaux is a major player in supporting the <strong> Biomedical Innovation </strong> and <strong> Translational Research </strong>. In this context, the Bordeaux University Hospital has partnered with INSERM and the University Bordeaux Segalen to effectively structure the transfer of technological innovations in the field of <strong> biomaterials </strong>. The CIC-IT integrated approaches biomaterials and assessment of their biocompatibility in a scientific and clinical advanced environment.");
 	 define('TXT_Titre', "The CIC-IT Bordeaux");
 	 define('TXT_Pied', "<ul ><a href=\"html/sitemap.php\" title=\"Plan du site\">sitemap</a> | <a href=\"html/mentions-legales.php\">Legal Notice</a>|<a href=\"html/fiche-de-contact.php\" title=\"Contact\">Contact</a></ul>");
-	 define('TXT_SSTitre', "One stop shop to bring your innovation to the patients.");
-	 define('TXT_Article', "The CIC-IT Bordeaux provides service dedicated to biomedical innovation and translational research in the field of Biomaterials and Implantable Medical Devices (IMD).<br>
-			It is a collaboration between Inserm , the University Hospital of Bordeaux, the Bergonie Institute and the University of Bordeaux to effectively structure the transfer of technological innovations:CIC -IT integrates preclinical and clinical evaluation of biomaterials and IMD in an advanced scientific and clinical environment.");
+	 define('TXT_SSTitre', "One stop shop to bring your innovation to the patients");
+	 define('TXT_Article', "<br><h6>The CIC-IT Bordeaux provides service dedicated to biomedical innovation and translational research in the field of Biomaterials and Implantable Medical Devices (IMD).<br>
+			It is a collaboration between INSRM , Bordeaux University Hospital centre, the Bergonie Institute, and the University of Bordeaux.Its provides a effective structure for the transfer of technological innovations:CIC -IT integrates preclinical and clinical evaluation of biomaterials and IMD in an advanced scientific and clinical environment.</h6>");
 	 
 	 //define('TXT_Anim',"<div id=\"div1\"><a href=\"html/qui-sommes-nous-detailspage1.php\" >Biomatériaux</a></div><div id=\"div2\"><h4><a href=\"html/qui-sommes-nous-detailspage2.php\">clinical recherch</a></h4></div><div id=\"div3\"><h4><a href=\"qui-sommes-nous-detailspage3.php\">Innovation_technologique</a></h4></div><div id=\"div4\"><h4><a href=\"html/qui-sommes-nous-detailspage4.php\">CHU_Bordeaux</a></h4></div><div id=\"div5\"><a href=\"html/qui-sommes-nous-detailspage5.php\">your innovations to beds patients</a></div><div id=\"div6\"><a href=\"html/qui-sommes-nous-detailspage6.php\">translational</a></div>");
 	 
@@ -63,9 +63,9 @@
   	 //---------------------------------------------------------
 	define('TXT_HPT',"History and partners");
 	
-	define('TXT_histoire',"The Center for Technological Innovation was created in 2001 covering the theme of Biomaterials at the Bordeaux University Hospital and it was certified as CIC-IT Biomaterials by <a target=\"_blank\" href=\" http://social-sante.gouv.fr/ministere/organisation/directions/article/dgos-direction-generale-de-l-offre-de-soins\">INSERM / DGOS</a> in 2008.CIC-IT joined the University of Bordeaux and Bergonie Institute in 2012 and it was successfully renewed in 2016 by the HCERES.<br>
+	define('TXT_histoire',"<br><div style=\"text-align:justify; \"><h6>The Center for Technological Innovation was created in 2001 covering the theme of Biomaterials at the Bordeaux University Hospital and it was certified as CIC-IT Biomaterials by <a target=\"_blank\" href=\" http://social-sante.gouv.fr/ministere/organisation/directions/article/dgos-direction-generale-de-l-offre-de-soins\">INSERM / DGOS</a> in 2008.CIC-IT joined the University of Bordeaux and Bergonie Institute in 2012 and it was successfully renewed in 2016 by the HCERES.<br>
 It is one of 3 Bordeaux  CIC-modules including <a target=\"_blank\" href=\"https://cic-p.u-bordeaux.fr \">CIC-multi-thematic</a> (investigator support) and <a href=\"http://usmr.isped.u-bordeaux2.fr/\">CIC-Epidemiological Clinic </a>(methodology and statistics). <br>
-It is supported by <a target=\"_blank\" href=\"http://www.biotis-bordeaux.com \">INSERM U1026 BIOTIS </a>(Bordeaux), to be in partnership with clinicians to conduct translational research programs in the field of Tissue bioengineering .");
+It is supported by <a target=\"_blank\" href=\"http://www.biotis-bordeaux.com \">INSERM U1026 BIOTIS </a>(Bordeaux), to be in partnership with clinicians to conduct translational research programs in the field of Tissue bioengineering .</h6></div>");
 		
 	//---------------------------------------------------------
   	// html/Missions.php
@@ -136,18 +136,18 @@ To this end, the CIC-IT of Bordeaux relies on the <a target=\"_blank\" href=\"ht
   	// html/environnementDePointe.php
   	//---------------------------------------------------------
 	define ('TXT_TitreEnvironnement',"<h1>Advanced Environment</h1>");
-	define ('TXT_ArticleEnvironnement',"<h6>CIC-IT Bordeaux works with clinicians from University Hospital (CHU) 
-	covering different medical expertise involved in the use of IMD (orthopedic and vascular surgery, ophthalmology, 
-	dentistry, ENT, intensive care, diabetology, nuclear medicine, radiology, etc ...), and the <a href=\"https://www.dondusang.net/rewrite/heading/804/efs/l-efs-en-regions/aquitaine-limousin.htm?idRubrique=804\" />EFSNA 
-	(Etablissement Français du Sang de la Nouvelle-Aquitaine)</a>.<br>
-<br>CIC-IT is located in Xavier Arnozan Hospital within the <a href=\"http://www.ptib.u-bordeaux2.fr/index.php?p=accueil\" />PTIB 
+	define ('TXT_ArticleEnvironnement',"<h6>CIC-IT Bordeaux works with clinicians from Bordeaux Univertity Hospital Centre and the<a href=\"https://www.dondusang.net/rewrite/heading/804/efs/l-efs-en-regions/aquitaine-limousin.htm?idRubrique=804\" /> EFSNA (Etablissement Français du Sang de la Nouvelle-Aquitaine)</a>
+	covering different medical expertise involved witch deal with IMD (orthopedic and vascular surgery, ophthalmology, 
+	dentistry, ENT, intensive care, diabetology, nuclear medicine, radiology, etc ...). 
+	<br>
+<br>CIC-IT is located at Xavier Arnozan Hospital within the <a href=\"http://www.ptib.u-bordeaux2.fr/index.php?p=accueil\" />PTIB 
 (Plateforme Technologique d'Innovation Biomédicale)</a> building closely connected to <a href=\"https://www.ihu-liryc.fr/\" \>IHU LIRYC 
 (Institute de  Rhythmologie Cardiaque)</a> providing access to laboratories (histology, P2 cell culture) 
-and advanced equipments (<em>in vivo</em> experimentation and imaging plates).<br>
+and advanced equipments (<em>in vivo</em> experimentation and imaging platforms).<br>
 <br>Additionally, CIC-IT takes an active part in the Federation of academic and industrial skills in the field 
 of biomaterials in  New Aquitaine region via <a href=\"http://www.2acbi-asso.fr/\" \>the Aquitaine Association Biomaterials and Implants</a> (2ACBI), 
-and actively participates in <a href=\"https://bcrm.u-bordeaux.fr/\" />BxCRM (Bordeaux consortium of Regenerative Medicine)</a> and FR TECSAN 
-(Federation de Recherche Technologie pour la Santé) of Bordeaux University.</h6>.");
+ participates in <a href=\"https://bcrm.u-bordeaux.fr/\" />BxCRM (Bordeaux consortium of Regenerative Medicine)</a> and an active member of FR TECSAN 
+(Federation de Recherche Technologie pour la Santé) at Bordeaux University.</h6>.");
 		
 	//---------------------------------------------------------
   	// Fonctionnement/organisation.php
@@ -249,27 +249,27 @@ Email: <a href=\"mailto:carolina.lanchas-fuentes@chu-bordeaux.fr\">carolina.lanc
 
 	
 	//---------------------------------------------------------
-  	//  Valorisation
+  	//  Valorisation/publication/Our Achievements
   	//---------------------------------------------------------
 	
-	define('TXT_TV',"<h1 style=\"text-align:center\">Valorizations</h1>");
+	define('TXT_TV',"<h1 style=\"text-align:center\">Our achievements</h1>");
 	define('TXT_VCB',"Publication Type");
 	define('TXT_OK',"Submit");
 	//fenetres modales
-	define('TXT_TM1',"Displayed Communications");
-	define('TXT_STM1',"Valorization");
-	define('TXT_TbM1',"Communiqués posted and other publications at a symposium:");
+	define('TXT_TM1',"Posters");
+	define('TXT_STM1',"Our achievements");
+	define('TXT_TbM1',"Articles posted and other publications at a symposium:");
 	//
 	define('TXT_TM2',"Articles");
 	define('TXT_TbM2',"Publication in a scientific journal:");
 	//
-	define('TXT_TM3',"Oral Communications");
-	define('TXT_TbM3',"Oral communication at a symposium:");
+	define('TXT_TM3',"Oral presentations");
+	define('TXT_TbM3',"Oral presentation at a symposium:");
 	//
 	define('TXT_TM4',"Patents");
 	define('TXT_TbM4',"Patent pending:");
 	//
-	define('TXT_TM5',"Literary works");
+	define('TXT_TM5',"Others");
 	define('TXT_TbM5',"Participation in a book:");
 	
 	//---------------------------------------------------------
@@ -383,13 +383,13 @@ Fax. : 05 57 10 28 63
 	define('TXT_HST',"<h1 align=\"center\"><strong>Activities</strong></h1>");
 	
 	define('TXT_HT1',"<h2>Soft tissue inclusion (paraffin) and calcified (methacrylate resin, technovit 9100)</h2>
-<br/><h2>Large and small cut samples</h2>");
+<br/><!--<h2>Large and small cut samples</h2>-->");
 
-	define('TXT_HT11',"Automate for processing of tissue.");
- define('TXT_HT12',"Inclusion Platform.");
- define('TXT_HT13',"Microtome RM2255.");
- define('TXT_HT14',"SM2500 sliding microtome.");
- define('TXT_HT15',"Diamond saw SP1600.");
+	define('TXT_HT11',"Automate for processing of tissue");
+ define('TXT_HT12',"Inclusion Platform");
+ define('TXT_HT13',"Microtome RM2255");
+ define('TXT_HT14',"SM2500 sliding microtome");
+ define('TXT_HT15',"Diamond saw SP1600");
 
 	define('TXT_HTC1',"<h2>Coloration of decalcified tissue</h2><em>(HES ,Masson's trichrome ,PAS ,Orcein ,Pentachrome of Movat ,VERHOEFF - van Gieson ).<em>");
 	
@@ -398,14 +398,14 @@ Fax. : 05 57 10 28 63
 	define('TXT_HTC4',"<h2>IHC on paraffin sections</h2><em> (alpha -actin , CD31 , CD45 , CD68 , Ki67 , ...)</em>");
 	define('TXT_HTC5',"<h2>histomorphometric analysis , quantification of different parameters</h2><em>( bone reconstruction , fibrosis, inflammation ...)<em>");
 	define('TXT_HTC6',"Associated equipment: Nikon Microscope Ni-U and 80i to 90i microscope NIKON motorized head (with two cameras for fluorescence DS- Qi1Mc white light DS- Fi2) provided by PTIB,and image analysis software NIS-Elements D version 4.2.");
-	define('TXT_HTC61',"NIKON microscope Ni-U.");
-	define('TXT_HTC62',"NIKON microscope 80i to 90i motorized head.");
-	define('TXT_HTC63',"binocculaire Loupe<br>(provision by the CIC-IT.)");
+	define('TXT_HTC61',"NIKON microscope Ni-U");
+	define('TXT_HTC62',"NIKON microscope 80i to 90i motorized head");
+	define('TXT_HTC63',"binocculaire Loupe");
 	
 	define('TXT_HTC7',"<h2>Other equipment</h2>");
 	define('TXT_HCI',"<div id=\"show\" class=\"slideshow\">
  <img src=\"../image/13-03(G10)2.jpg\" alt=\"coloration masson\" width=\"30%\"/></td><td><img src=\"../image/markerTransparent.png\" width=\"5%\" height=\"auto\"></td><td></div>
-  <div id=\"show1\" class=\"slideshow\" ><img src=\"../image/16-01 1a-1 (G40).jpg\" alt=\"coloration trichomique HES.\" ></div></td>
+  <div id=\"show1\" class=\"slideshow\" ><img src=\"../image/16-01 1a-1 (G40).jpg\" alt=\"coloration trichomique HES\" ></div></td>
   <td><img src=\"../image/markerTransparent.png\" width=\"5%\" height=\"auto\"></td><td>
  <div id=\"show6\" class=\"slideshow\" ><img src=\"../image/16-01 1a-4 ORC (G400)2b.jpg\" alt=\"coloration spécifique Orcéine.\" title=\"Orcéine\"/></div></td></tr>
   <tr><td style=\"text-align:left\"><strong>Masson trichrome</strong></td><td><img src=\"../image/markerTransparent.png\" width=\"5%\" height=\"auto\"></td><td style=\"text-align:left\"><strong>Trichrome HES</strong></td><td><img src=\"../image/markerTransparent.png\" width=\"5%\" height=\"auto\"></td><td><strong>Orcéine</strong></td></tr>");
@@ -421,14 +421,14 @@ Fax. : 05 57 10 28 63
 <br>Phone: 05 47 30 27 54 / Fax: 05 57 10 28 63
 <br>Email: <a href=\"mailto:mallory.meulle@chu-bordeaux.fr\">mallory.meulle@chu-bordeaux.fr</a>");
 	
-	define('TXT_HDT',"Testes hemodynamic");
+	define('TXT_HDT',"Hemodynamic");
 	define('TXT_HDTA',"<h2><strong>Activities</strong></h2>");
-	define('TXT_HDTA1',"<h2>Hemodynamic Tests : compliance, bursting </h2>");	
-	define('TXT_HDA1',"<strong>Biodynamic BOSE chamber + pulsatile pump motor and saphenous veins in parralel</strong>");
+	define('TXT_HDTA1',"<h2>Hemodynamic Tests : compliance, burst</h2>");	
+	define('TXT_HDA1',"<strong>Biodynamic BOSE chamber + pulsatile pump motor</strong>");
 	
-	define('TXT_HDA2',"<strong>Veins saphenes in paralleles</strong>");
-	define('TXT_HDA3',"<strong>Arming of an artificial vessel</strong>");
-	define('TXT_HDA4',"<strong>Saphenes veins</strong>");
+	define('TXT_HDA2',"<strong>Saphenous veins in paralleles</strong>");
+	define('TXT_HDA3',"<strong>Artificial vessel under flux condition</strong>");
+	define('TXT_HDA4',"<strong>saphenous veins</strong>");
 	
 	
 	define('TXT_HDTA2',"<h2>leakage tests of tubular tissue engineered products .</h2> ");
@@ -451,47 +451,47 @@ Fax. : 05 57 10 28 63
 define('TXT_CCM',"
 	<h2 style=\"width:100%; text-align:center; \">cell cultures :</h2>
 <em><h4>endothelial cells, smooth muscle, striated muscle, urothelial, fibroblasts, of human, swine, sheep ... origin.</h4><em>
-<div  style=\"width:100%; text-align:left; \"><ul><li><h4>Isolation and characterization of primary cells.</h4></li>
+<div  style=\"width:100%; text-align:left; \"><ul><li><h4>Isolation and characterization of primary cells</h4></li>
 <li><h4>Amplification and cultured (conventional and culture in sheets).</h4></li>
-<li><h4>Materials cellularization.</h4></li>
+<li><h4>Materials cellularization</h4></li>
 <li><h4>Cell characterization</h4></li>
 <li><h4>Cytocompatibility-cytotoxicity (EN ISO 10993-5) </h4></li>
 <li><h4>Attachment, proliferation (EN ISO 10993-5) </h4></li>
 </ul></div>");
 	
-	define('TXT_CCTM',"<div id=\"section-article\"><h3><strong>Activities</strong></h3>");
+	//define('TXT_CCTM',"<div id=\"section-article\"><h3><strong>Activities</strong></h3>");
 	define('TXT_CCTM1',"<h3><strong>Cytocompatibility biomaterials:</strong></h3>");
 	define ('TXT_CCMM1',"<div  style=\"width:100%; text-align:left; \"><li>tests according to ISO 10993-5: direct cytotoxicity and by direct contact extracts </li><li>MTT test</li><li>tests Neutral Red </li></ul><li>attachment and proliferation of materials on cells</li>");
 	define('TXT_AEQ'," <div id=\"section-article\"><h3><strong>other equipments</strong></h3>");
 	define('TXT_CCT',"<h2 style=\"text-align:center\">cell culture platform</h2>");
 	define('TXT_LegCytoCellules',"and cytocompatibility (tests on primary cells of the target tissue) <br>
-Attachment and proliferation. ");
+Attachment and proliferation");
 define('TXT_CCEA1',"PSM");
 	define('TXT_CCEA2',"Inverted microscope");
 	define('TXT_CCEA3',"CO2 Incubator");
-	define('TXT_IlegCC1',"<strong>Endothelial cells.</strong>");
-	define('TXT_IlegCC2',"<strong>Isolation of cells.</strong>");
-	define('TXT_IlegCC3',"<strong>attachment and proliferation of cells.</strong>");
-	define('TXT_IlegCC4',"<strong>neutral red test.</strong>");
+	define('TXT_IlegCC1',"<strong>Endothelial cells</strong>");
+	define('TXT_IlegCC2',"<strong>Isolation of cells</strong>");
+	define('TXT_IlegCC3',"<strong>attachment and proliferation of cells</strong>");
+	define('TXT_IlegCC4',"<strong>neutral red test</strong>");
 
 	//---------------------------------------------------------
   	// page Bactériologie
   	//---------------------------------------------------------
 	
 	define('TXT_TAB',"<h2 style=\"text-align:center\">Bacteriology</h2>");
-	define('TXT_BM',"<br>antibiotic activity of tissue extracts.");
-	define('TXT_BM1',"<br>Realization of an infectious ostéomyélyte model.");
-	define('TXT_BLI3',"<strong>Tissues shredder.</strong>");
+	define('TXT_BM',"<br>antibiotic activity of tissue extracts");
+	define('TXT_BM1',"<br>Realization of an infectious ostéomyélyte model");
+	define('TXT_BLI3',"<strong>Tissues shredder</strong>");
 	define('TXT_BM3',"<br><h2>GRAM colorations</h2><br>");
-	define('TXT_BLI1',"<strong>Bacterial /<br> anti-bacterial activity: CMI, CMB.</strong>");
-	define('TXT_BLI2',"<strong>agglutination test.</strong>");
-	define('TXT_BLI4',"<strong>GRAM on sprawl.</strong>"); 
-	define('TXT_BLI5',"<strong>GRAM on histological section.</strong>");
+	define('TXT_BLI1',"<strong>Bacterial /<br> anti-bacterial activity: CMI, CMB</strong>");
+	define('TXT_BLI2',"<strong>agglutination test</strong>");
+	define('TXT_BLI4',"<strong>GRAM on sprawl</strong>"); 
+	define('TXT_BLI5',"<strong>GRAM on histological section</strong>");
 	define('TXT_BM4',"<h2>Bacterial/anti-bacterial activity</h2>");
 	
-	define('TXT_BEA1',"Bacteria oven.");
-	define('TXT_BEA2',"Spectrophotometer.");
-	define('TXT_BEA3',"plate reader.");
+	define('TXT_BEA1',"Bacteria oven");
+	define('TXT_BEA2',"Spectrophotometer");
+	define('TXT_BEA3',"plate reader");
 	define('TXT_BEA4',"PSM");
 	
 	//---------------------------------------------------------
@@ -543,12 +543,6 @@ define('TXT_CCEA1',"PSM");
 	define('TXT_HEA3',"PSM");
 	
 	*/
-	
-	
-	
-	
-	
-	
 	//define('TXT_HMT',"<h2 style=\"text-align:center\">Hémocompatibilité.</h2></h4>");
 	//define('TXT_HM',"<br><div style=\"width:100%; text-align:left; \"><h3><strong>Tests hémocompatibilités :</strong></h3><ul><li><strong>Tests d'hémolyse selon la norme ASTM F756-08</strong></li><li><strong>Test d'activation plaquettaire</strong></li><li><strong>Complément(C3a, CH50, SC5b-9)</strong></li><li><strong>ASTM F2888-13 compte plaquettes et leucocytes des matériaux utilisés en cardiovasculaire.</strong></li></ul></div>");
 	//define('TXT_HLI1',"<strong>Test d'hémolyse.</strong>");
@@ -664,14 +658,13 @@ as regulatory power has been increased in recent years.");
 	//---------------------------------------------------------
   	// candidature spontanées
   	//---------------------------------------------------------
-	define('TXT_Spon',"<h3>Thank you for completing the form below:</h3>");
-	define('TXT_TitreSpon',"<h1 style=\"text-align:center\">You want to work at the CIC-IT !?</h1><h4>Let us know by submitting your CV here ;<br>We will contact you as soon as a position related to our needs and capabilities will be available.</h4>
-<div style=\"text-align:center\"><h2>Tell us who you are :</h2></div>");
+	define('TXT_Spon',"<h3>Thank you for completing the form below,</h3><h6>We will contact you as soon as a position related to our needs and capabilities will be available.</h6>");
+	define('TXT_TitreSpon',"<h1 style=\"text-align:center\">You want to work at the CIC-IT !?</h1>");
+
 	define('TXT_Tel',"Phone:");
 	
 	define('TXT_Int',"Titled: <span title=\"This field is required\">");
-	define('TXT_Note',"<h3>Note :</h3><strong>Send us file with the following format : doc, pdf, jpg, zip, rar, ppt, and txt.
- We recomend you to use the zip format compresses (for widow) or rar (linux) to send multiple documents into a single download (diplomas and other certificates) with the resume and cover letter.");
+	define('TXT_Note',"<h3>Note :</h3><strong>Send us file with the following format : doc, pdf, jpg, zip, rar, ppt, and txt.</strong>");
 	
 	
 	define('TXT_Max',"Warning: maximum allowed size is 8 MB");
@@ -724,15 +717,15 @@ Fax:+33 (0) 557 102 869</p>");
   	// mention légales
   	//---------------------------------------------------------
 	define('TXT_TML',"Legal Notice");
-	define('TXT_AML',"<h3><strong> Host: Hyperion </strong></h3><br>
-<strong>Protection of personal data</strong><br><br>This Web site comprises personal information especially about the CIC-IT personnel of Bordeaux and its partners. In accordance with Law No. 78-17 of 6 January 1978 relating to computers, files and Freedoms (Articles 38, 39, 40), you have a right to access, correct and delete information about you online on this site.
+	define('TXT_AML',"<h3><strong> Host: Hyperion </strong>GSI Network  <em>solidDigital Basement</em></h3>
+<h6 style=\"margin-left:5%;margin-rigth:5%; text-align:left;\"><strong>Protection of personal data</strong><br><br>This Web site comprises personal information especially about the CIC-IT personnel of Bordeaux and its partners. In accordance with Law No. 78-17 of 6 January 1978 relating to computers, files and Freedoms (Articles 38, 39, 40), you have a right to access, correct and delete information about you online on this site.
 <br> To exercise this right, you may contact the webmaster <a href= \"mailto:cecile.raymond@inserm.fr\"  >Cécile Raymond</a><br><br>
 <br><strong>Disclaimer Clause</strong><br><br>
 The responsibility of the CIC-IT of Bordeaux can not in any way be liable for the content of the information on this site or the consequences that may result from their use or interpretation.
 <br><br><strong> Intellectual property: </strong><br><br>
 The CIC-IT Bordeaux Site is a creative work, exclusive property of the CIC-IT burgundy, protected by French and international legislation on the right to intellectual property. No reproduction or representation can be done in contravention of the rights of the CIC-IT of Bordeaux from the above legislation.
 <br><br><strong> Hyperlinks</strong><br><br>
-The establishment of hyperlinks by others to pages or documents available on the CIC-IT Bordeaux site, is allowed provided that the links are not contrary to the interests of CIC-IT of Bordeaux, and that they guarantee the possibility for the user to identify the origin and author.");
+The establishment of hyperlinks by others to pages or documents available on the CIC-IT Bordeaux site, is allowed provided that the links are not contrary to the interests of CIC-IT of Bordeaux, and that they guarantee the possibility for the user to identify the origin and author.</h6>");
 	//---------------------------------------------------------//
   	//calendrier                                               //
 	//---------------------------------------------------------//
@@ -746,12 +739,14 @@ The establishment of hyperlinks by others to pages or documents available on the
   	//---------------------------------------------------------
 	
 	define('TXT_PlanSite',"<h1>Sitemap</h1>
-    <h2 class = \"title\">Home page</h2><a href=\"../index.php\">index or homepage of the site:<em>Bordeaux CIC-IT</em ></a>
-<h2 class = \"title\">navigation at the foot of the page</h2><div><ul><li><a href=\"sitemap.php\" title=\"map of site\">Sitemap</a></li>
+    <h2 class = \"title\">Home page</h2><h6><a href=\"../index.php\">index or homepage of the site:<em>Bordeaux CIC-IT</em ></a></h6>
+<h2 class = \"title\">navigation at the foot of the page</h2><div>
+<h6>
+<ul><li><a href=\"sitemap.php\" title=\"map of site\">Sitemap</a></li>
 <li><a href=\"mentions-legales.php\">Legal</a></li>
-<li><a href=\"fiche-de-contact.php\" title=\"Contact\">Contact</a></li></ul></div>
+<li><a href=\"fiche-de-contact.php\" title=\"Contact\">Contact</a></li></ul></h6></div>
 
-<h2 class = \"title\"> Main navigation: the menu</h2><div><ul>
+<h2 class = \"title\"> Main navigation: the menu</h2><div><h6><ul>
 <li><a href=\"../index.php\">Home</a><ul>
 <li><a href=\"histoire.php\">History and partners</a></li>
 
@@ -768,10 +763,10 @@ The establishment of hyperlinks by others to pages or documents available on the
 <li><a href=\"cic-it-stages.php\">Internship offers</a></li>
 <li><a href=\"cic-it-spontanee.php\">Submit your CV and unsolicited applications</a></li></ul></li>
 <li><a href=\"fiche-de-contact.php\">Contact/Travel</a><ul><li><a href=\"fiche-de-contact.php\">Contact form</a></li>
-<li><a href=\"coordonnees.php\">Contact</a></li></ul></li></ul>
+<li><a href=\"coordonnees.php\">Contact</a></li></ul></li></ul></h6>
 
 <h2>With password and login: private space of administration of the site.</h2>
-	<li><a href=\"admin.php\">Access to the intranet</a></li>
+	<h6><li><a href=\"admin.php\">Access to the intranet</a></li></h6>
 </div>");	
 	
 	/*
