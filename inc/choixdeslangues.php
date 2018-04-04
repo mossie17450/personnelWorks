@@ -4,9 +4,6 @@ echo"
 <div>
 ";  
 
-
-
-
 		if (preg_match('~MSIE|Internet Explorer~i', $_SERVER['HTTP_USER_AGENT']) || (strpos($_SERVER['HTTP_USER_AGENT'], 'Trident/7.0; rv:11.0') !== false) || (strpos($_SERVER['HTTP_USER_AGENT'], 'windows phone') !== false)) {
 			echo "
 <div class=\"table-responsive, ex2\" style=\"border:none; width:100%;\">
