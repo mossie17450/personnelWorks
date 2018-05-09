@@ -6,7 +6,6 @@
   	 define('TXT_indexA', 'The CIC-IT: one stop to bring innovation to the bedside.');
 	//define('TXT_EnTete',"<h4 style=\"color:#0059b3; text-align:center;\">CLINICAL INVESTIGATION CENTER</h4><h4 style=\"color:red; text-align:center;\">TECHNOLOGICAL INNOVATION</h4><h4 style=\"color:#0059b3; text-align:center;\">BIOMATERIALS AND IMPLANTABLE MEDICAL DEVICES</h4>");
 
-	
 	 define('TXT_Menu', "<li><a href=\"index.php\">Welcome to CIC-IT</a>
 	 <ul>
 	 <li><a href=\"html/histoire.php\">History and partners</a></li>
@@ -36,17 +35,13 @@
 	 <li><a href=\"html/cic-it-spontanee.php\">CV and unsolicited applications</a></li>
 	 </ul></li>
 	 <li><a href=\"html/actualites.php\">Events</a></li>	
-	 <li><a href=\"html/fiche-de-contact.php\">Contact/Practical Infos</a><ul>
-	 <li><a href=\"html/coordonnees.php\">Contact information</a></li>
+	 <li><a href=\"html/coordonnees.php\">Contact/Practical Infos</a></li>
 	 </ul></li>
-	 
-	 </ul></li>
-	
 	");
 	  
 	 define('TXT_Resume', "The Clinical Investigation Centre - Technological Innovation (CIC-IT) Biomaterials Bordeaux is a major player in supporting the <strong> Biomedical Innovation </strong> and <strong> Translational Research </strong>. In this context, the Bordeaux University Hospital has partnered with INSERM and the University Bordeaux Segalen to effectively structure the transfer of technological innovations in the field of <strong> biomaterials </strong>. The CIC-IT integrated approaches biomaterials and assessment of their biocompatibility in a scientific and clinical advanced environment.");
 	 define('TXT_Titre', "The CIC-IT Bordeaux");
-	 define('TXT_Pied', "<ul ><a href=\"html/sitemap.php\" title=\"Plan du site\">sitemap</a> | <a href=\"html/mentions-legales.php\">Legal Notice</a>|<a href=\"html/fiche-de-contact.php\" title=\"Contact\">Contact</a></ul>");
+	 define('TXT_Pied', "<ul ><a href=\"html/sitemap.php\" title=\"Plan du site\">sitemap</a> | <a href=\"html/mentions-legales.php\">Legal Notice</a>|<a href=\"html/coordonnees.php\" title=\"Contact\">Contact</a></ul>");
 	 define('TXT_SSTitre', "One stop shop to bring your innovation to the patients");
 	 define('TXT_Article', "<br><h6>The CIC-IT Bordeaux provides service dedicated to biomedical innovation and translational research in the field of Biomaterials and Implantable Medical Devices (IMD).<br>
 			It is a collaboration between INSRM , Bordeaux University Hospital centre, the Bergonie Institute, and the University of Bordeaux.Its provides a effective structure for the transfer of technological innovations:CIC -IT integrates preclinical and clinical evaluation of biomaterials and IMD in an advanced scientific and clinical environment.</h6>");
@@ -78,13 +73,10 @@ It is supported by <a target=\"_blank\" href=\"http://www.biotis-bordeaux.com \"
 	 <li><a href=\"environnement-de-pointe.php\">advanced environment</a></li>
 	 <li><a href=\"cic-it-publications.php\">Our achievements</a></li>
 	 </ul></li>
-	 
-	
 	<li><a href=\"organisation.php\">Organization</a><ul> 
 	<li><a href=\"management.php\">Management of the CIC-IT</a></li>
 	<li><a href=\"systeme-qualite.php\">Quality system</a></li>
 	</ul></li>
-	 
 	 <li><a href=\"activites.php\">Activities/Expertises</a><ul>	 
 	 <li><a href=\"histologie.php\">Histology</a></li>
 	 <li><a href=\"CulturesCellulaires.php\">Cell culture</a></li>
@@ -93,24 +85,15 @@ It is supported by <a target=\"_blank\" href=\"http://www.biotis-bordeaux.com \"
 	 <li><a href=\"Hemodynamiques.php\" >Hemodynamic</a></li>
 	 <li><a href=\"TestesPreCliniquesInVivo.php\">Preclinical studies <em>in vivo</em></a></li>
 	 <li><a href=\"TestesCliniques.php\">Clinical Studies</a></li>
-	
 	 </ul></li>
-	 
-	
-	 
 	 <li><a href=\"master-bidim.php\">Training/Recruitment</a>
 	 <ul>
 	 <li><a href=\"cic-it-postes.php\">Open positions</a></li>
 	 <li><a href=\"cic-it-stages.php\">Internship offers</a></li>
 	 <li><a href=\"cic-it-spontanee.php\">CV and unsolicited applications</a></li></ul></li>
 	 <li><a href=\"actualites.php\">News</a></li>
-	
-	
 	 <li><a href=\"coordonnees.php\">Contact information</a></li>
 	 </ul></li>
-	
-	
-	
 	 ");
 	
 	
@@ -125,7 +108,7 @@ To this end, the CIC-IT of Bordeaux relies on the <a target=\"_blank\" href=\"ht
 	
 	
 	
-	 define('TXT_Piedhtml', "<ul ><a href=\"sitemap.php\" title=\"Plan du site\">site map</a> | <a href=\"mentions-legales.php\">legals mentions</a>|<a href=\"fiche-de-contact.php\" title=\"Contact\">Contact</a></ul>");
+	 define('TXT_Piedhtml', "<ul ><a href=\"sitemap.php\" title=\"Plan du site\">site map</a> | <a href=\"mentions-legales.php\">legals mentions</a>|<a href=\"coordonnees.php\" title=\"Contact\">Contact</a></ul>");
 	 
 	 define('TXT_ContentMission',"<p>The CIC-IT Bordeaux, created in 2001 on the theme of Biomaterials at the University Hospital of Bordeaux, was certified by INSERM in 2008. It is one of 3 Bordeaux CIC modules with CIC and CIC-Plurithematic -Epidémologie Clinic (EC). It is backed <strong> Inserm unit 1026 / Université Bordeaux Segalen </strong> (BioTis) and works closely with Unit 791 Inserm / University of Nantes Dental (musculoskeletal engineering and dental), a leading international biomaterials and tissue repair. </p>
 	<p>The CIC-IT Biomaterials Bordeaux is a major player in supporting <strong> Biomedical Innovation </ strong> and <strong> Translational Research </strong>. In this context, the University Hospital of Bordeaux has joined Inserm and the University Bordeaux Segalen to effectively structure the transfer of technological innovations in the field of <strong> biomaterials </strong>. </p>
@@ -182,26 +165,29 @@ The Technical Committee is responsible for:
 	
 		//define('TXT_TM',"Management of the CIC-IT of Bordeaux.");
 	define('TXT_TMA1',"<h6>The CIC-IT is managed by an annual Strategic Orientation Committee (COS), chaired by its president <a>Prof. Jean-Christophe Fricain</a>, and bringing together the medical coordinator (<a href = \"LaurenceBordenave.php \">Pr Laurence Bordenave</a>), the delegated coordinator (<a href=\"MarleneDurand.php\">Marlène Durand $</a>), the representatives of the 
-CIC1401 ,<a> the Director of the PTIB </a> and the Scientific Members of CIC-IT.<a> EC and P coordinators </a> are also invited.
+CIC1401 ,<a> the Director of the PTIB </a> and the Scientific Members of CIC-IT.<a > EC and P coordinators </a> are also invited.
 <br> A review of the activity is presented and the future strategic and scientific orientations
 Are discussed and determined. <br> A report is drafted and sent to the participants.<br></h6>");
 
-	define('TXT_TMA2',"<br>The Bordeaux CIC-IT is led by a <a>Medical Coordinator </a> and a <a>Delegated Coordinator </a>.The medical coordinator ensures the medical and scientific coordination of the CIC-IT and is also in charge of relations with the CIC-IT tutors. The Deputy Coordinator assists the Medical Coordinator in her duties and ensures the administrative, managerial, logistical and scientific coordination of the CIC-IT on a daily basis. The Deputy Coordinator may also be a substitute for the Medical Coordinator in some jurisdictions.
-The coordinators are responsible for the implementation of the quality policy by the entire team and are also responsible for investigating requests for new projects submitted to the CIC-IT: eligibility assessment, search for partners, Response to calls for tenders.
-The Deputy Coordinator shall prepare budgets,
-Quotes and agreements with ad hoc services. It then monitors the projects in
-Allocation of human and technical resources, progress of work (meetings and other exchanges),
-Updating quotes and contracts if necessary, and drafting / validating reports.
-He reports regularly to the medical coordinator any difficulties concerning the conduct of the projects and the team.
-It also represents the CIC-IT in the different networks to which it belongs and also draws up the annual and
-Quadrennial demanded by the guardianship.");
+	define('TXT_TMA2',"<br>The Bordeaux CIC-IT is directed by a <a href=\"LaurenceBordenave.php\">Medical Coordinator </a> and a <a href=\"MarleneDurand.php\">Debuty Coordinator </a>.The medical coordinator ensures (1) the medical and scientific coordination of the CIC-IT and (2) communication among CIC-IT tutors. 
+	The Deputy Coordinator (1) assists the Medical Coordinator (2) ensures the administrative, managerial, logistical and scientific coordination of the CIC-IT on a daily basis. 
+	The Deputy Coordinator may be a substitute for the Medical Coordinator to the some extends of jurisdictions.
+The coordinators are responsible for the quality implementation and  new projects submission (including eligibility assessment, search for parteners, grant applications).
+The Deputy Coordinator prepares budgets,
+quotes and agreements with ad hoc services.
+Moreover, the debuty coordinator manages human and technical rescources, monitors the progress of work
+ (through meeting, calls, etc,...), conducts adjustments to quotes and contracts, and drafts/validates reports.
+The debuty coordinator reports regularly to the medical coordinator any difficulties concerning the projects and the team.
+The debuty coordinator represents the CIC-IT in  networking events and provides annual and
+Quadrennial reports.");
 
 
 define('TXT_TMA3',"<h6>A monthly plenary meeting (or technical committee) discusses the progress of ongoing projects.
-A monthly working meeting is regularly chaired by the CIC-IT Delegate Coordinator, along with the entire team, to discuss the day-to-day organization and operation of the structure.<br><br></h6>");
+A monthly working meeting is regularly chaired by the CIC-IT Delegate Coordinator and attended by the entire team, to discuss the day-to-day organization and operation of the structure.<br><br></h6>");
 
 define('TXT_TMA4',"<div style=\"display:inline-block; margin-left:0px; \">
-This function is provided by Claire Darcos who manages the ordering circuit and the organization of the missions for the whole team.
+<a href=\"ClaireDarcos.php\">The secretary service </a>is provided by Claire Darcos.She manages administrative procedures and logistics for the team.
+She handles the order and the reception of merchandises.
 She assists the coordinators in their daily work on administrative and monitoring issues.<br></div>");
 	define('TXT_coordinateurD',"Deputy Coordinator");
 	define('TXT_coordinateurM',"Medical Coordinator");
@@ -210,27 +196,28 @@ She assists the coordinators in their daily work on administrative and monitorin
   	// Système qualitée
   	//---------------------------------------------------------
 	define('TXT_QualiteTitre',"<h1 align=\"center\">Quality at the CIC-IT</h1> ");
-	define('TXT_A1Qualite',"The CIC-IT organizes its activities in compliance with its quality management system in accordance with the ISO 9001 standard. Since 2016, the CIC-IT has committed itself to certification in accordance with the new version 2015 of the Standard.");
+	define('TXT_A1Qualite',"The CIC-IT organizes its quality management system in accordance with the ISO 9001 standard. Since 2016, the CIC-IT has committed itself to conduct a certification in accordance with the new 2015 standard.");
 
-	define('TXT_SuiteA1Q',"<h3 style=\"margin-left:10px;\">This work around our quality management system translates into: </h3>
+	define('TXT_SuiteA1Q',"<h3 style=\"margin-left:10px;\">Our quality management system includes: </h3>
 <ul id =\"puces\"><li><h6> setting up quality documents that frame practices and organize activities,</h6> </li>
 <li><h6> monitoring actions to address dysfunctions or actions to improve processes, </h6></li>
-<li><h6> evaluations of our multi-level processes (process reviews, process audits and project audits) to ensure their implementation as planned. </h6></li></ul>
+<li><h6> evaluations of our multi-level processes (process reviews, process audits and project audits) to ensure their implementation as planned.</h6></li></ul>
 	");
 	
-	define('TXT_SuiteA2Q',"<h3 style=\"margin-left:10px;\">The quality system has been set up according to the recommendations of the quality systems of the following guardianship bodies:</h3>
+	define('TXT_SuiteA2Q',"<h3 style=\"margin-left:10px;\">The quality system has been set up according to the recommendations of the quality systems of:</h3>
 <ul id =\"puces\"><li><h6>The CHU de Bordeaux and its Quality and Performance Department (DQP) for the guidelines and models for the preparation of quality documents, and the Directorate of Clinical Research And Innovation (DRCI), for elements specific to clinical research, </h6></li>
-<li><h6>INSERM, because of its integration with the National Network of CICs and its participation in the group \"Harmonization of CIC procedures\" (HP-CIC). </h6></li></ul>");
+<li><h6>INSERM, due to its integration with the National Network of CICs and its participation in the group \"Harmonization of CIC procedures\" (HP-CIC). </h6></li></ul>");
 	
-	define('TXT_A3Qualite',"<h6>The activities of the CIC-IT are carried out in compliance with the Norms and the legislative framework in force in France, Europe and at the international level.
-All CIC-IT staff are involved in the quality process of the structure and guarantee its functioning in order to achieve work that is in line with customer and other interested parties.
+	define('TXT_A3Qualite',"<h6>The activities of the CIC-IT are carried out in compliance with the Norms and the legislative framework in France, Europe and at the international level.
+All CIC-IT staff are proudly involved in the quality process of the structure.
 For further information regarding the quality system, please contact the Quality Management Manager: Carolina LANCHAS FUENTES (carolina.lanchas-fuentes@chu-bordeaux.fr)</h6>
 ");
 	
 	
-	define('TXT_TexteImage',"<h3 style=\"margin-left:10px;\">Objectives of the CIC-IT </h3>
+	define('TXT_TexteImage',"<h3 style=\"margin-left:10px;\">The objectives of the CIC-IT </h3>
 <ul><li>Please refer to the CONVENTION ON THE CLINICAL INVESTIGATION CENTER OF BORDEAUX N ° 074.2010.RC and to the Rules of Procedure of the CIC-IT. </ Li>
 <li class = \"blink_me\" style=\"color:red; text-align:center; list-style-type:none;\"><h3> Get ISO 9001 version 2015 certification in 2018. </h3></li> ");
+	
 	define ('TXT_TitreImg',"CIC-IT: management process, implementation and support");
 	//define ('TXT_Vara',"Dans le souci de produire un travail de qualité, un service qualité à été mis en place en 2010. Celui-ci veille à la bonne application de ces réglementations et procédures. Pour y parvenir, le CIC-IT s'engage à accomplir la politique qualité et à mettre en place des outils de mesure d'efficacité des processus et d'atteinte des objectifs, ainsi que des ressources dédiées au système qualité: la chef de projet assure le fonctionnement des processus et la coordination fonctionnelle.<p>Le service qualité est à l\'origine, sous ma responsabilité, de la rédaction et de la révision des procédures et de la formation du personnel à celles-ci par des moyens divers (réunions, préparation de brochures, séances de révision...). Dans la continuité, le service qualité s\'assure de la mise en application de l\'organisation et des actions définies dans les documents qualité.</p><p>La formation du personnel aux modifications réglementaires et aux changements pratiques qui en résultent est également une priorité du CIC-IT.</p><p>Chaque membre du CIC-IT est donc responsable à son niveau de la garantie que son activité s\'inscrit dans une démarche qualité ce qui permet d\'assurer que le CIC-IT travaille dans un souci de développement d\'études de qualité scientifique maximale.</p><p>Dans cet esprit, en tant que coordinatrice du CIC-IT, j'attends un engagement fort du personnel à améliorer de façon continue nos performances pour satisfaire et anticiper les attentes de nos clients et partenaires.</p><p>La volonté du CIC-IT est d\'assurer à ses clients et aux parties intéressées la qualité de ses prestations, le meilleur service possible et les meilleurs conseils afin de répondre parfaitement à leurs besoins et aux exigences définies dans leurs demandes.</p><div>Pr Laurence BORDENAVE</div> ");
 	//define('TXT_finA1Q',"[fermer]");
@@ -251,6 +238,17 @@ Email: <a href=\"mailto:carolina.lanchas-fuentes@chu-bordeaux.fr\">carolina.lanc
 	//---------------------------------------------------------
   	//  Valorisation/publication/Our Achievements
   	//---------------------------------------------------------
+define('TXT_VRETA',"<TR><TH width=\"35%\">Title</TH><TH width=\"25%\">Authors</TH><TH width=\"18%\">Journal</TH><TH width=\"10%\">year</TH></TR>");
+	//com affiché
+	define('TXT_VRETAFF',"<TR><TH width=\"35%\">Title</TH><TH width=\"25%\">Authors</TH><TH width=\"18%\">Symposium</TH><TH width=\"10%\">year</TH></TR>");
+	//com orale
+	define('TXT_VRETO',"<TR><TH width=\"35%\">Title</TH><TH width=\"25%\">Authors</TH><TH width=\"18%\">Symposium</TH><TH width=\"10%\">year</TH></TR>");
+	//Brevet
+	define('TXT_VRETB',"<TR><TH width=\"35%\">Title</TH><TH width=\"25%\">Authors</TH><TH width=\"18%\">N° of patent</TH><TH width=\"10%\">year</TH></TR>");
+	//ouvrage
+	define('TXT_VRETOU',"<TR><TH width=\"35%\">Title</TH><TH width=\"25%\">Authors</TH><TH width=\"18%\">literary work</TH><TH width=\"10%\">year</TH></TR>");
+	
+	
 	
 	define('TXT_TV',"<h1 style=\"text-align:center\">Our achievements</h1>");
 	define('TXT_VCB',"Publication Type");
@@ -272,19 +270,13 @@ Email: <a href=\"mailto:carolina.lanchas-fuentes@chu-bordeaux.fr\">carolina.lanc
 	define('TXT_TM5',"Others");
 	define('TXT_TbM5',"Participation in a book:");
 	
-	//---------------------------------------------------------
-  	//  ValorisationR //n'existe plus!!
-  	//---------------------------------------------------------
-
-		define('TXT_VRET',"<TR><TH width=\"35%\">title</TH><TH width=\"25%\">author</TH><TH width=\"18%\">journale/ symposium</TH><TH width=\"10%\">year</TH></TR>");
-
 	
 	//---------------------------------------------------------//
   	//                    Activités                            //
   	//---------------------------------------------------------//
 	
-	
-	define('TXT_TitreA',"Our expertise");	
+	define('TXT_intro',"The CIC-IT missions are:");
+	//define('TXT_TitreA',"Our expertise");	
 	define('TXT_ArticleA1',"<div  id=\"puces\" ><ul><li style=\"text-align:justify; margin-left:25px;\">
 Integrated innovative biomaterials and the assessment of their biocompatibility in a leading scientific and clinical environment in two main areas including bone and vascular substitution.</li>
 <li style=\"text-align:justify; margin-left:25px;\">Demonstrate the concept of an implantable medical device at the service and/or in collaboration with researchers, clinicians and industry, from the physico-chemical characterization to the pilot clinical study.</li>
@@ -309,21 +301,7 @@ Pour la validation des \"biomatériaux naturels et synthétiques\", dans des app
 <li style=\"text-align:justify; margin-left:25px;\">Surgical Models. </li>
 <li style=\"text-align:justify; margin-left:25px;\">Longitudinal follow-up <em>in vivo</em> by non-invasive imaging.</li>
 <li style=\"text-align:justify; margin-left:25px;\">Etc...</li></ul></h6></div>");
-
-/*
 	
-
-	define('TXT_ArticleA13',
-"Pour la validation des \"biomatériaux naturels et synthétiques\", dans des applications cliniques variées, et en particulier dans les domaines ostéo-articulaires, cardio vasculaires, digestif (mais pas seulement), En mettant au point des modèles d'évaluation.
-<div style=\"display:block; text-align:left;\"><br>
-par exemple:<br><br>
-<div  id=\"puces\" ><ul>
-<li style=\"text-align:justify; margin-left:25px;\">Simulation de circulation artérielle sur banc hémodynamique</li>
-<li style=\"text-align:justify; margin-left:25px;\">Modèles chirurgicaux</li>
-<li style=\"text-align:justify; margin-left:25px;\">Suivi longitudinal <em>in vivo</em> par imagerie non invasive</li>
-<li style=\"text-align:justify; margin-left:25px;\">Etc.</li></ul></div></div>");
-
-	*/	
 
 define('TXT_Img',"<img src='../image/cic_it_preuve_concepten.jpg'  width=\"100%\" class=\"arrondie\">");
 		
@@ -397,7 +375,8 @@ Fax. : 05 57 10 28 63
 	define('TXT_HTC3',"<h2>Coloration of calcified tissue</h2><em>( trichrome Goldner , Von Kossa Mac Neal )<em>");
 	define('TXT_HTC4',"<h2>IHC on paraffin sections</h2><em> (alpha -actin , CD31 , CD45 , CD68 , Ki67 , ...)</em>");
 	define('TXT_HTC5',"<h2>histomorphometric analysis , quantification of different parameters</h2><em>( bone reconstruction , fibrosis, inflammation ...)<em>");
-	define('TXT_HTC6',"Associated equipment: Nikon Microscope Ni-U and 80i to 90i microscope NIKON motorized head (with two cameras for fluorescence DS- Qi1Mc white light DS- Fi2) provided by PTIB,and image analysis software NIS-Elements D version 4.2.");
+	define('TXT_HTC6',"Image analysis software NIS-Elements D version 4.2.");
+	//Associated equipment: Nikon Microscope Ni-U and 80i to 90i microscope NIKON motorized head (with two cameras for fluorescence DS- Qi1Mc white light DS- Fi2) provided by PTIB,and 
 	define('TXT_HTC61',"NIKON microscope Ni-U");
 	define('TXT_HTC62',"NIKON microscope 80i to 90i motorized head");
 	define('TXT_HTC63',"binocculaire Loupe");
@@ -458,6 +437,16 @@ define('TXT_CCM',"
 <li><h4>Cytocompatibility-cytotoxicity (EN ISO 10993-5) </h4></li>
 <li><h4>Attachment, proliferation (EN ISO 10993-5) </h4></li>
 </ul></div>");
+	
+	define('TXT_CCM2',"
+	<h3>Cyto-compatibility</h3>
+<h6>Cytotoxicity<br>
+Attachment, proliferation </h6>
+<h3>Bioengineering</h3>
+<h6>Culture under static conditions (bio-reactor)<br>Culture under flow (see \"<a href=\"Hemodynamiques.php\">hemodynamic</a>\" page)</h6>");
+	
+	
+
 	
 	//define('TXT_CCTM',"<div id=\"section-article\"><h3><strong>Activities</strong></h3>");
 	define('TXT_CCTM1',"<h3><strong>Cytocompatibility biomaterials:</strong></h3>");
@@ -561,13 +550,13 @@ define('TXT_CCEA1',"PSM");
 
 	define('TXT_IVA1',"<div  style=\"display:block; text-align:left;\"><ul><li>Protocols drafting for submission to the ethics committee of Bordeaux</li><br>
 <li>Experimental management with the approved animal husbandry in Bordeaux (rodent and large animal) and approved surgeons from hospital center.</li><br>
-<li>Experiment Follow-up(clinical and laboratory monitoring, imaging) and histological analyzes.</li><br>
+<li>Experiment Follow-up (clinical and laboratory monitoring, imaging) and histological analyzes.</li><br>
 <li>Reconstruction and quantifications of bone tissue following 3D acquisition scanner.</li><br>
 <li>Drafting of the final report.</li></ul></div>");
 
 	define('TXT_IVIA',"<strong><h3 style=\"margin-left:5%\">Examples</h3></strong><br>");
-	define('TXT_IVEquipements',"<h4 style=\"text-align:center; margin-left:5%; margin-rigth:5%;\">Resources from the University of Bordeaux, PTIB and IHU LIRYC :<br><br><ul><li>animal husbandry,</li><br><li>operation room,</li><br><li>X -ray imaging,</li><br><li>MRI,</li><br><li>PhotoImager,</li><br><li>ultrasound.</li></ul></h4>");
-	
+	define('TXT_IVEquipements',"<h4 style=\"text-align:center; margin-left:5%; margin-rigth:5%;\">Resources from the University of Bordeaux, PTIB and IHU LIRYC");
+	//:<br><br><ul><li>animal husbandry,</li><br><li>operation room,</li><br><li>X -ray imaging,</li><br><li>MRI,</li><br><li>PhotoImager,</li><br><li>ultrasound.</li></ul></h4>
 	define('TXT_IVI1',"<strong>Doppler ultrasound of carotid sheep after by pass</strong>");
 	define('TXT_IVI2',"<strong>Intervertebral injection in sheep</strong>");
 	define('TXTIVI3',"<strong>Photoluminescence of bacterial activity in bone site</strong>");
@@ -579,46 +568,47 @@ define('TXT_CCEA1',"PSM");
 	define('TXT_ResponsableClinique',"Elodie Belmo");
 	define('TXT_TCT',"Clinical studies");
 	define('TXT_TCR',"Responsible for clinical studies<br>Phone : 05 57 10 28 95 / Fax : 05 57 10 28 63 <br>Email: <a href=\"mailto:elodie.seris@chu-bordeaux.fr\">elodie.seris@chu-bordeaux.fr</a>");
-	define('TXT_ECM1',"<h2>Missions clinical research:</h2>
-<h4><strong>Coordination and management of single and multi-centred clinical trials management on medical devices.</strong></h4>
- <div  style=\"display:block; text-align:left;\" id=\"puces\">
-<ul><li>Protocol design and drafting and study documents (info-consent note, investigator's brochure, observation booklet, etc...)</li>
+	define('TXT_ECM1',"<h3>Missions clinical research:</h3>
+<h6><strong>Coordination and management of single and multi-centred clinical trials management on medical devices.</strong></h6>
+ <div  style=\"display:block; text-align:left; margin-left:5%;\" id=\"puces\">
+<h6><ul><li>Protocol design and drafting and study documents (info-consent note, investigator's brochure, observation booklet, etc...)</li>
 <li>Collaborations research (clinicians, industries, researchers) and financing (call for project, etc...)</li>
 <li>Incorporation and monitoring of administrative and regulatory issues at national level</li>
 <li>Logistics of the study (pharmacy circuit, biological samples, etc...), investigator support</li>
 <li>Data quality control ( e-CRF or paper support): monitoring of public or private site </li>
 <li>Participation in the research development(statitical assistance, summary of the final report and publication)</li>
-</ul></div>");
+</ul></h6></div>");
 	
-	define('TXT_ECM2',"<h2>Transversal missions:</h2> 
+	define('TXT_ECM2',"<h3>Transversal missions:</h3> 
 
-<div  style=\"display:block; text-align:left;\" id=\"puces\">
+<div  style=\"display:block; text-align:left; margin-left:5%;\" id=\"puces\"><h6>
 <ul>
 <li>Definition of biomaterials specifications</li>
  <li>Regulatory monitoring of medical devices and clinical research</li>
  <li>Participation in the development/validation of documentation related to quality Management in the Clinical Research (Bordeaux University Hospital, Inserm and CIC Network, EUCLID platform)</li>
- </ul>
+ </ul></h6>
  </div><br>
- <div  style=\"display:block; text-align:left;\" id=\"puces\">
- <h2>Experience in the following medical fields:</h2>
-Orthopaedics , vascular surgery , ENT and maxillofacial surgery , ( pediatric ENT) , plastic and reconstructive surgery , dental implantology , tissue engineering , imaging and interventional cardiology 
- </div>");
+
+ <h3>Experience in the following medical fields:</h3>
+  <div  style=\"display:block; text-align:left; margin-left:5%;\" id=\"puces\">
+<h6>Orthopaedics , vascular surgery , ENT and maxillofacial surgery , ( pediatric ENT) , plastic and reconstructive surgery , dental implantology , tissue engineering , imaging and interventional cardiology 
+ </h6></div>");
 	
 	//---------------------------------------------------------
   	// Master BIDIM
   	//---------------------------------------------------------
 
 	define('TXT_TitreMaster',"<h1 style=\"text-align:center\">Training activities by research.</h1>");
-	define('TXT_ArticleM1',"<p>CIC-IT members are involved in these courses:</p>
-<ul>
-<li>Master Bidim Bordeaux</li>
+	define('TXT_ArticleM1',"<p><h3>CIC-IT members are involved in these courses:</h3></p>
+<h6><ul id=\"puces\">
+<li>Master Bidim Bordeaux<br>	
+In response to the demand from industry, <strong>Professional Master </strong> aims to train managers (currently 20 maximum /year) to the specific problems of materials and equipment in the <strong> biomedical sectors</strong>.<br/>
+as regulatory power has been increased in recent years.
+</li>
 <li>DIU FARC at the University of Bordeaux</li>
 <li>Training in clinical research platform F-CRIN</li>
-</ul>
-	<h3>Professional Master, University Bordeaux</h3>
-
-In response to the demand from industry, <strong>Professional Master </strong> aims to train managers (currently 20 maximum /year) to the specific problems of materials and equipment in the <strong> biomedical sectors</strong>.<br/>
-as regulatory power has been increased in recent years.");
+</ul></h6>");
+	
 		
 	define('TXT_lien',"Links: ");
 	define('TXT_Master',"Master BiDim.");
@@ -645,15 +635,21 @@ as regulatory power has been increased in recent years.");
 	//---------------------------------------------------------
   	// contact
   	//---------------------------------------------------------
+	/*
 	define('TXT_TitreContact',"<h1>Contact </h1><h2>contact form</h2>");
 	define('TXT_Contacte',"Contact us");
+	*/
 	define('TXT_Nom',"Surname  :<span title=\"This field is required.\">");
 	define('TXT_Prenom',"First name  :<span title=\"This field is required.\">");
 	define('TXT_Email',"Email     :<span  title=\"This field is required.\">");
 	define('TXT_Message',"Message  :");
 	define('TXT_Code',"Enter the code from the image.");
+	
 	define('TXT_ValueR',"reset");
 	define('TXT_ValueE',"submit");
+	
+	
+	
 	
 	//---------------------------------------------------------
   	// candidature spontanées
@@ -672,7 +668,38 @@ as regulatory power has been increased in recent years.");
 	define('TXT_Motiv',"letter of motivation :");
 	
 	define('TXT_Competences',"Your skills :");
-	define('TXT_Donnees',"Send data.");
+	define('TXT_Donnees',"Send data");
+	define ('TXT_Champs',"*: fields must be filled in.");
+	define ('TXT_selectfichier',"no selected file");
+	
+	define ('TXT_upload',"You must upload a file of type  jpg, jpeg, zip, rar, pdf, txt ou doc...");
+	
+	define('TXT_messageform',"are you sure that you dont have some message?<br/>");
+	
+	define('TXT_phone',"Have you forget your phone?<br/>");
+	
+	define('TXT_mail',"We needs your email.<br/>");
+	
+	define('TXT_prenomform',"We needs your surname.<br/>");
+	
+	define('TXT_nomform',"We needs your name.<br/>");
+	
+	define('TXT_intform',"Your title is required<br/>");
+	
+	define('TXT_codenok',"<br/><h6 style=\"text-align:center\">incorrect code, start again!</h6><br>");
+	
+	define('TXT_codeok',"<br/><h6 style=\"text-align:center\">correct code</h6><br>");
+	
+	define('TXT_formnok',"<br/>Please fill in the contact form again and fill in the mandatory \"* \" requesters!<br>");
+	
+	define('TXT_formok',"<h6 style=\"text-align:center\">you have filled in the form correctly and your data are registered. <br/> An e-mail has been sent to the Director of CIC-IT.<br/> Thank  for your visit and see you soon.<h6/><br>");
+	
+	//---------------------------------------------------------
+  	// actualités
+  	//---------------------------------------------------------
+	define('TXT_actualites',"The news of CIC-IT");
+	define('TXT_Tele',"Download");
+	define('TXT_Webplus',"to know more");
 	
 	
 	//------------------------------------------------------------------//
@@ -711,7 +738,9 @@ Fax:+33 (0) 557 102 869</p>");
 	define('TXT_CoordoTrafic',"<h4 style=\"margin-top:10px\"><h4>By car</h4>Real-time traffic freeways<br>for Bordeaux");
 	define('TXT_CoordoBusTram',"<h4 style=\"margin-top:10px\">with the TBM network.</h4>");
 	define('TXT_MobiliteTBM',"<a solutions proposed by the tbm : href=\"\">  </a>");
-	
+	define('TXT_Deplacements',"To travel thanks to public transport");
+	define('TXT_Paravion',"<h6><a target=\"_blank\" href=\"aeroportXavierXernozan.php\" >By plane:</a> from Mérignac airport to CIC-IT, Xavier Arnozan Hospital (Pessac)</h6>");
+	define('TXT_Partrain', "<h6><a target=\"_blank\" href=\"gareStJeanXavierXernozan.php\">By train:</a> from Saint Jean train station (Bordeaux) to CIC-IT, Xavier Arnozan Hospital (Pessac)</h6>");
 	
 	//---------------------------------------------------------
   	// mention légales
@@ -746,45 +775,39 @@ The establishment of hyperlinks by others to pages or documents available on the
 <li><a href=\"mentions-legales.php\">Legal</a></li>
 <li><a href=\"fiche-de-contact.php\" title=\"Contact\">Contact</a></li></ul></h6></div>
 
-<h2 class = \"title\"> Main navigation: the menu</h2><div><h6><ul>
+<h2 class = \"title\"> Main navigation: the menu</h2><div>
+<h6><ul>
 <li><a href=\"../index.php\">Home</a><ul>
 <li><a href=\"histoire.php\">History and partners</a></li>
-
 <li><a href=\"missions.php\">Missions</a></li>
 <li><a href=\"environnement-de-pointe.php\">advanced environment</a></li>
-</ul></li><li><a href=\"organisation.php\">Operation</a><ul>
+<li><a href=\"cic-it-publications.php.php\">Our achievements</a></li></ul></li>
+<br>
+<li><a href=\"organisation.php\">Operation</a><ul>
 <li><a href=\"organisation.php\">Organization</a></li>
 <li><a href=\"systeme-qualite.php\">Quality System</a></li>
 </ul>
-<li><a href=\"activites.php\">Activities</a><ul><li><a href=\"activites.php\">Activities</a></li><li><a href=\"histologie.php\">histology</a></li><li><a href=\"CulturesCellulaires&Bacteriologie.php\">Cell culture and bacteriology</a></li>
-<li><a href=\"hemocompatibilite.php\">Hemocompatibility</a></li><li><a href=\"hemodynamique.php\">Hemodynamic</a></li><li><a href=\"TestesPreCliniquesInVivo.php\">Preclinical trial </a></li><li><a href=\"TestesCliniques.php\">clinical trial </a></ul></li>
-<li><a href=\"master-bidim.php\">Training/Recruitment</a><ul><li><a href=\"master-bidim.php\">Master Bidim</a></li>
+<br>
+<li><a href=\"activites.php\">Activities</a><ul>
+<li><a href=\"histologie.php\">histology</a></li>
+<li><a href=\"CulturesCellulaires&Bacteriologie.php\">Cell culture and bacteriology</a></li>
+<li><a href=\"hemocompatibilite.php\">Hemocompatibility</a></li>
+<li><a href=\"hemodynamique.php\">Hemodynamic</a></li>
+<li><a href=\"TestesPreCliniquesInVivo.php\">Preclinical trial </a></li>
+<li><a href=\"TestesCliniques.php\">clinical trial </a></ul></li>
+<br>
+<li><a href=\"master-bidim.php\">Training/Recruitment</a><ul></li>
 <li><a href=\"cic-it-postes.php\">Job Offers</a></li>
 <li><a href=\"cic-it-stages.php\">Internship offers</a></li>
 <li><a href=\"cic-it-spontanee.php\">Submit your CV and unsolicited applications</a></li></ul></li>
-<li><a href=\"fiche-de-contact.php\">Contact/Travel</a><ul><li><a href=\"fiche-de-contact.php\">Contact form</a></li>
-<li><a href=\"coordonnees.php\">Contact</a></li></ul></li></ul></h6>
-
+<br>
+<li><a href=\"coordonnees.php\">Contact/pratical info</a></li>
+<br>
+<li><a href=\"actualites.php\">news</a></li></ul></h6>
+<br>
 <h2>With password and login: private space of administration of the site.</h2>
 	<h6><li><a href=\"admin.php\">Access to the intranet</a></li></h6>
 </div>");	
-	
-	/*
-	<ul><li><a href=\"../admin/ajoutevent.php\">Add an event to the event calendar</a></li>
-		<li><a href=\"../admin/supprevent.php\">Delete an event</a></li>
-		<li><a href=\"../admin/publicationsMaJ.php\">Adding a Publication</a></li>
-        <li><a href=\"../admin/ajoutPost.php\">Posting of proposed positions</a></li>
-		<li><a href=\"../admin/supprimeposte.php\">Abolition of proposed job posting</a></li>
-		<li><a href=\"../admin/ajoutStage.php\">Posting of proposed courses</a></li>
-		<li><a href=\"../admin/supprimestage.php\">Removal of posting of proposed courses</a></li>
-		<li><a href=\"../admin/NouveauStagiaire.php\">Addition to the list of CIC-IT trainees</a></li>
-		<li><a href=\"../admin/listeCV.php\">Management of unsolicited applications sent to the site</a></li>
-		<li><a href=\"../admin/listeContacts.php\">Contact management (contact form) sent to the site</a></li>		
-		</ul>
-	//</div>");
-*/
-
-
 	
 	//---------------------------------------------------------//
   	// carouselle                                              //

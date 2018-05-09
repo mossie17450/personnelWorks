@@ -180,7 +180,7 @@ Le Comité Technique a pour missions :
   	//---------------------------------------------------------
 	define('TXT_TM',"Management du CIC-IT de Bordeaux.");
 
-	define('TXT_TMA1',"Le CIC-IT est piloté via un Comité d’Orientation Stratégique (COS) annuel, sous la direction de son président <a>le Pr Jean-Christophe Fricain</a>, et regroupant le coordonnateur médical (<a href=\"LaurenceBordenave.php\">Pr Laurence Bordenave</a>), le coordonnateur délégué (<a href=\"MarleneDurand.php\">Marlène Durand</a>), les représentants des tutelles du CIC1401 ,<a   href=\"http://www.u-bordeaux.fr/Universite/Organisation/Presidence2/Les-vice-presidents/Pierre-Dos-Santos-vice-president-en-charge-de-la-recherche\"> le directeur de la PTIB</a> et les membres scientifiques du CIC-IT. <a>Les coordonnateurs des modules EC et P </a>sont également conviés. 
+	define('TXT_TMA1',"Le CIC-IT est piloté via un Comité d’Orientation Stratégique (COS) annuel, sous la direction de son président <a >le Pr Jean-Christophe Fricain</a>, et regroupant le coordonnateur médical (<a  href=\"LaurenceBordenave.php\" class=\"a\">Pr Laurence Bordenave</a>), le coordonnateur délégué (<a href=\"MarleneDurand.php\">Marlène Durand</a>), les représentants des tutelles du CIC1401 ,<a   href=\"http://www.u-bordeaux.fr/Universite/Organisation/Presidence2/Les-vice-presidents/Pierre-Dos-Santos-vice-president-en-charge-de-la-recherche\"> le directeur de la PTIB</a> et les membres scientifiques du CIC-IT. <a>Les coordonnateurs des modules EC et P </a>sont également conviés. 
 <br>Un bilan d’activité y est présenté et les orientations stratégiques et scientifiques futures 
 y sont discutées et déterminées.<br> Un compte-rendu est rédigé et adressé aux participants.<br>");
 	define('TXT_TMA2',"<br>Le CIC-IT de Bordeaux est dirigé par un <a href=\"LaurenceBordenave.php\">coordonnateur médical (Pr L Bordenave)</a> et par un <a href=\"MarleneDurand.php\">coordonnateur délégué (PhD M Durand)</a>. <br>Le coordonnateur médical assure la coordination médicale et scientifique du CIC-IT et est également en charge des relations avec les tutelles du CIC-IT. Le coordonnateur délégué assiste le coordonnateur médical dans ses fonctions et assure la coordination administrative, managériale, logistique et scientifique du CIC-IT au quotidien. Le coordonnateur délégué peut également suppléer le coordonnateur médical dans certaines instances.
@@ -245,7 +245,18 @@ Pour tout renseignement concernant le système qualité, vous pouvez contacter l
 	//---------------------------------------------------------
   	//  Valorisation ou publications...
   	//---------------------------------------------------------
-	define('TXT_VRET',"<TR><TH width=\"35%\">titre</TH><TH width=\"25%\">auteur</TH><TH width=\"18%\">journale/symposium</TH><TH width=\"10%\">annee</TH></TR>");
+	
+	//en fonction de si brevet ou non....
+	//article
+	define('TXT_VRETA',"<TR><TH width=\"35%\">Titre</TH><TH width=\"25%\">Auteurs</TH><TH width=\"18%\">Journal</TH><TH width=\"10%\">Année</TH></TR>");
+	//com affiché
+	define('TXT_VRETAFF',"<TR><TH width=\"35%\">Titre</TH><TH width=\"25%\">Auteurs</TH><TH width=\"18%\">Symposium</TH><TH width=\"10%\">Année</TH></TR>");
+	//com orale
+	define('TXT_VRETO',"<TR><TH width=\"35%\">Titre</TH><TH width=\"25%\">Auteurs</TH><TH width=\"18%\">Symposium</TH><TH width=\"10%\">Année</TH></TR>");
+	//Brevet
+	define('TXT_VRETB',"<TR><TH width=\"35%\">Titre</TH><TH width=\"25%\">Auteurs</TH><TH width=\"18%\">N° du brevet</TH><TH width=\"10%\">Année</TH></TR>");
+	//ouvrage
+	define('TXT_VRETOU',"<TR><TH width=\"35%\">Titre</TH><TH width=\"25%\">Auteurs</TH><TH width=\"18%\">Ouvrage</TH><TH width=\"10%\">Année</TH></TR>");
 	
 	define('TXT_TV',"<h1 style=\"text-align:center\">Nos Réalisations</h1><h1></br></h1>");
 	define('TXT_VCB',"Type de publication");
@@ -253,16 +264,16 @@ Pour tout renseignement concernant le système qualité, vous pouvez contacter l
 	//les fenetres modales :
 	define('TXT_TM1',"Communications affichées");
 	define('TXT_STM1',"Nos réalisations");
-	define('TXT_TbM1',"Communiquations affichées et autres publications lors d'un symposium:");
+	define('TXT_TbM1',"Communications affichées et autres publications lors d'un symposium:");
 	//
 	define('TXT_TM2',"Articles");
-	define('TXT_TbM2',"Publication dans une revu scientifique:");
+	define('TXT_TbM2',"Publications dans une revue scientifique:");
 	//
 	define('TXT_TM3',"Communications orales");
 	define('TXT_TbM3',"Communiquation orale lors d'un symposium:");
 	//
 	define('TXT_TM4',"Brevets");
-	define('TXT_TbM4',"Brevet déposé:");
+	define('TXT_TbM4',"Brevets déposés:");
 	//
 	define('TXT_TM5',"Ouvrages");
 	define('TXT_TbM5',"Participation à un ouvrage:");
@@ -271,6 +282,7 @@ Pour tout renseignement concernant le système qualité, vous pouvez contacter l
   	// Activités
   	//---------------------------------------------------------	
 	define('TXT_TitreA',"Nos expertises");
+	define('TXT_intro',"Les missions du CIC-IT sont :");
 	define('TXT_ArticleA1',"<div  id=\"puces\" ><ul><li style=\"text-align:justify; margin-left:25px;\">
 Aborder de manière intégrée les biomatériaux innovants et l'appréciation de leur biocompatibilité dans un environnement scientifique et clinique de pointe, dans deux domaines de prédilection (substitution osseuse et vasculaire), mais pas seulement.</li>
 <li style=\"text-align:justify; margin-left:25px;\">Faire la preuve du concept d'un dispositif médical implantable au service et/ou en collaboration avec des chercheurs, des cliniciens et des industriels, depuis la caractérisation physico-chimique jusqu'à l'étude clinique pilote.</li>
@@ -315,7 +327,7 @@ par exemple:<br><br>
 <li><em>Fondation de la Recherche Médicale:1(#)</em></li></ul>
 </div>");
 
-	define('TXT_TCol',"Projets depuis 2006, dans lesquels le CIC-IT est coordinateur(*) ou parteniare(#):");
+	define('TXT_TCol',"Projets depuis 2006, dans lesquels le CIC-IT est coordinateur(*) ou partenaire(#):");
 	
 //---------------------------------------------------------
 // page histologie
@@ -331,32 +343,32 @@ define('TXT_CH',"<br><a href=\"LionelCouraud.php\">Lionel Couraud</a>: consultan
 	//define('TXT_HST',"<h1 align=\"center\"><strong>Activités</strong></h1>");
 	define('TXT_HT1',"<h2 align=\"justify\">Inclusion de tissus mous (paraffine) et calcifiés (résine méthacrylate, technovit 9100)</h2>  
  <br>"); 
-	//define('TXT_HT11',"Automate de traitement des tissus: Leica TP1020<br>mis à diposition par la PTIB.");
+
 	define('TXT_HT11',"Automate de traitement des tissus");
  define('TXT_HT12',"Plateforme d'inclusion");
- //define('TXT_HT12',"Plateforme d'inclusion: Leica EG1150H<br>mis à disposition par la PTIB.");
+
  define('TXT_HT13',"Microtomes");
- //define('TXT_HT13',"Microtomes  RM2255<br>mis à disposition par la PTIB.");
+
  define('TXT_HT14',"Microtome à glissière");
- //define('TXT_HT14',"Microtome à glissière Leica  SM2500<br>non mis à disposition.");
+
  define('TXT_HT15',"Scie diamantée"); 
- // define('TXT_HT15',"Scie diamantée Leica SP1600<br>mis à dispositioon par le CIC-IT."); 
+
 define('TXT_HTC1',"<h2>Colorations sur tissu mou et décalcifié </h2><em>(HES, Trichrome de Masson, PAS,
  Orcéine, Pentachrome de Movat, VERHOEFF-VAN GIESON,...)</em>");
- define('TXT_HEA',"<h4><strong>Equipements associés</strong></h4></br>");
+ define('TXT_HEA',"<h4 align=\"center\"><strong>Equipements associés</strong></h4></br>");
 	
 	define('TXT_HTC21',"Automate de coloration");
-		//define('TXT_HTC21',"Automate de coloration \"Microm Microtech HMS MYR\"<br>mis à disposition par la PTIB.");
+	
 	define('TXT_HTC3',"<h2>Coloration sur tissu calcifié</h2>(<em>Trichrome de Goldner, Von Kossa Mac Neal</em>)");
 	define('TXT_HTC4',"<h2>Immuno-histo-chimie sur coupes de paraffine </h2>( alpha-actine, CD31, CD45, CD68, Ki67,... ) et mises au point.");
 	define('TXT_HTC5',"<h2>Analyse histomorphométrique, quantification de différents paramètres</h2>(Reconstruction osseuse, fibrose, inflammation, ...)");
-	define('TXT_HTC6',"Equipements associés : Microscope Ni-U Nikon et microscope NIKON Eclipse 80i à tête motorisée 90i (équipés de deux caméras pour fluorescence DS-Qi1Mc et lumière blanche DS-Fi2) (PTIB) et logiciel d'analyse d'images NIS-Elements D version 4.2.");
+	define('TXT_HTC6',"Logiciel d'analyse d'images NIS-Elements D version 4.2.");
 	define('TXT_HTC61',"Microscope NIKON Ni-U");
-	
+	//Equipements associés : Microscope Ni-U Nikon et microscope NIKON Eclipse 80i à tête motorisée 90i (équipés de deux caméras pour fluorescence DS-Qi1Mc et lumière blanche DS-Fi2) (PTIB) et 
 	define('TXT_HTC62',"Microscope à tête motorisée");
-	//	define('TXT_HTC62',"microscope NIKON Eclipse 80i à tête motorisée 90i<br>mis à disposition par la PTIB.");
+
 	define('TXT_HTC63',"Loupe binoculaire");
-	//define('TXT_HTC63',"Loupe binoculaire NICKON SMZ1000.<br>mis à disposition par le CIC-IT.");
+	
 	define('TXT_HTC7',"<h2>Autres équipements de la plateforme</h2>");
 	define('TXT_HCI',"<div id=\"show\" class=\"slideshow\" >
  <img src=\"../image/13-03(G10)2.jpg\" alt=\"coloration masson\" width=\"50%\" /></td><td><img src=\"../image/markerTransparent.png\" width=\"5%\" height=\"auto\"></td><td></div>
@@ -466,6 +478,16 @@ define('TXT_HTC1',"<h2>Colorations sur tissu mou et décalcifié </h2><em>(HES, 
 <li><h3>Isolement et amplification</h3></li>
 <li><h3>Caractérisation cellulaire</h3></li>
 </ul></div>");
+
+define('TXT_CCM2',"
+	<h3>Cyto-compatibilité</h3>
+<h6>Cytotoxicité<br>
+Attachement, prolifération </h6>
+<h3>Bio-ingénierie</h3>
+<h6>Culture en condition statique (bio-réacteur)<br>
+Culture sous flux (cf page \"<a href=\"Hemodynamiques.php\">hémodynamique</a>\")</h6>");
+
+
 	define('TXT_EAT',"Equipements associés");
 	//define('TXT_CCTM',"<div id=\"section-article\"><h2><strong>Activités</strong></h2>");
 	define('TXT_CCTM1',"<h3><strong>Cytocompatibilité</strong></h3>");
@@ -485,7 +507,7 @@ define('TXT_HTC1',"<h2>Colorations sur tissu mou et décalcifié </h2><em>(HES, 
   	//---------------------------------------------------------
 	define('TXT_ResponsableInVivo',"Responsable: <br>Marlène Durand");
 	define('TXT_IVT',"<h2 style=\"text-align:center\">Etudes pré-cliniques<em> in vivo</em></h2>");
-	define('TXT_IVR',"Coordonnateur délégué, chef de projets
+	define('TXT_IVR',"Coordonnateur délégué, chef de projets<br>
 	<div style=\"display:inline;\">	
 	Tél : 05 57 10 28 66 / Fax. :05 57 10 28 63<br>
 	Courriel:<a href=\"mailto:marlene.durand@chu-bordeaux.fr\"> marlene.durand@chu-bordeaux.fr</div></a><br>
@@ -499,7 +521,8 @@ define('TXT_HTC1',"<h2>Colorations sur tissu mou et décalcifié </h2><em>(HES, 
 	define('TXT_IVIA',"<h3 style=\"margin-left:5%; text-align:left;\"><strong>Exemples:</strong></h3><br>");
 	
 	define('TXT_IVEquipements',"<h4 style=\"text-align:center; margin-left:5%; margin-rigth:5%;\">
-Ressources de l'Université de Bordeaux, la PTIB et l'IHU LIRYC:</h4><h6><br><ul style=\"text-align:left; margin-left:5%; margin-rigth:5%;\"><li>Animaleries agréées,</li><br><li>Blocs opératoires,</li><br><li>Imagerie rayons X,</li><br><li>IRM,</li><br><li>PhotoImager,</li><br><li>Echographie.</li></ul></h6>");
+Ressources de l'Université de Bordeaux, la PTIB et l'IHU LIRYC</h4>");
+//<h6><br><ul style=\"text-align:left; margin-left:5%; margin-rigth:5%;\"><li>Animaleries agréées,</li><br><li>Blocs opératoires,</li><br><li>Imagerie rayons X,</li><br><li>IRM,</li><br><li>PhotoImager,</li><br><li>Echographie.</li></ul></h6>");
 	
 	define('TXT_IVI1',"<strong>Echodoppler carotide de brebis après pontage</strong>");
 	define('TXT_IVI2',"<strong>Injection intervertébrale chez le mouton</strong>");
@@ -550,7 +573,7 @@ Ressources de l'Université de Bordeaux, la PTIB et l'IHU LIRYC:</h4><h6><br><ul
 <li>Master BiDim de Bordeaux:<br>
 En réponse à la demande industrielle, ce <strong>master professionnel</strong> a pour objectif de former des cadres (actuellement 20 maxi/an) aux problématiques spécifiques des matériaux et matériels du <strong>secteur biomédical</strong>.
 Les compétences réglementaires ont été renforcées ces dernieres années.</li>
-<li>DIU FARC de l'université de Bordeaux</li>
+<li>DIU FARC de l'Université de Bordeaux</li>
 <li>Formation à la recherche clinique plateforme F-CRIN</li>
 </ul></h6>
 ");
@@ -577,12 +600,11 @@ Les compétences réglementaires ont été renforcées ces dernieres années.</l
 	define('TXT_ArticlePoste',"<h3>Aucun poste à pourvoir à ce jour.</h3>");
 	define('TXT_TPDF',"plus de détail dans le pdf ci-dessous:");
 	
+
 	//---------------------------------------------------------
-  	// contact  // à supprimer: inutil...
-  	//---------------------------------------------------------	
-	define('TXT_TitreContact',"<h1>Contact </h1>");
-	define('TXT_stContact',"<br><h3>Fiche de contact</h3>");
-	define('TXT_Contacte',"Contactez-nous");
+  	// candidature spontanées
+  	//---------------------------------------------------------
+	
 	define('TXT_Nom',"Nom  :<span title=\"Ce champ est obligatoire.\">");
 	define('TXT_Prenom',"Prénom  :<span title=\"Ce champ est obligatoire.\">");
 	define('TXT_Email',"Email     :<span  title=\"Ce champ est obligatoire.\">");
@@ -590,21 +612,49 @@ Les compétences réglementaires ont été renforcées ces dernieres années.</l
 	define('TXT_Code',"Entrez le code de l'image.");
 	define('TXT_ValueR',"Effacez");
 	define('TXT_ValueE',"Envoyez");
-	//---------------------------------------------------------
-  	// candidature spontanées
-  	//---------------------------------------------------------
+	
+	
 	define('TXT_TitreSpon',"<h1 style=\"text-align:center\">Vous souhaitez travailler avec nous, au CIC-IT de Bordeaux!</h1><div style=\"text-align:center\"></div>");
-	define('TXT_Spon',"<h3>Merci de bien vouloire compléter le formulaire ci-dessous,</h3><h6> Nous pourrons vous contacter dés qu'une offre en rapport avec nos besoins et vos compétences sera disponible.</h6>");
+	define('TXT_Spon',"<h3>Merci de bien vouloir compléter le formulaire ci-dessous,</h3><h6> Nous pourrons vous contacter dés qu'une offre en rapport avec nos besoins et vos compétences sera disponible.</h6>");
 	
 	define('TXT_Tel',"Téléphone:");
 	define('TXT_Int',"Intitulé: <span title=\"Ce champ est obligatoire.\">");
 	define('TXT_Competences',"Vos compétences :");
 	define('TXT_Donnees',"Envoyez-nous les données.");
 	
-	define('TXT_Note',"<h3>A noter</h3><strong>Les fichier pouvant être transferé sont au format doc, pdf, jpg, zip, rar, ppt et txt.");
+	define('TXT_Note',"<h3>A noter</h3><strong>Les fichiers pouvant être transferés sont au format doc, pdf, jpg, zip, rar, ppt et txt.");
 	define('TXT_Max',"Attention: la taille maximum autorisée est de 8 Mo");
 	define('TXT_CV',"CV :");
 	define('TXT_Motiv'," Lettre de motivation : ");
+	define ('TXT_Champs',"*: ces champs doivent être remplis.");
+	
+	define ('TXT_upload',"Vous devez uploader un fichier de type  jpg, jpeg, zip, rar, pdf, txt ou doc...");
+	
+	define('TXT_messageform',"pas de message? un oubli?<br/>");
+	
+	define('TXT_phone',"pas de telephone? un oubli?<br/>");
+	
+	define('TXT_mail',"votre email est exigé!<br/>");
+	
+	define('TXT_prenomform',"il faut informer la rubrique prenom<br/>");
+	
+	define('TXT_nomform',"Votre nom est necssecaire.<br/>");
+	define('TXT_intform',"Votre intitulé est requis!<br/>");
+	
+	define('TXT_codenok',"<br/><h6 style=\"text-align:center\">vous n'avez pas entrez le bon code, recommencez!</h6><br>");
+	
+	define('TXT_codeok',"<br/><h6 style=\"text-align:center\">vous avez entrez le bon code.</h6><br>");
+	
+	define('TXT_formnok',"<br/>SVP, remplissez à nouveau le formulaire contact en renseignant les rubliques \"*\" obligatoire!<br>");
+	
+	define('TXT_formok',"<h6 style=\"text-align:center\">vous avez correctement remplie le formulaire et vos données sont enrgistrées.<br/>Un mail à ete envoyé au DRH du CIC-IT.<br>Merci de votre visite et à bientot.<h6/><br>");
+	
+	//---------------------------------------------------------
+  	// actualités
+  	//---------------------------------------------------------	
+	define('TXT_actualites',"Les actualités du CIC-IT");
+	define('TXT_Tele',"à télécharger");
+	define('TXT_Webplus',"pour en savoir plus");
 	//---------------------------------------------------------
 	//	coordonnées
   	//---------------------------------------------------------
@@ -635,11 +685,15 @@ define('TXT_CoordoCoSecretériat',"
 Secrétaire du CIC-IT de Bordeaux</p>
 <p><a href=\"mailto:claire.darcos@chu-bordeaux.fr\">Courriel:claire.darcos@chu-bordeaux.fr</a><br/>Tél: +33 (0) 557 102 862<br/>
 Fax: +33 (0) 557 102 863</p>");
-
-	define('TXT_Coordo',"<h4 style=\"margin-top:10px\"><br></h4>");
+	define('TXT_Coordo',"<h4 style=\"margin-top:10px\">Rejoindre le groupe hospitalier de<br>Xavier Arnozan</h4>"); 
+	//define('TXT_Coordo',"<h4 style=\"margin-top:10px\"><br></h4>");
 	define('TXT_CoordoTrafic',"<h4 style=\"margin-top:10px\"><h4>En voiture:</h4>trafic en temps réel des voies rapides de Bordeaux");
 	define('TXT_CoordoBusTram',"<h4 style=\"margin-top:10px\">Le réseau TBM : TRAM et Bus de la CUB de Bordeaux</h4>");
 	define('TXT_MobiliteTBM',"<a solutions proposées par la tbc : href=\" http://www.infotbm.com/ \"> http://www.infotbm.com/ </a>");
+	define('TXT_Deplacements',"Pour se déplacer grâce aux transports en commun");
+	define('TXT_Paravion',"<h6><a target=\"_blank\" href=\"aeroportXavierXernozan.php\" >En avion :</a>de l'aéroport de Mérignac au CIC-IT,Hôpital Xavier Arnozan (Pessac)</h6>");
+	define('TXT_Partrain',"<h6><a target=\"_blank\" href=\"gareStJeanXavierXernozan.php\">En train :</a>de la gare Saint Jean (Bordeaux) au CIC-IT, Hôpital Xavier Arnozan (Pessac)</h6>");
+	
 	//---------------------------------------------------------
   	// mention légales
   	//---------------------------------------------------------
@@ -658,7 +712,7 @@ La mise en place de liens hypertextes par des tiers vers des pages ou des docume
 	// voire le site du CNRS
 	
 	//---------------------------------------------------------
-  	// calendrier
+  	// calendrier //refonte de la page des événements...
   	//---------------------------------------------------------
 	define('TXT_Jours',"<tr><th>Lu-</th><th>Ma-</th><th>Me-</th><th>Je-</th><th>Ve-</th><th>Sa-</th><th>Di-</th></tr>");
 	define('TXT_TitreCal',"<h3>Calendrier des événements</h3>");
@@ -717,7 +771,7 @@ La mise en place de liens hypertextes par des tiers vers des pages ou des docume
 	
 	
 	//---------------------------------------------------------
-  	//carrousel
+  	//carrousel : pas de carroussel mais page pour indentifié proprietaire equipement...
   	//---------------------------------------------------------
 
 	define('TXT_legendeCare',"Mise à disposition par la PTIB");
@@ -737,7 +791,7 @@ La mise en place de liens hypertextes par des tiers vers des pages ou des docume
 	define('TXT_carrouselIm10',"La laverie");
 	define('TXT_carrouselIm11',"Chambre froide");
 	define('TXT_carrouselIm12',"centrifugeuse pour la culture cellulaire");
-	//define('TXT_HTC61',"microscope NIKON 80i à tête motorisée 90i."); //problème?
+	define('TXT_HTC61',"microscope NIKON 80i à tête motorisée 90i"); //problème?
 	
 	
 	//---------------------------------------------------------
