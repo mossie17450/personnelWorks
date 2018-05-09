@@ -66,8 +66,6 @@ if (d) {d.style.display='block';}
 
 </script>
 
- 
-
 </head>
 <!-- langue par défaut                        -->
 <?php include'../inc/languesParDefauthtml.php';?>
@@ -81,7 +79,7 @@ if (d) {d.style.display='block';}
 <?php include '../inc/choixDesLangueshtml.php';?>
 <?php include '../inc/objetMenuhtml.php'; ?>
 
-<div style="margin-left:10%;margin-right:10%;">
+<div style="margin-left:2%; margin-right:15%;">
 <br>
 <div style="text-align:justify;"><?php echo TXT_TitreSpon ; ?><?php echo TXT_Spon ; ?></div><br>
 <div id="FdC">
@@ -92,7 +90,7 @@ if (d) {d.style.display='block';}
 
 <form name="ficheS"  accept-charset="iso-8859-1"  enctype="multipart/form-data" method="post" onSubmit="return verifformS()" >
 
-<fieldset><legend><?php echo TXT_Contacte ; ?></legend>
+<fieldset><legend><?php //echo TXT_Contacte ; ?></legend><!--text_Contact n'existe plus -->
 
  <label><?php echo TXT_Int; ?> *</span></label>
 
@@ -132,7 +130,7 @@ if (d) {d.style.display='block';}
 
  <textarea cols="60" rows="5" name="message"></textarea>
 
- <br/><br/><br/></fieldset>
+ <br><br/><?php  echo TXT_Champs; ?><br/><br/></fieldset>
 
  <fieldset><legend><?php echo TXT_Competences ;  ?></legend>
 
@@ -143,7 +141,7 @@ if (d) {d.style.display='block';}
  <!-- On limite le fichier à 8000Ko -->
      <input type="hidden" name="MAX_FILE_SIZE" value="8000000">
 
-    <?php echo TXT_CV; ?><input type="file" name="avatar">
+    <?php echo TXT_CV; ?><input type="file" name="avatar" value="OK">
 
      <br><?php echo TXT_Max; ?>
 
@@ -155,12 +153,16 @@ if (d) {d.style.display='block';}
 
    <!-- On limite le fichier à 8000Ko -->
 
+
      <input type="hidden" name="MAX_FILE_SIZE" value="8000000">
 
-    <?php  echo TXT_Motiv ;?><input type="file" name="avatar2" value="un truc!">
+    <?php  echo TXT_Motiv ;?><input type="file" name="avatar2" id="1" value="<?php echo TXT_selectfichier ;?>">
+
 
 	 <br><?php echo TXT_Max; ?>
-
+<script>
+document.getElementById("1").innerHTML = "Hello Dolly.";
+</script>
 	<br><br>
 
  <br/><strong>
@@ -182,62 +184,45 @@ if (d) {d.style.display='block';}
     <img src="captchaLettres.php" ><label><?php echo TXT_Code; ?></label> 
 
 		<input type="text" name="code" >
-
+		<br>
 		<br>
 
         <input type="submit" value="<?php echo TXT_ValueE; ?>" style="width:80px;" ><span><img src="../image/transparent.png" width="5%" height="5%"></span><input type="reset" value="<?php echo TXT_ValueR; ?>" style="width:80px;">	
 
-</fieldset>	
+	</fieldset>	
 <br>
-		</form>
-
-
-
+</form>
 <br>
-
-</div>
-
-<br><br>
-
+<div>
 
 
 <?php
 
 //echo "code captcha :".$_SESSION['captcha']; 
-
 // on se connecte à MySQL, si post cic-it et ok...
 
-
-
-
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
+
 /*
 echo "langue :".$_SESSION['lang']."<br>";  //pour le dev : les sessions!
 	echo "code captcha :".$_SESSION['captcha']; 
 	echo "le post est: ".$_POST['code'];
 	echo "<br/>bonjour, verification du formulaire :<br/>";
 */
-	
 
 	if($_POST['code']!=$_SESSION['captcha']){
-
-	echo "<br/>vous n'avez pas entrez le bon code, recommencez!";		
-
+	echo TXT_codenok;
+	
  }
 
 	else {
-
-	echo "<br/><h3 style=\"text-align:center\">vous avez entrez le bon code.</h3>";
-
+	echo TXT_codeok ;
 }
 
-
-//echo "<br/><h3 style=\"text-align:center\">vous avez entrez le bon code.</h3>";
-
 //formulaire contact 
-if (empty($_POST['intitule'])) {
+if(empty($_POST['intitule'])) {
 
-    $nameErr = "Votre intitulé est requis!<br/>";
+    $nameErr = TXT_intform ;
 
 	echo $nameErr;
 
@@ -251,7 +236,7 @@ if (empty($_POST['intitule'])) {
 
 if (empty($_POST['nom'])) {
 
-    $nameErr = "Votre nom est necssecaire<br/>";
+    $nameErr = TXT_nomform;
 
 	echo $nameErr;
 
@@ -263,11 +248,9 @@ if (empty($_POST['nom'])) {
 
   }
 
-
-
 if (empty($_POST['prenom'])) {
 
-    $nameErr = "il faut informer la rubrique prenom<br/>";
+    $nameErr = TXT_prenomform;
 
 	echo $nameErr;
 
@@ -279,11 +262,9 @@ if (empty($_POST['prenom'])) {
 
   }
 
-
-
 if (empty($_POST['email'])) {
 
-    $nameErr = "votre email et exigé!<br/>";
+    $nameErr = TXT_mail ;
 
 	echo $nameErr;
 
@@ -299,7 +280,7 @@ if (empty($_POST['email'])) {
 
 if (empty($_POST['tel'])) {
 
-    $nameErr = "pas de telephone? un oubli?<br/>";
+    $nameErr = TXT_phone;
 
 	echo $nameErr;
 
@@ -313,7 +294,7 @@ if (empty($_POST['tel'])) {
 
 if (empty($_POST['message'])) {
 
-    $nameErr = "pas de message? un oubli?<br/>";
+    $nameErr = TXT_messageform;
 
 	echo $nameErr;
 
@@ -326,25 +307,29 @@ if (empty($_POST['message'])) {
   }
 
 if($nom==NULL|$prenom==NULL|$intitule==NULL|$mail==NULL)
-
 {
 
-echo "<br/>SVP, remplissez à nouveau le formulaire contact en renseignant les rubliques \"*\" obligatoire!";
+echo TXT_formnok ;
 
 }
+//fin de la vérification du formulaire.
 
+if( $nom!=NULL && $prenom!=NULL && $intitule!=NULL && $mail!=NULL && $_POST['code']==$_SESSION['captcha']){
+//on traite le formulaire et on les rentre dans la BD
 
-
+//echo "je suis connectée...<br>"; pour le developpement
+	
 $dossier = 'www/';
 
 $fichier = basename($_FILES['avatar']['name']); //?????
 
 $fichier2 = basename($_FILES['avatar2']['name']);
 
-//echo $fichier; //(nom du fichier?)
+//echo "mon fichier :".$fichier; //(nom du fichier?) pour le developpement
 
 //echo "<br/>deusieme fichier: ".$fichier2; //(nom du fichier 2?)
 
+if($fichier!=NULL){
 $taille_maxi = 8000000;
 
 $taille = "<br>".filesize($_FILES['avatar']['tmp_name']);
@@ -355,17 +340,12 @@ $extensions = array('.jpg', '.jpeg', '.pdf','.doc','.txt','.zip','.rar');
 
 $extension = strrchr($_FILES['avatar']['name'], '.'); 
 
-$date=date("Y-m-d h-i-sa");
+//$date=date("Y-m-d h-i-sa");
 
 	$fichier=$date.$fichier; //concatenation fichier et date ???
-
-	$fichier2=$date.$fichier2;
-
 	//echo "premier fichier: ".$fichier;
 
 //Début des vérifications de sécurité...
-
-
 
 if(!in_array($extension, $extensions)) //Si l'extension n'est pas dans le tableau
 
@@ -374,8 +354,6 @@ if(!in_array($extension, $extensions)) //Si l'extension n'est pas dans le tablea
      $erreur = 'Vous devez uploader un fichier de type  jpg, jpeg, zip, rar, pdf, txt ou doc...';
 
 }
-
-
 
 if(!isset($erreur)) //S'il n'y a pas d'erreur, on upload
 
@@ -391,6 +369,45 @@ if(!isset($erreur)) //S'il n'y a pas d'erreur, on upload
 
      $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
 
+    }
+
+	 if( move_uploaded_file($_FILES['avatar']['tmp_name'], $dossier.$fichier)){ echo " ";}  //Si la fonction renvoie TRUE, c'est que ça a fonctionné...
+}
+//else $fichier=NULL;
+
+if($fichier2!=NULL){
+
+$taille_maxi = 8000000;
+
+$taille = "<br>".filesize($_FILES['avatar2']['tmp_name']);
+
+//echo "<br/>taille :".$taille."!";
+
+$extensions = array('.jpg', '.jpeg', '.pdf','.doc','.txt','.zip','.rar');
+
+$extension = strrchr($_FILES['avatar2']['name'], '.'); 
+
+$date=date("Y-m-d h-i-sa");
+
+	$fichier2=$date.$fichier2; //concatenation fichier et date ???
+
+
+	//echo "premier fichier: ".$fichier;
+
+//Début des vérifications de sécurité...
+
+if(!in_array($extension, $extensions)) //Si l'extension n'est pas dans le tableau
+
+{
+
+     $erreur = TXT_upload ;
+
+}
+
+if(!isset($erreur)) //S'il n'y a pas d'erreur, on upload
+
+{
+
 	 //deusieme fichier: fichier2
 
 		$fichier2 = strtr($fichier2, 
@@ -403,63 +420,57 @@ if(!isset($erreur)) //S'il n'y a pas d'erreur, on upload
 
     }
 
-	 if( move_uploaded_file($_FILES['avatar']['tmp_name'], $dossier.$fichier)&&move_uploaded_file($_FILES['avatar2']['tmp_name'], $dossier.$fichier2)) //Si la fonction renvoie TRUE, c'est que ça a fonctionné...
+	 if(move_uploaded_file($_FILES['avatar2']['tmp_name'], $dossier.$fichier2)){ echo " ";} //Si la fonction renvoie TRUE, c'est que ça a fonctionné...
 
           //echo 'Upload 2 effectué avec succès !'; //pour le développement
 
-	 
+		  }
 
-$link = mysqli_connect('localhost', 'c4cicit','dyKaTm8H#','c4dev');		 
 
-			
-if (!$link) {
-
-die('Impossible de se connecter : ' . mysql_error());
-
-}
 
 $date=date("Y-m-d h:i:sa");
 
-//echo $date;
-
+//echo $date; //pour le developpement....
+include("../inc/connect.php");	
+//on se connect à la BD
 // on sélectionne la table...
-
 mysqli_select_db($link,"cvjoint");
-
 // on crée la requête SQL
-
-$sql = "INSERT INTO cvjoint VALUES( 0,'$nom','$prenom','$intitule','$mail','$telephone','$message','$date','$fichier','$fichier2') " ;
-
+$sql = "INSERT INTO cvjoint(nom, prenom, intitule, email, telephone, message, date, NomfichierCV, NomfichierLettreM ) VALUES('$nom','$prenom','$intitule','$mail','$telephone','$message','$date','$fichier','$fichier2') " ;
 
 
 // on envoie la requête, jusque la...ca va presque...
 
-
-
 $req = mysqli_query($link,$sql) or die ("Erreur SQL !<br>".$sql."<br>".mysqli_error($link));
 
-//  envoie automatique d'un mail à Marlène:
 
+//  envoie automatique d'un mail à Marlène:
 $message = "Bonjour Marlène,\r\nUne nouvelle candidature spontanée vient d'être déposée sur le site.\nTu peux la consulter dès maintenant sur l'administration du site, gestion des candidatures spontanées.\nCordialement,\nLe webmaster du CIC-IT.";
 
 // Dans le cas où nos lignes comportent plus de 70 caractères, nous les coupons en utilisant wordwrap()
 //$message = wordwrap($message, 70, "\r\n");
-
 // Envoi du mail
+
 mail('marlene.durand@chu-bordeaux.fr, cecile.raymond@chu-bordeaux.fr', 'Nouvelle candidature spontané aujourd\'hui', $message);
+//mail('marlene.durand@chu-bordeaux.fr, cecile.raymond@inserm.fr' , 'Nouvelle candidature spontané aujourd\'hui', $message); 
 
 mysqli_close($link);
 
 //echo"fin de mise a jour de la bd";
 
-echo "<h3 style=\"text-align:center\">vous avez correctement remplie le formulaire et vos données sont enrgistrées.<br/>Un mail à ete envoyé au DRH du CIC-IT.<br>Merci de votre visite et à bientot.<h3/>";
+echo TXT_formok ;
 
 }
+}
 ?>
+</div>
 
-
+<!--<div>fin</div><!-- pour le developpement -->
 <!-- pied de page  -->
-<div style="display:flex; flex-direction:column; ">
+</div></div>
+<br><br>
+
+<div>
 <?php include '../inc/piedDePage.php'; ?>
 </div>
 

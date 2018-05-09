@@ -91,7 +91,7 @@ if (d) {d.style.display='block';}
 <?php echo TXT_TV;  ?>
 
 <!-- Bouton execution modal -->
-	<button class="btn btn-info  btn-block" data-toggle="modal" data-target="#myModal" style=" position:relative; width:80%; height:12%; left:10%; align:justify; color:white; background-color:#339fff;" >
+	<button class="btn btn-info  btn-block" data-toggle="modal" data-target="#myModal" style=" position:relative; width:80%; height:12%; left:10%; align:justify; color:white; background-color:#2d5986;" >
 	<h1><?php echo TXT_TM2 ;  ?></h1>
 	</button>
 	<!-- Modal -->
@@ -105,21 +105,15 @@ if (d) {d.style.display='block';}
 	<div class="modal-body">
 	<h1><?php echo TXT_TbM2 ;  ?></h1>
 
-	<?php 
-$link = mysqli_connect('localhost', 'c4cicit','dyKaTm8H#','c4dev'); //serveur distant
-//$link = mysqli_connect( 'localhost', 'root','','cic-it2017');		//connection en local....	
- if (!$link) {
-die('Impossible de se connecter : ' . mysql_error());
-}	
-?>
+
+
+<?php include '../inc/connect.php'; ?>
 
 <?php
 
-//$sql= "SELECT DISTINCT titre ,annee ,href ,titreJournal ,codification  FROM auteur join communique on auteur.idAuteur=communique.idAuteur join publication on communique.idPublication=publication.idPublication join journale on publication.idJournal=journale.idJournal WHERE publication.codification IN ('ACL') ORDER BY annee DESC";
-
-$sql= "SELECT DISTINCT titre ,annee ,titreJournal ,codification ,href ,communique.idPublication  FROM auteur join communique on auteur.idAuteur=communique.idAuteur join publication on communique.idPublication=publication.idPublication join journale on publication.idJournal=journale.idJournal WHERE publication.codification IN ('ACL') ORDER BY annee DESC";
 
 
+$sql= "SELECT DISTINCT titre ,annee ,titreJournal ,codification ,href ,communique.idPublication  FROM auteur join communique on auteur.idAuteur=communique.idAuteur join publication on communique.idPublication=publication.idPublication join journale on publication.idJournal=journale.idJournal WHERE publication.codification IN( 'ACL')ORDER BY annee DESC";
 
 $req= mysqli_query($link,$sql) or die ("Erreur SQL !<br>".$sql."<br>".mysqli_error($link)); 
  
@@ -128,19 +122,15 @@ $req= mysqli_query($link,$sql) or die ("Erreur SQL !<br>".$sql."<br>".mysqli_err
 
 
 <CENTER><table id="tab">
- <?php echo TXT_VRET; ?>
+ <?php echo TXT_VRETA; ?>
 	
 <!--premiere boucle while : liste des publications -->
 
 <?php 
 while($row= mysqli_fetch_array($req, MYSQLI_BOTH)){ 
-//$teste=$row[4]; 
-// \" https://www.ncbi.nlm.nih.gov/pubmed/28683837 \" 
-//remplacer href par l'adresse de la publi dans pubmed si elle existe... (page publi "82")
-//echo "<TR><TD width=\"40%\"><a href=\" https://www.ncbi.nlm.nih.gov/pubmed/28683837 \" >".$row[0]."</a></TD><TD width=\"35%\">";
 
-//echo "<TR><TD width=\"40%\">".$row[0]."</TD><TD width=\"35%\">";
-echo "<TR><TD width=\"40%\"><a style=\"color:LightGray;\" href=\" ".$row[4]." \" >".$row[0]."</a></TD><TD width=\"35%\">"; 
+
+echo "<TR><TD width=\"40%\"><a style=\"color:#ffcc66;\" href=\" ".$row[4]." \" >".$row[0]."</a></TD><TD width=\"35%\">"; 
 // si publication ecrite : mettre en lien vers la publication(sur pubmed par exemple....
 // deuxième boucle while à l'intérieur de la première :
 
@@ -182,7 +172,7 @@ echo "<TD width=\"5%\">".$row[1]."</TD></TR>";
 	</div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
 	<div><br></div>	
-	<button class="btn btn-info  btn-block" data-toggle="modal" data-target="#myModal1" style=" position: relative; width:80%; height:12%; left:10%; align:justify; color:white; background-color:#339fff;" >
+	<button class="btn btn-info  btn-block" data-toggle="modal" data-target="#myModal1" style=" position: relative; width:80%; height:12%; left:10%; align:justify; color:white; background-color:#2d5986;" >
 	 <h1><?php echo TXT_TM1 ; ?></h1>
 	</button>
 	<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:90%; left:5%;" >
@@ -196,13 +186,6 @@ echo "<TD width=\"5%\">".$row[1]."</TD></TR>";
 	<h2><?php echo TXT_TbM1 ; ?></h2>
 	<?php
 
-$link = mysqli_connect('localhost', 'c4cicit','dyKaTm8H#','c4dev');  //serveur distant
-//$link = mysqli_connect( 'localhost', 'root','','cic-it2017');		//connection en local....	
- if (!$link) {
-
-die('Impossible de se connecter : ' . mysql_error());
-
-}
 
 $sql= "SELECT DISTINCT titre ,annee ,titreJournal ,codification ,href ,communique.idPublication FROM auteur join communique on auteur.idAuteur=communique.idAuteur join publication on communique.idPublication=publication.idPublication join journale on publication.idJournal=journale.idJournal WHERE publication.codification IN ('AFF','ACTN','ACTI') ORDER BY annee DESC";
 
@@ -214,14 +197,14 @@ $req= mysqli_query($link,$sql) or die ("Erreur SQL !<br>".$sql."<br>".mysqli_err
 
 <CENTER><table id="tab">
 
- <?php echo TXT_VRET; ?>
+ <?php echo TXT_VRETAFF; ?>
 
 <!--premiere boucle while : liste des publications -->
 
 <?php 
 while($row= mysqli_fetch_array($req, MYSQLI_BOTH)){  
 
-echo "<TR><TD width=\"40%\"><a href=\" ".$row[4]." \" >".$row[0]."</a></TD><TD width=\"35%\">";// si publication ecrite : mettre en lien vers la publication(sur pubmed par exemple....
+echo "<TR><TD width=\"40%\">".$row[0]."</TD><TD width=\"35%\">";// si publication ecrite : mettre en lien vers la publication(sur pubmed par exemple....
 // deusième boucle while à l'intérieur de la première :
 
 $sql1="SELECT nom, prenom, Rang FROM auteur join communique on auteur.idAuteur=communique.idAuteur   WHERE communique.idPublication=".$row[5]." ORDER BY communique.Rang";
@@ -271,7 +254,7 @@ echo "<TD width=\"5%\">".$row[1]."</TD></TR>";
 	</div><!-- /.modal -->
 	<div><br></div>
 
-	<button class="btn btn-info  btn-block" data-toggle="modal" data-target="#myModal2" style=" position: relative; width:80%; height:12%; left:10%; align:justify; color:white; background-color:#339fff;" >
+	<button class="btn btn-info  btn-block" data-toggle="modal" data-target="#myModal2" style=" position: relative; width:80%; height:12%; left:10%; align:justify; color:white; background-color:#2d5986;" >
 	   <h1><?php echo TXT_TM3 ; ?></h1>
 	</button>
 	<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:90%; left:5%;">
@@ -284,10 +267,8 @@ echo "<TD width=\"5%\">".$row[1]."</TD></TR>";
 	<div class="modal-body">
 	<h1><?php echo TXT_TbM3 ; ?></h1>
 	
-		<?php
-
-$link = mysqli_connect('localhost', 'c4cicit','dyKaTm8H#','c4dev');  // serveur distant
-//$link = mysqli_connect( 'localhost', 'root','','cic-it2017');		//connection en local....	
+<?php		
+	
  if (!$link) {
 
 die('Impossible de se connecter : ' . mysql_error());
@@ -304,7 +285,7 @@ $req= mysqli_query($link,$sql) or die ("Erreur SQL !<br>".$sql."<br>".mysqli_err
 
 <CENTER><table id="tab">
 
- <?php echo TXT_VRET; ?>
+ <?php echo TXT_VRETO; ?>
 
 <!--premiere boucle while : liste des publications -->
 
@@ -357,7 +338,7 @@ echo "<TD width=\"5%\">".$row[1]."</TD></TR>";
 	</div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
 	<div><br></div>
-	<button class="btn btn-info  btn-block" data-toggle="modal" data-target="#myModal3" style=" position: relative; width:80%;  height:12%; left:10%; align:justify; color:white; background-color:#339fff;" >
+	<button class="btn btn-info  btn-block" data-toggle="modal" data-target="#myModal3" style=" position: relative; width:80%;  height:12%; left:10%; align:justify; color:white; background-color:#2d5986;" >
 	<h1><?php echo TXT_TM4 ; ?></h1>
 	</button>
 	<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:90%; left:5%;">
@@ -369,10 +350,8 @@ echo "<TD width=\"5%\">".$row[1]."</TD></TR>";
 	</div>
 	<div class="modal-body">
 	<h1><?php echo TXT_TbM4 ; ?></h1>
-		<?php
-
-$link = mysqli_connect('localhost', 'c4cicit','dyKaTm8H#','c4dev');  //serveur distant
-//$link = mysqli_connect( 'localhost', 'root','','cic-it2017');		//connection en local....	
+		
+<?php
  if (!$link) {
 
 die('Impossible de se connecter : ' . mysql_error());
@@ -389,7 +368,7 @@ $req= mysqli_query($link,$sql) or die ("Erreur SQL !<br>".$sql."<br>".mysqli_err
 
 <CENTER><table id="tab">
 
- <?php echo TXT_VRET; ?>
+ <?php echo TXT_VRETB; ?>
 
 <!--premiere boucle while : liste des publications -->
 
@@ -445,7 +424,7 @@ echo "<TD width=\"5%\">".$row[1]."</TD></TR>";
 	</div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
 	<div><br></div>
-	<button class="btn btn-info  btn-block" data-toggle="modal" data-target="#myModal4" style=" position: relative; width:80%; height:12%; left:10%; align:justify; color:white; background-color:#339fff;" >
+	<button class="btn btn-info  btn-block" data-toggle="modal" data-target="#myModal4" style=" position: relative; width:80%; height:12%; left:10%; align:justify; color:white; background-color:#2d5986;" >
 	 <h1><?php echo TXT_TM5; ?></h1>
 	</button>
 	<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:90%; left:5%;">
@@ -457,9 +436,8 @@ echo "<TD width=\"5%\">".$row[1]."</TD></TR>";
 	</div>
 	<div class="modal-body">
 	<h1><?php echo TXT_TbM5;?></h1>
-			<?php
-$link = mysqli_connect('localhost', 'c4cicit','dyKaTm8H#','c4dev');  //serveur distant
-//$link = mysqli_connect( 'localhost', 'root','','cic-it2017');		//connection en local....	
+	
+<?php
  if (!$link) {
 
 die('Impossible de se connecter : ' . mysql_error());
@@ -476,7 +454,7 @@ $req= mysqli_query($link,$sql) or die ("Erreur SQL !<br>".$sql."<br>".mysqli_err
 
 <CENTER><table id="tab">
 
- <?php echo TXT_VRET; ?>
+ <?php echo TXT_VRETOU; ?>
 
 <!--premiere boucle while : liste des publications -->
 
@@ -521,7 +499,7 @@ echo "<TD width=\"5%\">".$row[1]."</TD></TR>";
 
 }
 
-
+mysqli_close($link);
 
 ?>
 

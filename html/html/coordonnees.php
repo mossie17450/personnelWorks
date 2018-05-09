@@ -60,7 +60,7 @@ if (d) {d.style.display='block';}
 
 
 <!--<tr><td colspan="9"><h4>personnes à contactées:</h4></td></tr>-->
-<tr colspan="9"><td colspan="1"><a target="_blank" href="../image/personnels/MarleneP.png">
+<tr colspan="9"><td colspan="1"><a target="_blank" href="MarleneDurand.php">
    <?php
 		if (preg_match('~MSIE|Internet Explorer~i', $_SERVER['HTTP_USER_AGENT']) || (strpos($_SERVER['HTTP_USER_AGENT'], 'Trident/7.0; rv:11.0') !== false) || (strpos($_SERVER['HTTP_USER_AGENT'], 'windows phone') !== false)) {
 			
@@ -73,7 +73,7 @@ if (d) {d.style.display='block';}
 		?>
   </a></td><td colspan="2"><?php echo TXT_CoordoResponsable;?></td>
   
-  <td colspan="1"><a target="_blank" href="../image/personnels/ClaireP.png">
+  <td colspan="1"><a target="_blank" href="ClaireDarcos.php">
    <?php
 		if (preg_match('~MSIE|Internet Explorer~i', $_SERVER['HTTP_USER_AGENT']) || (strpos($_SERVER['HTTP_USER_AGENT'], 'Trident/7.0; rv:11.0') !== false) || (strpos($_SERVER['HTTP_USER_AGENT'], 'windows phone') !== false)) {
 			
@@ -106,9 +106,9 @@ if (d) {d.style.display='block';}
  
  
  <tr colspan="9">
-<td colspan="5"><?php echo TXT_Coordo; ?>
+<td colspan="5">
  
-<div align="center"><h3><?php echo TXT_CoordoAdresse; ?></h3></div></td>
+<div align="center"><h3><?php echo TXT_CoordoAdresse; ?></h3></div><?php echo TXT_Coordo; ?></td>
 <td colspan="4" style="padding:2%;"><iframe width="100%" height="100%" margin-left="1px" frameborder="1px" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.fr/maps?f=q&amp;source=s_q&amp;hl=fr&amp;geocode=&amp;q=Hopital+Xavier+Arnozan,+33600+Pessac&amp;aq=&amp;sll=44.848567,-0.623131&amp;sspn=0.120486,0.220757&amp;ie=UTF8&amp;hq=Hopital+Xavier+Arnozan,&amp;hnear=Pessac,+Gironde,+Aquitaine&amp;cid=14449669705423434568&amp;ll=44.833474,-0.604935&amp;spn=0.121735,0.192261&amp;z=11&amp;output=embed">
 </iframe></td>
 </tr>
@@ -118,13 +118,13 @@ if (d) {d.style.display='block';}
 <hr><?php echo TXT_CoordoTrafic; ?>
 <p><img src="../image/coordonnees_bison_fute.jpg" width="90%"/><br/></p></a></td>
 
-<td colspan="3"> <?php echo "<h3>Pour se déplacer grâce aux transports en commun.</h3><br>"; echo "<h6>".TXT_MobiliteTBM."</h6>"; ?>
+<td colspan="3"><?php echo "<h3>".TXT_Deplacements."</h3><br><h6>".TXT_MobiliteTBM."</h6>"; ?>
 <br>
-<div align="inline"><?php echo "<h6><a target=\"_blank\" href=\"aeroportXavierXernozan.php\" >En avion :</a>de l'aéroport de Mérignac au CIC-IT,Hôpital Xavier Arnozan (Pessac)</h6>"; ?><br>
+<div align="inline"><?php echo TXT_Paravion ; ?><br>
 <!--<img src="../image/aeroportXavierXernozan.png" width="50%"><br/>-->
 </div>
 <br>
-<div align="inline"><?php echo "<h6><a target=\"_blank\" href=\"gareStJeanXavierXernozan.php\">En train :</a>de la gare Saint Jean (Bordeaux) au CIC-IT, hopital Xavier Arnozan (Pessac)</h6>"; ?></td>
+<div align="inline"><?php echo TXT_Partrain; ?></td>
 <td colspan="3" style="padding:2%;">
 <!--<a href="http://www.infotbm.com/" ></a>-->
 <a target="http://www.infotbm.com/" href="plantbcchu.php" ><?php echo TXT_CoordoBusTram; ?>

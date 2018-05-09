@@ -135,68 +135,6 @@ if (d) {d.style.display='block';}
 </tr></table></div>
 
 
-<!--<div  class="table-responsive, ex2" style="margin-left:10%">
-<table class="table, ex2" width="100%"><tr colspan="12"><td>
-<a  target="_blank" href="LaurenceBordenave.php"><!-- lien quand on clique sur l'image....   -->
-			<?php
-			/*
-		if (preg_match('~MSIE|Internet Explorer~i', $_SERVER['HTTP_USER_AGENT']) || (strpos($_SERVER['HTTP_USER_AGENT'], 'Trident/7.0; rv:11.0') !== false) || (strpos($_SERVER['HTTP_USER_AGENT'], 'windows phone') !== false)) {
-			
-			echo "<img src=\"../image/personnels/LBordenavePP.png\" alt=\"Laurence Bordenave\" title=\"Laurence Bordenave\" width=\" 100%\">
-";
-		}
-		else {
-			
-		echo "<img src=\"../image/personnels/LBordenavePP.png\" alt=\"Laurence Bordenave\" title=\"Laurence Bordenave\" width=\" 100%\">
-			";
-		}
-		?>
-		</a></td>
-		
-		<td colspan="3" style="padding-left:2%;"><h6>Pr Laurence Bordenave, MD, PhD<br><?php echo TXT_coordinateurM ; ?></h6></td>
-		<td><a target="_blank" href="MarleneDurand.php"><!-- lien quand on clique sur l'image....   -->
-   <?php
-		if (preg_match('~MSIE|Internet Explorer~i', $_SERVER['HTTP_USER_AGENT']) || (strpos($_SERVER['HTTP_USER_AGENT'], 'Trident/7.0; rv:11.0') !== false) || (strpos($_SERVER['HTTP_USER_AGENT'], 'windows phone') !== false)) {
-			
-			echo "<img src=\"../image/personnels/MarleneP.png\" alt=\"Marlène Durand\" title=\"Marlène Durand\" width=\" 100%\" >
-";
-		}
-		else {
-			
-		echo "<img src=\"../image/personnels/MarleneP.png\" alt=\"Marlène Durand\" title=\"Marlène Durand\" width=\" 100%\" >
-			";
-		}
-		?>
-		</a></td>
-		<td colspan="3" style="padding-left:2%;"><h6>Marlène Durand, PhD<br><?php echo TXT_coordinateurD ;  ?></h6></td>
-		
-		<td><a target="_blank" href="ClaireDarcos.php">
-   <?php
-		if (preg_match('~MSIE|Internet Explorer~i', $_SERVER['HTTP_USER_AGENT']) || (strpos($_SERVER['HTTP_USER_AGENT'], 'Trident/7.0; rv:11.0') !== false) || (strpos($_SERVER['HTTP_USER_AGENT'], 'windows phone') !== false)) {
-			
-			echo "<img src=\"../image/personnels/ClaireP.png\" alt=\"Claire Darcos\"  title=\"Claire Darcos\" width=\"100%\" >";
-		}
-		else {
-			
-		echo "<img src=\"../image/personnels/ClaireP.png\" alt=\"Claire Darcos\" title=\"Claire Darcos\" width=\"100%\" >
-			";
-		}
-		
-		?>
-		</td>
-<td colspan="3" style="padding-left:2%;">
-<h6><?php echo TXT_secreteriat ; 
-*/
-?>
-<!--</h6>
-</td></tr>
-		
-		</table>
-		</div>-->
-
-
-
-
 <div id="articleManagement" style="text-align:justify;">
 
 <h6><?php echo TXT_TMA2; ?></h6>
