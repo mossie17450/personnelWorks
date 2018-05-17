@@ -700,7 +700,8 @@ as regulatory power has been increased in recent years.
 	define('TXT_actualites',"The news of CIC-IT");
 	define('TXT_Tele',"Download");
 	define('TXT_Webplus',"to know more");
-	
+	define('TXT_Deb'," from "); 
+	define('TXT_Fin', "to ");
 	
 	//------------------------------------------------------------------//
 	//coordonnées                                                       //
