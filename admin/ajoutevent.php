@@ -1,16 +1,19 @@
 <?php
 session_start();
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Gestion de calendrier | Ajout d'événement</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../design/calendrier.css" media="screen" />
-	
+	<link rel="stylesheet" type="text/css" media="screen and (min-width:240px)" href="../css/menuHDR2.css" />
 </head>
+	<?php include'../inc/languesParDefauthtml.php';?>
 <body>
-	<?php
+	<?php 
+	
 	function get_ip()
 {
 	if(isset($_SERVER['HTTP_X_FORWARDED_FOR']))
@@ -29,10 +32,10 @@ session_start();
 	//echo $ip;
 	return $ip;	
 }
-
-	    if ( !(preg_match('#194.167.179.10#', get_ip())) ) // || (preg_match('#fe80::7401:6b45:c98a:7784#', $ip)) || (preg_match('#fe80::8eb:d45:23f4:5142#', $ip))) )
-
-
+//echo get_ip();
+	   if ( !(preg_match('#194.167.179.10#', get_ip())) )  // || 
+	//if(	!(preg_match('#fe80::7401:6b45:c98a:7784#', $ip)) || !(preg_match('#fe80::8eb:d45:23f4:5142#', $ip))) 
+ 
 	{ 
 
 // Ne facilitons pas la tâche aux malveillants - Le test est fait sur la paire login/password 
@@ -43,110 +46,341 @@ session_start();
 //retourd à la page d'acceuil du site...
 
 
-       	 exit; } 
-	
-	
-		// Variables vides pour les valeurs par défaut des champs
-		$titre=""; $description=""; $dateDebut = date("d/m/Y", time()); $dateFin = date("d/m/Y", time());
+       	 exit; 
+		 } 
+
+	?>
+ 
+  <?php	
+  
+ if (isset($_POST['envoi'])){
+ // echo "Traitement du formulaire..."; //developpement
+ 
+ 
+  if (empty($_POST['titre'])) {
+
+    $nameErr = "Donnez un titre à l'événement.<br/>";
+
+	echo $nameErr;
+
+	$titreE=Null;
+
+  } else {
+	//encode en utf8 pour les blèmes d'accents...
+    $titre = $_POST['titre']; 
+	$titre=utf8_encode($titre);//ok correct dans la BD...
+  }
+
+if (empty($_POST['description'])) {
+
+    $nameErr = "Décrivez l'évenement?<br/>";
+
+	echo $nameErr;
+
+	$description=Null;
+
+  } else {
+//$description=(mysql_real_escape_string($_POST['description']));
+    $description = $_POST['description'];
+	$description=utf8_encode($description);
+  }
+
+ if (empty($_POST['lien'])) {
+
+   $nameErr = "pas de lien vers le promoteur de l'événement.<br/>";
+
+	echo $nameErr;
+
+	$lien=NULL;
+
+  } else {
+
+    $lien = $_POST['lien'];
+	//$lien=utf8_encode($lien);
+  }
+
+
+//echo basename($_FILE['actu']); //pour le dev... nom du fichier téléchargé
+//echo basename($_FILE['logo']);
+$dossier = '../html/www/';
+$fichier = basename($_FILES['actu']['name']); 
+$fichierlogo = basename($_FILES['logo']['name']); 
+
+//il y a telechargement d'un fichier et dans ce cas, la valeur du nom du fichier n'est pas null autrement dit si il existe.
+if($fichier!=NULL) 
+{
+
+$taille_maxi = 8000000;
+
+$taille = "<br>".filesize($_FILES['actu']['tmp_name']); 
+//echo "<br/>taille :".$taille."!";
+
+$extensions = array('.jpg', '.jpeg', '.pdf','.doc','.txt','.zip','.rar','.png');
+
+$extension = strrchr($_FILES['actu']['name'], '.'); 
+
+$date=date("Y-m-d h-i-sa"); //aujourd'hui...
+
+$fichier=$date.$fichier;  //concatenation fichier et date ???
+
+$fichier=utf8_encode($fichier);  //encodage pour la BD Mysql en utf8bom...
+//echo "premier fichier: ".$fichier; //developpement
+
+//Début des vérifications de sécurité...
+if(!in_array($extension, $extensions)) //Si l'extension n'est pas dans le tableau
+{
+     $erreur = 'Vous devez uploader un fichier de type  jpg, jpeg, png, zip, rar, pdf, txt ou doc...';
+	echo $erreur;
+}
+
+
+
+if(!isset($erreur)) //S'il n'y a pas d'erreur, on upload
+{
+     //On formate le nom du fichier ici...
+     $fichier = strtr($fichier, 
+
+          'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 
+
+          'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
+
+     $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
+	}
+    
+	$fichier=utf8_decode($fichier);
+//echo "nom du fichier: ".$fichier;  //pour le developpement
+	 if(move_uploaded_file($_FILES['actu']['tmp_name'], $dossier.$fichier)) //Si la fonction renvoie TRUE, c'est que ça a fonctionné...
 		
-		if(isset($_POST['envoi'])) {
-			// Traitement de l'envoi de l'événement
-			$titre = htmlentities(addslashes($_POST['titre']));
-			$description = nl2br(htmlentities(addslashes($_POST['description'])));
-			$dateDebut = htmlentities($_POST['debut']);
-			$dateFin = htmlentities($_POST['fin']);
+         { 
+		 	//echo "nom du fichier: ".$fichier; //pour le developpement	
+		 echo 'Upload effectué avec succès !<br>';
+		 } 
+		 else "<br>mince! qu'est-ce qui ce passe?<br>";//pour le développement
+		
+}	else $fichier=NULL;
+//fin du traitement du téléchargement de la piece à télécharger....
+
+
+
+//traitement du téléchargement du logo ...
+if($fichierlogo!=NULL) 
+{
+
+$taille_maxilogo = 100;
+
+$taille = "<br>".filesize($_FILES['logo']['tmp_name']); 
+//echo "<br/>taille :".$taille."!";
+
+$extensions = array('.jpg', '.jpeg', '.pdf','.doc','.txt','.zip','.rar', '.png');
+
+$extension = strrchr($_FILES['logo']['name'], '.'); 
+
+$date=date("Y-m-d h-i-sa"); //aujourd'hui...
+
+$fichierlogo=$date.$fichierlogo;  //concatenation fichier et date ???
+
+$fichierlogo=utf8_encode($fichierlogo);  //encodage pour la BD Mysql en utf8bom...
+//echo "premier fichier: ".$fichier;
+
+//Début des vérifications de sécurité...
+if(!in_array($extension, $extensions)) //Si l'extension n'est pas dans le tableau
+{
+     $erreur = 'Vous devez uploader un fichier de type  jpg, jpeg, png, zip, rar, pdf, txt ou doc...';
+	echo $erreur;
+}
+
+
+
+if(!isset($erreur)) //S'il n'y a pas d'erreur, on upload
+{
+     //On formate le nom du fichier ici...
+
+     $fichierlogo = strtr($fichierlogo, 
+
+          'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 
+
+          'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
+
+     $fichierlogo = preg_replace('/([^.a-z0-9]+)/i', '-', $fichierlogo);
+	}
+    
+	$fichierlogo=utf8_decode($fichierlogo);
+//echo "nom du fichier: ".$fichier;  //pour le developpement
+	 if(move_uploaded_file($_FILES['logo']['tmp_name'], $dossier.$fichierlogo)) //Si la fonction renvoie TRUE, c'est que ça a fonctionné...
+		
+         { 
+		 	//echo "nom du fichier: ".$fichier; //pour le developpement	
+		 echo 'Upload effectué avec succès !<br>';
+		 } 
+		//  else "<br>mince! qu'est-ce qui ce passe?<br>";//pour le développement
+		
+}
+else $fichierlogo=NULL;
+		
+//fin du traitement du téléchargement de la piece à télécharger....
+
+
+		 if((empty($_POST['debut']))||(empty($_POST['fin']))) 
+		 echo "les champs \"date\" du formulaire ne sont pas remplis";
+		
+	
+		if((!empty($_POST['debut']))&&(!empty($_POST['fin']))){
+			$tabDateDeb=htmlentities($_POST['debut']);
+			$tabDateFin=htmlentities($_POST['fin']);
 			
-			$typeDate = "#^[0-3]?[0-9]/[01]?[0-9]/[0-9]{4}$#";
 			
-			if (preg_match($typeDate, $dateDebut) && preg_match($typeDate, $dateFin)) {
-				$tabDateDeb = explode("/", $dateDebut);
+			//echo "je suis là!<br>"; //pour le developpement
+		//echo $tabDateDeb ."<br>";
+			//echo $tabDateFin; //pour le developpement
+			$typeDate = "#^[0-3]?[0-9]/[0-1]?[0-9]/[0-9]{4}$#";  //jour/mois/année : 0 à 3? 0 à 9 / etc...
+			
+			if (preg_match($typeDate, $tabDateFin)) {
+					//echo "youpie!!!<br>"; //pour le developpement
+			if ((preg_match($typeDate, $tabDateFin))&&(preg_match($typeDate, $tabDateDeb))){ //ligne sensible...
+			//echo "date conforme";//pour le developpement
+			
+					//echo $tabDateDeb."<br>"; //pour le developpement
+					//echo $tabDateFin;
+				
+				$tabDateDeb = explode("/", $tabDateDeb);
 				$timestampDebut = mktime(0, 0, 0, $tabDateDeb[1], $tabDateDeb[0], $tabDateDeb[2]);
-				
-				$tabDateFin = explode("/", $dateFin);
+						//echo $timestampDebut;
+				$tabDateFin = explode("/", $tabDateFin);
 				$timestampFin = mktime(0, 0, 0, $tabDateFin[1], $tabDateFin[0], $tabDateFin[2]);
-				
-				$timestampDiff = $timestampFin - $timestampDebut;
-				$nbreJours = intval($timestampDiff / 86400)+1;
-				
-				if($nbreJours <= 0) $nbreJours = 1;
-				
-				
+				//	echo $timestampFin;
+				}}
+				//else "date non conforme";
+		
+		
 				if(!empty($titre) && !empty($description)) {
 					// Traitement de l'enregistrement de l'événement
+					//echo "Nous stockons les informations dans la BD...<br>"; //pour le dev ?????
 					$identifiantCommun = time();
 					$timeDuJour = $timestampDebut;
+					//echo "Jour: ".$timeDuJour."<br>"; //pour le developpement
+					$timeFin=$timestampFin;
+					
+					//echo "Les times et identifiant comment sont  OK";
+					//echo "fin de l'evenement: ".$timeFin; //pour le developpement
+					
+					//echo "tant pis!";
 					
 					
 					
-					
-					$link = mysqli_connect();
+					$link = mysqli_connect('localhost', 'c4cicit','dyKaTm8H#','c4dev');
 
-					for($i=0 ; $i<$nbreJours ; $i++) {
-						$req = "INSERT INTO calendrier(jour_evenement, mois_evenement, annee_evenement, id_evenement) VALUES ( ".date('d', $timeDuJour).", ".date('m', $timeDuJour).", ".date('Y', $timeDuJour).", $identifiantCommun)";
-						mysqli_query($link,$req) or die(mysqli_error($link));
-						
-						$timeDuJour += 86400; // On augmente le timestamp d'un jour
-					}
-					
-					$req = "INSERT INTO evenements VALUES ($identifiantCommun, '$titre', '$description')";
+					//echo "je suis connecté!";
+
+					if (!$link) {
+
+						die('Impossible de se connecter : ' . mysql_error());
+
+								}
+
+					//echo "connecter!requete:";
+
+					$req = "INSERT INTO evenements VALUES($identifiantCommun, '$titre', '$description', '$fichier','$fichierlogo', '$lien', 1)";
 					mysqli_query($link,$req) or die(mysqli_error());
 					
-					mysqli_close($link);
+					$req1 = "INSERT INTO calendrier(jour_evenement, jour_fin_evenement, mois_evenement, mois_fin_evenement, annee_evenement, annee_fin_evenement, id_evenement) VALUES 
+						( ".date('d', $timeDuJour).", ".date('d', $timeFin).", ".date('m', $timeDuJour).", ".date('m', $timeFin).", ".date('Y', $timeDuJour).", ".date('Y', $timeFin).", '$identifiantCommun' ) ";
+						mysqli_query($link, $req1) or die(mysqli_error($link));
 					
-					echo '<ul><li>Evénement enregistré !</li></ul>';
-				} else {
-					echo '<ul><li>Titre ou description de l\'événement non renseigné.</li></ul>';
-				}
-			}
-			else
-			{
-				echo "<ul><li>Date de début ou de fin d\'événement non conforme (ex. 12/02/2008).</li></ul>";
-			}
+					//echo"coucou";
+					
+						
+					echo '<ul><li>L\'événement est enregistré!</li></ul>';
+								
+					}	
 		}
-	?>
-    
+	
+}	
+mysqli_close($link);
+
+
+ ?>
+ 
+<h1 align="center">Espace intranet du CIC-IT de Bordeaux</h1>
+ 
+<nav>
+<ul id="menu">
+		<li><a href="ajoutevent.php">évènements</a><ul></li>
+		<li><a href="supprevent.php">Suppr- évènement</a></ul></li>
+		<li><a href="publicationsMaJ.php">les publications</a></li>
+        <li><a href="ajoutPost.php">publier une offre de poste</a><ul></li>
+		<li><a href="supprimeposte.php">supprimer l'offre de poste</a></ul></li>
+		<li><a href="ajoutStage.php">publier une offre de stage</a><ul></li>
+		<li><a href="supprimestage.php">supprimer l'offre de stage</a></ul></li>
+		
+		<li><a href="listeCV.php">candidatures spontanées</a></li>
+		
+		<li><a href="../index.php">Acceuil du site</a></li>	
+		</ul>	
+</nav>
     <!-- Formulaire d'envoi -->
-	<h1>Ajouter un événement</h1>
-    
-    <form method="post" action="ajoutevent.php">
+
+	
+	<div style="margin-left:5%;" >	
+	<h1 align="center">Pour afficher un évènement</h1>
+     <h3>Les champs avec "*" doivent êtres remplis.</h3>
+    <form  accept-charset="iso-8859-1" enctype="multipart/form-data" method="post" action="ajoutevent.php">
     	<table id="tabAjoutEvent">
         	<tr>
-            	<td><label>Du : <input type="text" name="debut" value="<?php echo $dateDebut ?>" /></label></td>
-                <td><label>Au : <input type="text" name="fin" value="<?php echo $dateFin; ?>" /></label></td>
+            	<td><label>Du : <input type="text" name="debut" value="<?php echo $dateDebut ?>" /></label>*</td>
+                <td><label>Au : <input type="text" name="fin" value="<?php echo $dateFin; ?>" /></label>*</td>
             </tr>
        		<tr>
        			<td colspan="2"><br/>
-                	<label for="titre">Titre de l'événement :</label><br/>
-       				<input type="text" name="titre" id="titre" size="30" value="<?php echo $titre ?>" /><br/><br/>
+                	<label for="titre">Titre de l'évènement :</label><br/>
+       				<input type="text" name="titre" id="titre" size="30" value="<?php echo $titre ?>" />*<br/><br/>
                 </td>
        		</tr>
             <tr>
             	<td colspan="2">
-       				<label for="description">Description de l'événement :</label><br/>
-       				<textarea rows="10" cols="50" id="description" name="description"><?php echo $description ?></textarea>
+       				<label for="description">Description de l'évènement :</label><br/>
+       				<textarea rows="10" cols="50" maxlength="200" id="description" name="description"><?php echo $description ?></textarea>*
                 </td>
             </tr>
+			<tr>
+		
+			<td colspan="2"><h3>Promoteur de l'évènement :</h3>les lignes suivantes sont optionelles pour publier l'évènement...<br>
+       				<label for="lienWeb">lien vers sa page Web: </label><br/>
+       				<input type="text" name="lien" id="lien" size="100" value="<?php echo $lienWeb ?>" /><br/><br/>
+                </td>
+				</tr>
+<tr>				 <!-- On limite le fichier à 8000Ko -->
+
+<td>
+     <input type="hidden" name="MAX_FILE_SIZE" value="8000000" />
+
+    <?php  echo "son logo à telecharger : "; ?>
+	<input type="file" name="logo" value="logo" />
+ <br/><?php echo TXT_Note;  ?>
+ </td></tr>
+		
+		<tr>
+		<td>
+<!-- On limite le fichier à 100Ko -->
+     <input type="hidden" name="MAX_FILE_SIZE" value="8000000" />
+    <?php  echo "fichier à telecharger : "; ?>
+	<input type="file" name="actu" value="actu" />
+ <br/><?php  echo TXT_Note;  ?>
+ </td></tr>
+ 
+
+<tr><td>
+
+ <h3>Les champs avec "*" doivent êtres remplis.</h3>
+		</td></tr>
             <tr>
+			
             	<td colspan="2"><input type="submit" name="envoi" value="Envoyer"/></td>
             </tr>
        </table>
     </form>
-    
+ 
+<div align="center"><br><?php echo TXT_Piedhtml ; ?><br></div> 
+	  
+</div></body></html>
 
- <ul><li><a href="ajoutevent.php">Ajouter un evenement</a></li>
-		<li><a href="supprevent.php">Supprimer un événement</a></li>
-		<li><a href="publicationsMaJ.php">Ajouter une publication</a></li>
-        <li><a href="ajoutPost.php">afficher une proposition de poste sur notre page "Offre de poste"</a></li>
-		<li><a href="supprimeposte.php">supprimer l'affichage de postes sur notre page "Offre de poste"</a></li>
-		<li><a href="ajoutPost.php">afficher une proposition de stage sur notre page "Offre de stage"</a></li>
-		<li><a href="supprimeposte.php">supprimer l'affichage de stages sur notre page "Offre de stage"</a></li>
-		<li><a href="NouveauStagiaire.php">Ajouter un nouveau stagiaire à la liste</a></li>
-		<li><a href="listeCV.php">gestion des candidatures spontanées envoyé au site</a></li>
-		<li><a href="listeContacts.php">gestion des contactes (formulaire contacte) envoyé au site</a></li>
-		<li><a href="../index.php">Retourd à l'acceuil</a></li>	
-		</ul>
-	
-	
-    <p class="centre"><br/><a href="../index.php">Revenir à l'accueil</a></p>
-</body>
-</html>
+
