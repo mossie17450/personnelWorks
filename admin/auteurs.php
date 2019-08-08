@@ -20,9 +20,9 @@ session_start();
 	return $ip;	
 }
 
-	    if ( !(preg_match('#194.167.179.10#', get_ip())) ) // || (preg_match('#fe80::7401:6b45:c98a:7784#', $ip)) || (preg_match('#fe80::8eb:d45:23f4:5142#', $ip))) )
 
 
+ if ( !(preg_match('#194.167.179.10#', get_ip())) )
 	{ 
 
 // Ne facilitons pas la tâche aux malveillants - Le test est fait sur la paire login/password 
@@ -33,11 +33,37 @@ session_start();
 //retourd à la page d'acceuil du site...
 
 
-       	 exit; } 
+       	 exit; 
+		 } 
 
 
+?>
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">	
+<head>
+<title>Innovation biomédicale, recherche de biomateriaux avec le CHU de Bordeaux : le CIC-IT. Aquitaine - France</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<meta name="keywords" content="CIC, centre, investigation, clinique, innovation, technologique, biomatériaux, bordeaux, CIC-IT, chu bordeaux, PTIB, Master, bidim, cellules, in vivo, in vitro, médical, recherche, Pessac, Arnozan, hôpital, réparation tissulaire, CIC IT, biomédical, Aquitaine, ingénierie tissulaire, scientifique" />
+<meta name="description" content="Acteur aquitain de l&#039;innovation biomédicale, le Centre d&#039;Investigation Clinique Innovation Technologique Biomatériaux de Bordeaux opère au sein d&#039;une structure scientifique actuelle et avancée pour appuyer tous ces travaux de recherche." />
+<!---                         -->
+<!--- mes feuilles de style : -->
+<!---                         -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">	
+
+<!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
+
+<!--<link rel="stylesheet" media="screen and (max-width: 1200px)" href="css/moyenneResolution.css" />
+<link rel="stylesheet" media="screen and (max-width: 800px)" href="css/petitResolution.css" />
+<link rel="stylesheet" media="screen and (max-width: 400px)" href="css/toutpetitResolution.css" />-->
+<link rel="stylesheet" media="screen and (max-width: 1200px)" href="css/calendrier.css" />
+<link rel="stylesheet" type="text/css" href="../css/menuHDR2.css" />
+<link rel="stylesheet" type="text/css" href="../css/admin.css" >
+</head>
+<body>
+<?php
+	include'../inc/languesParDefauthtml.php';
    if (isset($_POST['auteurs'])) {  //a modifié
-        echo '<br>Entrez les auteurs :';
+        echo '<br><h3 align="center">Entrez les auteurs :';
 		
 		//la recupe des nomsA et prenom et rang (marche)
 		//echo $_POST['nbreAuteurs'];
@@ -110,11 +136,40 @@ if (!empty($_POST['submitA'])) {
  
   else "combien d'auteur ?";
  ?>  
- 
+<nav>
+<ul id="menu">
+		<li><a href="ajoutevent.php">événements</a><ul></li>
+		<li><a href="supprevent.php">Suppr- événement</a></ul></li>
+		<li><a href="publicationsMaJ.php">les publications</a></li>
+        <li><a href="ajoutPost.php">publier une Offre de poste</a><ul></li>
+		<li><a href="supprimeposte.php">supprimer l'offre de poste</a></ul></li>
+		<li><a href="ajoutStage.php">publier une offre de stage</a><ul></li>
+		<li><a href="supprimestage.php">supprimer l'offre de stage</a></ul></li>
+		
+		<li><a href="listeCV.php">candidatures spontanées</a></li>
+		
+		<li><a href="../index.php">acceuil</a></li>	
+		</ul>	
+</nav> 
 
  
 <form action="#" method="post" name="listeA">
 <?php
+
+//insertion des auteurs dans la table auteur si il n'existe pas
+//.......................................................................//
+/*entrez le nombre d'auteurs pour la boucle for...*/
+//echo"coucou!<br>";
+//echo $_SESSION['nbreAuteurs'];
+//echo $_POST['nbreAuteurs'];
+
+if (!empty($_POST['submitA'])) {
+   //echo "nombre d'auteur :".$_POST['nbreAuteurs'];
+  // echo "<br>idPubli : ".$_POST['idPubli'];
+   // echo "<br>idJou : ".$_POST['idJou'];
+} 
+ 
+  else "combien d'auteur ?";
 
 if (!empty($_POST['idPubli'])&& !empty($_POST['nbreAuteurs']) && !empty($_POST['idJou'])){
 $nbreAuteurs=$_POST['nbreAuteurs'];
@@ -142,21 +197,9 @@ echo "<br>auteur ".$i."<br>";
 <input type="hidden" name="idJou" value="<?php echo $idJou ;?>" >
 <input type="submit" name="auteurs" value="soumettre"/>
 </form>
-<?php
-echo "<br>
- <ul><li><a href=\"../admin/ajoutevent.php\">Ajouter un événement au calendrier des évenements</a></li>
-		<li><a href=\"../admin/supprevent.php\">Supprimer un événement</a></li>
-		<li><a href=\"../admin/publicationsMaJ.php\">Ajout d'une publication</a></li>
-        <li><a href=\"../admin/ajoutPost.php\">affichage de postes proposés</a></li>
-		<li><a href=\"../admin/supprimeposte.php\">suppression de l'affichage de postes proposés</a></li>
-		<li><a href=\"../admin/ajoutStage.php\">affichage de stage proposés</a></li>
-		<li><a href=\"../admin/supprimestage.php\">suppression de l'affichage de stages</a></li>
-		<li><a href=\"../admin/listeCV.php\">gestion des candidatures spontanées envoyé au site</a></li>
-		<li><a href=\"../admin/listeContacts.php\">gestion des contactes (formulaire contacte) envoyé au site</a></li>
-		<li><a href=\"../index.php\">Retourd à l'acceuil</a></li>	
-		</ul>";
-    ?>
+
     <p class="centre"><br/><a href="../index.php">Revenir à l'accueil</a></p>
+	<div align="center"><br><?php echo TXT_Piedhtml; ?><br></div>
 </body>
 </html>
 

@@ -19,10 +19,10 @@ session_start();
 	//echo $ip;
 	return $ip;	
 }
-
-	    if ( !(preg_match('#194.167.179.10#', get_ip())) ) // || (preg_match('#fe80::7401:6b45:c98a:7784#', $ip)) || (preg_match('#fe80::8eb:d45:23f4:5142#', $ip))) )
-
-
+	if ( !(preg_match('#194.167.179.10#', get_ip())) )
+	 //  if ( !(preg_match('#194.167.179.10#', get_ip())) && ((preg_match('#fe80::7401:6b45:c98a:7784#', $ip)) || (preg_match('#fe80::8eb:d45:23f4:5142#', $ip)) )) // || 
+	//if(	!(preg_match('#fe80::7401:6b45:c98a:7784#', $ip)) || !(preg_match('#fe80::8eb:d45:23f4:5142#', $ip))) 
+ 
 	{ 
 
 // Ne facilitons pas la tâche aux malveillants - Le test est fait sur la paire login/password 
@@ -33,9 +33,12 @@ session_start();
 //retourd à la page d'acceuil du site...
 
 
-       	 exit; } 
+       	 exit; 
+		 } 
+
+
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<HTML5>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">	
 <head>
 <title>Innovation biomédicale, recherche de biomateriaux avec le CHU de Bordeaux : le CIC-IT. Aquitaine - France</title>
@@ -47,21 +50,55 @@ session_start();
 <!---                         -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">	
 
-<!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
-
-<link rel="stylesheet" media="screen and (max-width: 1200px)" href="css/moyenneResolution.css" />
-<link rel="stylesheet" media="screen and (max-width: 800px)" href="css/petitResolution.css" />
-<link rel="stylesheet" media="screen and (max-width: 400px)" href="css/toutpetitResolution.css" />
 <link rel="stylesheet" media="screen and (max-width: 1200px)" href="css/calendrier.css" />
-<!--<link rel="stylesheet" type="text/css" href="css/menuHDR2.css" />-->
+<link rel="stylesheet" type="text/css" href="../css/menuHDR2.css" />
 <link rel="stylesheet" type="text/css" href="../css/admin.css" >
 </head>
+<?php
 
-<h1><?php echo "Page de mise à jour des publications: ajout d'une publi.";  ?></h1>
+$link = mysqli_connect('localhost', 'c4cicit','dyKaTm8H#','c4dev'); // bd distante...
+	if (!$link) {
+		die('Impossible de se connecter : ' . mysql_error());
+				}
+echo "verifs de routines!"; // pour le developpement
+//requete qui marche:
+$sql = "SELECT idPublication, titre, annee, codification, idJournal, COUNT(idPublication) AS cnt FROM publication GROUP BY titre, annee, codification, idJournal HAVING cnt>1 "; 
+$req = mysqli_query($link,$sql) or die ("Erreur SQL 0!<br>".$sql."<br>".mysqli_error($link));
+$row = mysqli_fetch_row($req); 
+ //print_r($row); //pour le developpement
+ if($row==NULL){echo "pas de doublons dans la table publication";}
+ //echo "<br> count :".$row[4]."!<br>";
+ //echo "<br> n° de la Publi :".$row[0]."!<br>";
 
+//à vérifier....OK! envoyer un message au webmaster si $row n'est pas null...
+ if($row!=NULL){ 
+ $message = "Bonjour Cécile,\r\nUn doublon dans la table publication existe, il faut le vérifié et corrigé. merci! .\nCordialement,\nLe webmaster du CIC-IT.";
+// Dans le cas où nos lignes comportent plus de 70 caractères, nous les coupons en utilisant wordwrap()
+//$message = wordwrap($message, 70, "\r\n");
+// Envoi du mail
+mail('mossie17450@gmail.com, cecile.raymond@inserm.fr', 'Nouvelle candidature spontané aujourd\'hui', $message);
+ }
+?>
+<?php include'../inc/languesParDefauthtml.php';?>
+<h1 align="center"><?php echo "Mise à jour des publications";  ?></h1>
 
-<h6 style="margin-left:10px;">Télégargement du fichier PDF pour Claire (devellopement en cours, plus tard: excel).</h6>
+<nav>
+<ul id="menu">
+		<li><a href="ajoutevent.php">événements</a><ul></li>
+		<li><a href="supprevent.php">Suppr- événement</a></ul></li>
+		<li><a href="publicationsMaJ.php">les publications</a></li>
+        <li><a href="ajoutPost.php">publier une Offre de poste</a><ul></li>
+		<li><a href="supprimeposte.php">supprimer l'offre de poste</a></ul></li>
+		<li><a href="ajoutStage.php">publier une offre de stage</a><ul></li>
+		<li><a href="supprimestage.php">supprimer l'offre de stage</a></ul></li>
+		<li><a href="listeCV.php">candidatures spontanées</a></li>
+		<li><a href="../index.php">acceuil</a></li>	
+		</ul>	
+</nav>
+<br>
+<!-- construction d'un fichier excel -->
 <?php  
+/*
 echo " <h3 style=\"margin-left:10px;\">Le fichier excel :</h3>";  
  
  //include the file that loads the PhpSpreadsheet classes
@@ -95,8 +132,7 @@ $spreadsheet->setActiveSheetIndex(0)
 $cell_st =[
  'font' =>['bold' => true],
  'alignment' =>['horizontal' => \PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER],
- 'borders'=>['bottom' =>['style'=> \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_MEDIUM]]
-];
+ 'borders'=>['bottom' =>['style'=> \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_MEDIUM]];
 $spreadsheet->getActiveSheet()->getStyle('A1:C1')->applyFromArray($cell_st);
 
 //set columns width
@@ -109,15 +145,16 @@ $spreadsheet->getActiveSheet()->setTitle('Simple'); //set a title for Worksheet
 $writer = new Xlsx($spreadsheet);
 $fxls ='excel-file_1.xlsx';
 $writer->save($fxls);
+*/
 ?>
  
- <a target="_blank" href="publisE.xlsx"><h3 style="margin-left:10px;">ou là !</h3>
-</a>
+ <!--<a target="_blank" href="publisE.xlsx"><h3 style="margin-left:10px;">ou là !</h3>
+</a>-->
 
-
+<br>
 <form method="post" name="validez">
 
-<fieldset><legend><?php echo "Ajout d'une publication." ; ?></legend>
+<fieldset><legend><?php echo "Ajout d'une publication" ; ?></legend>
  
 
  <label style="margin-left:5%;"><?php echo "Titre de la publication"; ?> *</label>
@@ -128,7 +165,7 @@ $writer->save($fxls);
 <hr>
  <label style="margin-left:5%;"><?php echo "Type de  publication"; ?> *</label><br/>
  
-<label style="margin-left:10%;">ACL</label><input type="radio" name="typePubli" value="ACL" ><br/>
+<label style="margin-left:10%;">ACL</label><input type="radio" name="typePubli" value="ACL" ><span>    </span><label>lien web</label><span>    </span><input type="text" maxlength="256" size="120" name="lienweb"><br/>
 <label style="margin-left:10%;">ACTN</label><input type="radio" name="typePubli" value="ACTN" ><br/>
 <label style="margin-left:10%;">ACTI</label><input type="radio" name="typePubli" value="ACTI" ><br/>
 <label style="margin-left:10%;">COM</label><input type="radio" name="typePubli" value="COM" ><br>
@@ -140,16 +177,14 @@ $writer->save($fxls);
 <input type="text" maxlength="20" name="annee" size="20" /><br>
  <hr>
 <br>
-<input type="reset" value="recommencez">
-<input type="submit" value="validez" name="validez">
+<input type="reset" value="recommencez"/>
+<input type="submit" value="validez" name="validez"/></fieldset>
 </form>
 
 <?php 
-
-
 //verification des entrées dans le formulaire avant de les entre dans la bd:
-
 //type de publication: /*
+
 if(!empty($_POST['validez'])){
 
 if (empty($_POST['typePubli'])) {
@@ -178,13 +213,13 @@ if (empty($_POST['revue'])) {
 
   } else {
 	$revu1=addslashes($_POST['revue']);
-    $revue= utf8_decode($revu1);
+    $revue= utf8_encode($revu1);
 echo "<br>journale:".$revue."<br>";
   }
  
   if (empty($_POST['titreP'])) {
 
-    $nameErr = "pas de titre de publication! un oubli?<br/>";
+    $nameErr = "Il me faut le titre de la publication<br/>";
 
 	echo $nameErr;
 
@@ -192,7 +227,7 @@ echo "<br>journale:".$revue."<br>";
 
   } else {
 	$titreP1=addslashes($_POST['titreP']);
-    $titreP = utf8_decode($titreP1);
+    $titreP = utf8_encode($titreP1);
 	
 	echo "titre publi : ".$titreP." !<br>";
   }
@@ -200,7 +235,7 @@ echo "<br>journale:".$revue."<br>";
   
    if (empty($_POST['annee'])) {
 
-    $nameErr = "pas d'annee de publication? un oubli?<br/>";
+    $nameErr = "Il me faut l'année de la publication<br/>";
 
 	echo $nameErr;
 
@@ -218,10 +253,9 @@ echo "le formulaire n'est pas correctement remplie, recommencez!";
   }
 else echo "on continue."; 
 
-
- if(!(empty($_POST['revue'])||empty($_POST['titreP'])||empty($_POST['annee'])||empty($_POST['typePubli']))){
+if(!(empty($_POST['revue'])||empty($_POST['titreP'])||empty($_POST['annee'])||empty($_POST['typePubli']))){
  
-{
+
    //echo"<br>on insert dans la bd!<br>";
 //echo"type de publi :".$codification."<br>";
 $link = mysqli_connect('localhost', 'c4cicit','dyKaTm8H#','c4dev'); // bd distante...
@@ -235,59 +269,44 @@ $link = mysqli_connect('localhost', 'c4cicit','dyKaTm8H#','c4dev'); // bd distan
 //insertion  dans la table journale si il n'y est pas deja
 //.......................................................................//
 //verifie si le journale (ou autre) est present dans la table journale:
-
 $sql2="SELECT idJournal, titreJournal FROM journale WHERE titreJournal='".$revue."' ";
 $req2 = mysqli_query($link,$sql2) or die ("Erreur SQL2 !<br>".$sql."<br>".mysqli_error($link));
-
 $row2 = $req2->fetch_assoc();
 /*pour le dev : */
 //echo " id du journale:".$row2['idJournal']."!";
-
 $idJou=$row2['idJournal'];
 if($row2['idJournal']==""){
 //echo "oui<br>"; 
-
 //insertion  dans la table journale (car il n'y est pas encore!)
 // attribue un autre idpubli si la publi existe dans un autre journale...? (15Mars2017)
-
 echo "oui pour l'insertion....<br>"; //pour le dev.
 $sql1="INSERT INTO journale (titreJournal) VALUES ('".$revue."') ";
-
 $req1 = mysqli_query($link,$sql1) or die ("Erreur SQL !<br>".$sql1."<br>".mysqli_error($link));
 echo "verif bd!";
-
 // je recupere l'id du journale de la publi avant l'insertion dans la table 'publication'...
-
 $sql="SELECT idJournal, titreJournal FROM journale WHERE titreJournal='".$revue."' ";
 $req = mysqli_query($link,$sql) or die ("Erreur SQL !<br>".$sql."<br>".mysqli_error($link));
 $row = $req->fetch_assoc();
-
 $idJou=$row['idJournal'];
 //echo "id du journal :".$row['idJournal']."!<br>";//pour le dev.
 //printf("id = %s (%s)\n", $row['idJournal'], gettype($row['idJournal']));
 //printf("label = %s (%s)\n", $row['titreJournal'], gettype($row['titreJournal']));
 }
-
 //echo "mon id du journal :".$idJou."!<br>";//pour le dev.
 //echo $idJou."<br>";
-
 //.......................................................................//
 //insertion  de la publication dans la table publication 
 //.......................................................................//
-
 //avant, si elle existe dans un autre journale, on l'insere avec un autre idpubli!...
 //insertion de la publi dans la table publi , ...//
 //echo "journale :".$idJou;
 if($idJou){
 $sql3="INSERT INTO publication (titre, idJournal, annee, codification) VALUES('".$titreP."','".$idJou."','".$annee."','".$codification."')";
 $req3 = mysqli_query($link,$sql3) or die ("Erreur SQL 3!<br>".$sql3."<br>".mysqli_error($link));
-
 //recupération de l'id de la publication pour l'insertion dans la table 'communique'. corrige ici :
 $sql4="SELECT idPublication, titre, titreJournal FROM publication join journale  WHERE titre='".$titreP."' AND publication.idJournal='".$idJou."' ";
 $req4 = mysqli_query($link,$sql4) or die ("Erreur SQL 4!<br>".$sql4."<br>".mysqli_error($link));
-
 $row4 = $req4->fetch_assoc();
-
 echo " id publi :".$row4['idPublication']."!<br>"; //pour le dev
 $idPubli=$row4['idPublication'];
 echo "<br>publi :".$idPubli;
@@ -295,27 +314,20 @@ echo "<br>journale :".$idJou;
 }
 mysqli_close($link);
 }
-}
+
 //echo "<br>publi :".$idPubli;
 //echo "<br>journale :".$idJou;
 ?>
 
 <?php 
-
 if (empty($_POST['nbreAuteurs'])) {
-
     $nameErr = "nous avont besoin du nombre d'auteur pour continue!<br/>";
-
 	echo $nameErr;
-
 	$nbreAuteurs=NULL;
-
   } else {
-
     $nbreAuteurs = $_POST['nbreAuteurs'];
 	
   }
-
 ?>
 
 <form method="post" action= "auteurs.php">
@@ -329,26 +341,12 @@ if (empty($_POST['nbreAuteurs'])) {
 
 <?php
 }
+?>
 
-echo "<br>
- <ul><li><a href=\"ajoutevent.php\">Ajouter un événement au calendrier des évenements</a></li>
-		<li><a href=\"supprevent.php\">Supprimer un événement</a></li>
-		<li><a href=\"publicationsMaJ.php\">Ajout d'une publication</a></li>
-        <li><a href=\"ajoutPost.php\">affichage de postes proposés</a></li>
-		<li><a href=\"supprimeposte.php\">suppression de l'affichage de postes proposés</a></li>
-		<li><a href=\"ajoutStage.php\">affichage de stage proposés</a></li>
-		<li><a href=\"supprimestage.php\">suppression de l'affichage de stages</a></li>
-		<li><a href=\"NouveauStagiaire.php\">Ajouter un nouveau stagiaire</a></li>
-		<li><a href=\"listeCV.php\">gestion des candidatures spontanées envoyé au site</a></li>
-		<li><a href=\"listeContacts.php\">gestion des contactes (formulaire contacte) envoyé au site</a></li>
-		<li><a href=\"../index.php\">Retourd à l'acceuil</a></li>	
-		</ul>";
-    ?>
-	
-	
-    <!--<p class="centre"><br/><a href="../index.php">Revenir à l'accueil du site</a></p>-->
+	<br><br>
 </body>
 </html>
+
 
 
 	
