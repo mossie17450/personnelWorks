@@ -1,252 +1,286 @@
+
 <?php
 
-echo"
-<html>
-<head>
-<!--<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous\">-->
-</head>
-<body>";
-
-?>
-<?php
-
-include("connect.php");
-	
-//requete...on recupères toutes les variables.	
-	$sql ='SELECT DISTINCT evenements.id_evenement, jour_evenement, jour_fin_evenement, mois_evenement, mois_fin_evenement, annee_evenement, annee_fin_evenement, titre_evenement, contenu_evenement, Nomfichier, lienweb FROM calendrier join evenements on(calendrier.id_evenement=evenements.id_evenement) GROUP BY evenements.id_evenement ';	
-	$query=mysqli_query($link, $sql) or die("Une requête a échouée.");
-	//tableau des mois en lang choisie...
-	$num_rows = mysqli_num_rows($query);
-	//echo "nombre de ligne: ".$num_rows;  pour le developpement
 	if($_SESSION['lang']==fr){
- $m=array("","Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Septembre","Octobre","Novembre","Décembre");
- //echo "langue francaise";//developpemnent
- }
- else if($_SESSION['lang']==en){
-$m=array("","January", "February","March","April","May","June","July","September","October","November","December");
-//echo "langue englaise";// pour le dev...
-}
+	$m=array("","Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Décembre");
+	//echo "langue francaise";//developpemnent
+	$pageE="pour en savoir + ";
+	$docs="Documents";
+	}
+	else if($_SESSION['lang']==en){
+	$m=array("","January", "February","March","April","May","June","July","August","September","October","November","December");
+	//echo "langue englaise";// pour le dev...
+	$docs="Files";
+	$pageE="to know more ";
+	}
 
-//afficher tous les evenements :
-		while($row=mysqli_fetch_array($query)){
-		//echo"quelque chose!!!!";
+		// année différente, on affiche du jj/mm/aaaa au jj/mm/aaaa 
+		if($row[5]!=$row[6]){
+			//ligne suivante à remplacer par du bootstraps
+		//echo "<table class=\"table-responsive, ex2\" style=\" width:96%; float:left; border:none;margin:2%;height:250px;\">";
 		
 		
-		if(($row[5]!=$row[6]))  //années de l'évenement différents, on affiche toutes la date : du jj/mm/aaaa au jj/mm/aaaa
-		{
-		//echo"annee differentes...<br>"; //pour le develloppement...
-		echo "<div class=\"ex2\" style=\"margin-top:2%;\" >		
-		<table class=\"table-responsive, ex2\" style=\"width:50%; float:left;  borders:none; margin-top:2%; \">
-		<tr colspan=\"15\">
-		<td><img src=\"../image/blanc.png\" style=\"width:1%; height:10%; borders:none;\"></td>	<!--du blanc: un espace	-->		
-		<td style=\"background-color:orange;\" colspan=\"3\"><h3>du ".$row[1]."<br>".$m["$row[3]"]."<br>".$row[5]."<br>au ".$row[2]."<br>".$m["$row[4]"]."<br>".$row[6]."</td>
-		<td style=\"background-color:#F0F7D4; \" colspan=\"10\"><h6 style=\"text-align:center;\"><strong>".$row[7]."</strong></h6><h6>".$row[8]."</h6></td>
-		<td><img src=\"../image/blanc.png\" style=\"width:1%; height:10%; borders:none;\"></td>
-		</tr>";
-			//condidition sur la presence ou non de fichier attaché ou lien vers le promoteur de l'événement.
-			if(($row[10]!=NULL)&&($row[9]!=NULL)){ 
-			echo"<tr colspan=\"15\">
-			<td><img src=\"../image/blanc.png\" style=\"width:1%; height:10%; borders:none;\"></td>
-			<td style=\"background-color:grey;\"  colspan=\"3\"><a href=\"www/".$row[9]."\" style=\"color:white; \"><img src=\"../image/logos/telechargement.png\" width=\"20%\"; title=\"Telechargement\" alt=\"Telechargement\" height=\"auto\"; float=\"left\"; ><h6>à télécharger</h6></a></td>
-			<td style=\"background-color:#005580; color:white;\" style=\"background-color:#005580; color:#005580;\" colspan=\"11\"><a href=".$row[10]." style=\"color:white;\"><h6>lien web vers l'éditeur de l'événement</h6></a></td>
-			<td><img src=\"../image/blanc.png\" style=\"width:1%; height:10%; borders:none;\"></td></tr>
-			</table></div>";
+		echo"<div class=\"container-fluid\" style=\"margin-left:5%;\" >";		
+		if(($row[11])&&($row[10])){
+			echo"		
+			<div class=\"row\" style=\"height:50px;\"><div class=\"col-2\" style=\"background-color:grey;\">
+			<a href=".$row[10]." style=\"color:white;\"><img src=\"../html/www/".$row[11]."\" width=\"120%\"; height=\"auto;\" title=\"".$pageE."\" alt=\"".$pageE."\" /></a></div>
+			<!--ligne date : -->
+			<br><div class=\"col-8\" style=\"background-color:#005580; color:white;\"><br><h3>".TXT_Deb." ".$row[1]." ".$m["$row[3]"]." ".$row[5]." ".TXT_Fin." ".$row[2]." ".$m["$row[4]"]." ".$row[6]."</div>			
+			</div>";	
 			}
-			else if(($row[10]==NULL)&&($row[9]!=NULL)){ 
+
+			if(($row[11])&& (!$row[10])){
+			echo"
+			<div class=\"row\" style=\"height:50px;\"><div class=\"col-2\" style=\"background-color:grey;\">
+			<a style=\"color:white;\"> <img src=\"../html/www/".$row[11]."\" width=\"120%\"; height=\"auto;\" title=\"".$pageE."\" alt=\"".$pageE."\" /></a></div>
+			<!--ligne date : -->
+			<br><div class=\"col-8\" style=\"background-color:#005580; color:white;\"><br><h3>".TXT_Deb." ".$row[1]." ".$m["$row[3]"]." ".$row[5]." ".TXT_Fin." ".$row[2]." ".$m["$row[4]"]." ".$row[6]."</div>			
+			</div>";
 		
-			echo"<tr colspan=\"15\">
-			<td colspan=\"1\"><img src=\"../image/blanc.png\" style=\"width:1%; height:10%; borders:none;\"></td>
-			<td style=\"background-color:grey;\"  colspan=\"3\"><a href=\"www/".$row[9]."\" style=\"color:white; \"><img src=\"../image/logos/telechargement.png\" width=\"20%\"; title=\"Telechargement\" alt=\"Telechargement\" height=\"auto\"; float=\"left\"; ><h6>à télécharger</h6></a></td>
-			<td style=\"background-color:#005580; color:white;\" style=\"background-color:#005580; color:#005580;\" colspan=\"10\"><a href=".$row[10]." style=\"color:white;\"><h6></h6></a></td>
-			<td colspan=\"1\"><img src=\"../image/blanc.png\" style=\"width:1%; height:10%; borders:none;\"></td></tr>
-			</table>
-			</div>"; 
+			}
+
+			else if((!$row[11])&&($row[10])){
+			echo"		
+			<div class=\"row\" style=\"height:50px;\"><div class=\"col-2\" style=\"background-color:grey;\">
+			<a href=".$row[10]." style=\"color:white;\">".$pageE."</a></div>
+			<!--ligne date : -->
+			<br><div class=\"col-8\" style=\"background-color:#005580; color:white;\"><br><h3>".TXT_Deb." ".$row[1]." ".$m["$row[3]"]." ".$row[5]." ".TXT_Fin." ".$row[2]." ".$m["$row[4]"]." ".$row[6]."</div>			
+			</div>";	
+			}
+	
+			else if((!$row[11])&& (!$row[10])){
+			echo"		
+			<div class=\"row\" style=\"height:50px;\"><div class=\"col-2\" style=\"background-color:grey;\">
+			</div>
+			<!--ligne date : -->
+			<br><div class=\"col-8\" style=\"background-color:#005580; color:white;\"><br><h3>".TXT_Deb." ".$row[1]." ".$m["$row[3]"]." ".$row[5]." ".TXT_Fin." ".$row[2]." ".$m["$row[4]"]." ".$row[6]."</div>			
+			</div>";
+			}
 			
-			//echo $row[9]."<br>";
-			}
-			else if(($row[10]!=NULL)&&($row[9]==NULL)){ 
-			echo"<tr colspan=\"15\">
-			<td><img src=\"../image/blanc.png\" style=\"width:1%; height:10%; borders:none;\"></td>
-			<td style=\"background-color:grey;\"  colspan=\"3\"><a><h6></h6></a></td><td style=\"background-color:#005580; color:white;\" style=\"background-color:#005580; color:#005580;\" colspan=\"11\"><a href=".$row[10]." style=\"color:white;\"><h6>lien web vers l'éditeur de l'événement</h6></a></td>
-			<td><img src=\"../image/blanc.png\" style=\"width:2%; height:10%; borders:none;\"></td>
-			<td><img src=\"../image/blanc.png\" style=\"width:1%; height:10%; borders:none;\"></td>
-			</tr>
-			</table></div>";
-			}
-			else if(($row[10]==NULL)&&($row[9]==NULL)){ 
+		//les lignes suivante avec détails, telechargements
+		
+			if($row[9]!=NULL) {
+			echo"		
+			<div class=\"row\"><div class=\"col-2\" style=\"background-color:#ffad33;\">
+			<a href=\"www/".$row[9]."\" style=\"color:white; \"><img src=\"../image/logos/telechargement.png\" width=\"50%\"; title=\"".$docs."\" alt=\"".$docs."\" height=\"auto\"; float=\"left\"; ></a>
+			</div>
+			<div class=\"col-8\" style=\"background-color:white;height:200px;\"><h6 style=\"text-align:center;\"><strong >".$row[7]."</strong></h6><h6>".$row[8]."</h6>
+			</div>
+			</div></div>";
+			 }		
 			
-			echo"<tr colspan=\"15\">
-			<td><img src=\"../image/blanc.png\" style=\"width:1%; height:10%; borders:none;\"></td>
-			<td style=\"background-color:grey;\"  colspan=\"3\"><a><h6><br><br></h6></a></td>
-			<td style=\"background-color:#005580; color:white;\" style=\"background-color:#005580; color:#005580;\" colspan=\"10\"><a  style=\"color:white;\"><h6><br><br></h6></a></td>
-			<td><img src=\"../image/blanc.png\" style=\"width:2%; height:10%; borders:none;\"></td>
-			</tr></table></div>";
-			}	
-				
-			//	echo $row[9]." un truc!!!<br>";
+			else if($row[9]==NULL){ 
+				echo"		
+			<div class=\"row\"><div class=\"col-2\" style=\"background-color:#ffad33;\">
+			</div>
+			<div class=\"col-8\" style=\"background-color:white;height:200px;\"><h6 style=\"text-align:center;\"><strong >".$row[7]."</strong></h6><h6>".$row[8]."</h6>
+			</div>
+			</div></div>";
+			 }
+					
+	echo"<br>";			
 		}
 		
-		//jour different(on s'enfiche...)  mois different et meme année, on affiche du jj/mm au jj/mm/aaaa , seul l'anné n'est pas repet 
+		//mois different et annee identique, j'affiche : du jj/mm au jj/mm/aaaa	
 		else if(($row[3]!=$row[4])&&($row[5]==$row[6])){
-		echo "<div class=\"table-responsive, ex2\" style=\"margin-top:2%;\">
-		<table class=\"table-responsive, ex2\" style=\"width:50%; float:left; border:none; margin-top:2%; \" >
-		<tr colspan=\"15\">
-		<td colspan=\"1\"><img src=\"../image/blanc.png\" style=\"width:1%; height:10%; borders:none;\"></td>	<!--du blanc: un espace	-->
-		<td style=\"background-color:orange;\" colspan=\"3\"><h3> du ".$row[1]."<br>".$m["$row[3]"]."<br>au ".$row[2]."<br>".$m["$row[4]"]."<br>".$row[6]."<br><br>  </td>
-		<td style=\"background-color:#F0F7D4; \" colspan=\"10\"><h6 style=\"text-align:center;\"><strong>".$row[7]."</strong></h6><h6>".$row[8]."</h6></td>
-		<td colspan=\"1\"><img src=\"../image/blanc.png\" style=\"width:1%; height:10%; borders:none;\"></td>
-		</tr>";	
+		//echo"<table class=\"table-responsive, ex2\" style=\"width:96%; border:none; float:left;\">";
+		echo"<div class=\"container-fluid\" style=\"margin-left:5%;\" >";	
+		//les premières lignes :
+			if(($row[11])&&($row[10])){
+				echo"		
+			<div class=\"row\" style=\"height:50px;\"><div class=\"col-2\" style=\"background-color:grey;\">
+			<a href=".$row[10]." style=\"color:white;\"><img src=\"../html/www/".$row[11]."\" width=\"120%\"; height=\"auto;\" title=\"".$pageE."\" alt=\"".$pageE."\" /></a></div>
+			<!--ligne date : -->
+			<br><div class=\"col-8\" style=\"background-color:#005580; color:white;\"><br>
+			<h3>".TXT_Deb." ".$row[1]." ".$m["$row[3]"]." ".TXT_Fin." ".$row[2]." ".$m["$row[4]"]." ".$row[6]."<br><br></div>		
+			</div>";	
+			}
+				
+			else if(($row[11])&&(!$row[10])){		
+			echo"<div class=\"row\" style=\"height:50px;\"><div class=\"col-2\" style=\"background-color:grey;\">
+			<a style=\"color:white;\"><img src=\"../html/www/".$row[11]."\" width=\"120%\"; height=\"auto;\" title=\"".$pageE."\" alt=\"".$pageE."\" /></a></div>
+			<!--ligne date : -->
+			<br><div class=\"col-8\" style=\"background-color:#005580; color:white;\"><br>
+			<h3>".TXT_Deb." ".$row[1]." ".$m["$row[3]"]." ".TXT_Fin." ".$row[2]." ".$m["$row[4]"]." ".$row[6]."<br><br></div>		
+			</div>";
+			}
+
 		
-			if(($row[10]!=NULL)&&($row[9]!=NULL)) {
-			echo"<tr colspan=\"15\">
-			<td colspan=\"1\"><img src=\"../image/blanc.png\" style=\"width:1%; height:10%; borders:none;\"></td>
-			<td colspan=\"3\"><a href=\"www/".$row[9]."\" style=\"color:white; \"><img src=\"../image/logos/telechargement.png\" width=\"20%\"; title=\"Telechargement\" alt=\"Telechargement\" height=\"auto\"; float=\"left\"; ><h6>à télécharger</h6></a></td>
-			<td style=\"background-color:#005580; color:white;\" style=\"background-color:#005580; color:#005580;\" colspan=\"10\"><a href=".$row[10]." style=\"color:white;\"><h6>lien web vers l'éditeur de l'événement</h6></a></td>
-			<td colspan=\"1\"><img src=\"../image/blanc.png\" style=\"width:1%; height:10%; borders:none;\"></td></tr>
-			</table></div>";
+			
+			else if((!$row[11])&&(!$row[10])){		
+			echo"<div class=\"row\" style=\"height:50px;\"><div class=\"col-2\" style=\"background-color:grey;\">
+			</div>
+			<!--ligne date : -->
+			<br><div class=\"col-8\" style=\"background-color:#005580; color:white;\"><br>
+			<h3>".TXT_Deb." ".$row[1]." ".$m["$row[3]"]." ".TXT_Fin." ".$row[2]." ".$m["$row[4]"]." ".$row[6]."<br><br></div>		
+			</div>";
+			
 			}
-			else if(($row[10]==NULL)&&($row[9]!=NULL)){ 
-			echo"<tr colspan=\"15\">
-			<td colspan=\"1\"><img src=\"../image/blanc.png\" style=\"width:1%; height:10%; borders:none;\"></td>
-			<td style=\"background-color:grey;\"  colspan=\"3\"><a href=\"www/".$row[9]."\" style=\"color:white; \"><img src=\"../image/logos/telechargement.png\" width=\"20%\"; title=\"Telechargement\" alt=\"Telechargement\" height=\"auto\"; float=\"left\"; ><h6>à télécharger?!</h6></a></td>
-			<td style=\"background-color:#005580; color:white;\" style=\"background-color:#005580; color:#005580;\" colspan=\"10\"><a href=".$row[10]." style=\"color:white;\"><h6></h6></a></td>
-			<td colspan=\"1\"><img src=\"../image/blanc.png\" style=\"width:1%; height:10%; borders:none;\"></td></tr>
-			</table></div>";
+			
+			else if((!$row[11])&&($row[10])){		
+			echo"<div class=\"row\" style=\"height:50px;\"><div class=\"col-2\" style=\"background-color:grey;\">
+			<a href=".$row[10]." style=\"color:white;\">".$pageE."</a></div>
+			<!--ligne date : -->
+			<br><div class=\"col-8\" style=\"background-color:#005580; color:white;\"><br>
+			<h3>".TXT_Deb." ".$row[1]." ".$m["$row[3]"]." ".TXT_Fin." ".$row[2]." ".$m["$row[4]"]." ".row[6]."<br/><br/>
+			</div></div>
+			";		
 			}
-			else if(($row[10]!=NULL)&&($row[9]==NULL)){ 
-			echo"<tr colspan=\"15\">
-			<td colspan=\"1\"><img src=\"../image/blanc.png\" style=\"width:1%; height:10%; borders:none;\"></td>
-			<td style=\"background-color:grey;\"  colspan=\"3\"><a \" style=\"color:white; \"><h6></h6></a></td>
-			<td style=\"background-color:#005580; color:white;\" colspan=\"10\"><a href=".$row[10]." style=\"color:white;\"><h6></h6></a></td>
-			<td colspan=\"1\"><img src=\"../image/blanc.png\" style=\"width:1%; height:10%; borders:none;\"></td></tr>
-			</table></div>";
-			}	
-			else if(($row[10]==NULL)&&($row[9]==NULL)){ 
-			echo"<tr colspan=\"15\">
-			<td colspan=\"1\"><img src=\"../image/blanc.png\" style=\"width:1%; height:10%; borders:none;\"></td>
-			<td style=\"background-color:grey;\"  colspan=\"3\"><a  style=\"color:white; \"><h6><br><br></h6></a></td>
-			<td style=\"background-color:#005580; color:white;\" style=\"background-color:#005580; color:#005580;\" colspan=\"10\"><a  style=\"color:white;\"><h6><br><br></h6></a></td>   
-			<td colspan=\"1\"><img src=\"../image/blanc.png\" style=\"width:1%; height:10%; borders:none;\"></td></tr>
-			</table></div>";
-			}
-		}
+		//les lignes suivante avec détails
 		
+		 if(!$row[9]) {
+			echo"		
+			<div class=\"row\"><div class=\"col-2\" style=\"background-color:#ffad33;\">
+			</div>
+			<div class=\"col-8\" style=\"background-color:white;height:200px;\"><h6 style=\"text-align:center;\"><strong >".$row[7]."</strong></h6><h6>".$row[8]."</h6>
+			</div>
+			</div></div>";
+			 }
+			
+			else if($row[9]){ 
+			echo"		
+			<div class=\"row\"><div class=\"col-2\" style=\"background-color:#ffad33;\">
+			<a href=\"www/".$row[9]."\" style=\"color:white; \"><img src=\"../image/logos/telechargement.png\" width=\"50%\"; title=\"".$docs."\" alt=\"".$docs."\" height=\"auto\"; float=\"left\"; ></a>
+			</div>
+			<div class=\"col-8\" style=\"background-color:white;height:200px;\"><h6 style=\"text-align:center;\"><strong >".$row[7]."</strong></h6><h6>".$row[8]."</h6>
+			</div>
+			</div></div>";
+			 }	
+
+		echo"<br>";	
+	}
+
+		// seul le jour est different on affiche du jj au jj/mm/aaaa (ainsi les deux jour sont afficher et le mois et l'année n'est pas repété.	
+		else if(($row[1]!=$row[2])&&($row[3]==$row[4])&&($row[5]==$row[6])){			
+			echo"<div class=\"container-fluid\" style=\"margin-left:5%;\" >";	
+			if(($row[11])&&($row[10])){
+				
+			echo"		
+			<div class=\"row\" style=\"height:50px;\"><div class=\"col-2\" style=\"background-color:grey;\">
+			<a href=".$row[10]." style=\"color:white;\"><img src=\"../html/www/".$row[11]."\" width=\"120%\"; height=\"auto;\" title=\"".$pageE."\" alt=\"".$pageE."\" /></a></div>
+			<!--ligne date : -->
+			<br><div class=\"col-8\" style=\"background-color:#005580; color:white;\"><br><h3>".TXT_Deb." ".$row[1]." ".TXT_Fin." ".$row[2]." ".$m["$row[4]"]." ".$row[6]."<br><br></div>		
+			</div>";	
+			}
+			
+			else if(($row[11])&&(!$row[10])){		
+			//echo"<tr colspan=\"15\" style=\"height:50px;\">
+			echo"		
+			<div class=\"row\" style=\"height:50px;\"><div class=\"col-2\" style=\"background-color:grey;\"><a>
+			<img src=\"../html/www/".$row[11]."\" width=\"120%\"; height=\"auto;\" title=\"".$pageE."\" alt=\"".$pageE."\" /></a></div>			
+			<!--ligne date : -->
+			<br><div class=\"col-8\" style=\"background-color:#005580; color:white;\"><br><h3>".TXT_Deb." ".$row[1]."".TXT_Fin." ".$row[2]." ".$m["$row[4]"]." ".$row[6]."</div>
+			</div>
+			";
+			}
+
+			else if((!$row[11])&&(!$row[10])){		
+			echo"<div class=\"row\" style=\"height:50px;\">
+			<div class=\"col-2\" style=\"background-color:grey;\">
+			</div>
+			
+			<!--ligne date : -->
+			<br><div class=\"col-8\" style=\"background-color:#005580; color:white;\"><br><h3>".TXT_Deb." ".$row[1]." ".TXT_Fin." ".$row[2]." ".$m["$row[4]"]." ".$row[6]."<br><br></div>		
+			</div>";
+			}
+		
+			else if((!$row[11])&&($row[10])){
+			echo"		
+			<div class=\"row\" style=\"height:50px;\"><div class=\"col-2\" style=\"background-color:grey;\">
+			<a href=".$row[10]." style=\"color:white;\">".$pageE."</a></div>
+			<!--ligne date : -->
+			<br><div class=\"col-8\" style=\"background-color:#005580; color:white;\"><br><h3>".TXT_Deb." ".$row[1]." ".TXT_Fin." ".$row[2]." ".$m["$row[4]"]." ".$row[6]."<br><br></div>		
+			</div>";			
+			}
+		
+		//les lignes suivantes avec détails	en bootstraps:			
+			 if($row[9]==NULL) {
+			echo"		
+			<div class=\"row\"><div class=\"col-2\" style=\"background-color:#ffad33;\">
+			</div>
+			<div class=\"col-8\" style=\"background-color:white;height:200px;\"><h6 style=\"text-align:center;\"><strong >".$row[7]."</strong></h6><h6>".$row[8]."</h6>
+			</div>
+			</div></div>";
+			 }
+			
+			else if($row[9]!=NULL){ 
+			echo"		
+			<div class=\"row\"><div class=\"col-2\" style=\"background-color:#ffad33;\">
+			<a href=\"www/".$row[9]."\" style=\"color:white; \"><img src=\"../image/logos/telechargement.png\" width=\"50%\"; title=\"".$docs."\" alt=\"".$docs."\" height=\"auto\"; float=\"left\"; ></a>
+			</div>
+			<div class=\"col-8\" style=\"background-color:white;height:200px;\"><h6 style=\"text-align:center;\"><strong >".$row[7]."</strong></h6><h6>".$row[8]."</h6>
+			</div>
+			</div></div>";
+			 }			 
+		echo"<br>";
+	}
+
 	
-		// seul le jour est different on affiche du jj au jj/mm/aaaa (ainsi les deux jour sont afficher et le mois et l'année n'est pas repété.
-		else if(($row[1]!=$row[2])&&($row[3]==$row[4])&&($row[5]==$row[6])){
-		echo "<div class=\"table-responsive, ex2\" style=\"margin-top:2%;\">
-		<table class=\"table-responsive, ex2\" style=\"width:50%; float:left; border:none; margin-top:2%; \">	
-		<tr colspan=\"15\">
-		<td><img src=\"../image/blanc.png\" style=\"width:1%; height:10%; borders:none;\"></td>	<!--du blanc: un espace	-->
-		<td style=\"background-color:orange;\" colspan=\"3\"><h3> du ".$row[1]."<br> au ".$row[2]."<br>".$m["$row[4]"]."<br>".$row[6]."<br><br><br></td>
-		<td style=\"background-color:#F0F7D4; \" colspan=\"10\"><h6 style=\"text-align:center;\"><strong >".$row[7]."</strong></h6><h6>".$row[8]."</h6></td>
-		<td colspan=\"1\"><img src=\"../image/blanc.png\" style=\"width:1%; height:10%; borders:none;\"></td>
-		</tr>";
-		
-			if(($row[10]!=NULL)&&($row[9]!=NULL)){ 
-			echo"<tr colspan=\"15\">
-			<td><img src=\"../image/blanc.png\" style=\"width:1%; height:10%; borders:none;\"></td>	<!--du blanc: un espace	-->
-			<td style=\"background-color:grey;\"  colspan=\"3\"><a href=\"www/".$row[9]."\" style=\"color:white; \"><img src=\"../image/logos/telechargement.png\" width=\"20%\"; title=\"Telechargement\" alt=\"Telechargement\" height=\"auto\"; float=\"left\"; ><h6>à télécharger</h6></a></td>
-			<td style=\"background-color:#005580; color:white;\" style=\"background-color:#005580; color:#005580;\" colspan=\"10\"><a href=".$row[10]." style=\"color:white;\"><h6>lien web vers l'éditeur de l'événement</h6></a></td><td><img src=\"../image/blanc.png\" style=\"width:2%; height:10%; borders:none;\"></td></tr>
-			<td><img src=\"../image/blanc.png\" style=\"width:1%; height:10%; borders:none;\"></td>	<!--du blanc: un espace	-->
-			</table></div>";
-			}
-			else if(($row[10]==NULL)&&($row[9]!=NULL)) {
-			echo"<tr colspan=\"15\">
-			<td><img src=\"../image/blanc.png\" style=\"width:1%; height:10%; borders:none;\"></td>	<!--du blanc: un espace	-->
-			<td style=\"background-color:grey;\" colspan=\"3\"><a href=\"www/".$row[9]."\" style=\"color:white; \"><img src=\"../image/logos/telechargement.png\" width=\"20%\"; title=\"Telechargement\" alt=\"Telechargement\" height=\"auto\"; float=\"left\"; ><h6>à télécharger!!".$row[9]."</h6></a></td>
-			<td style=\"background-color:#005580; color:white;\" style=\"background-color:#005580; color:#005580;\" colspan=\"10\"><a href=".$row[10]." style=\"color:white;\"><h6>  </h6></a></td>
-			<td><img src=\"../image/blanc.png\" style=\"width:2%; height:10%; borders:none;\"></td></tr>
-			</table></div>";
-			}
-			else if(($row[10]!=NULL)&&($row[9]==NULL)){ 
-			echo"<tr colspan=\"15\">
-			<td><img src=\"../image/blanc.png\" style=\"width:1%; height:10%; borders:none;\"></td>
-			<td style=\"background-color:grey;\"  colspan=\"3\"><a href=\"www/".$row[9]."\" style=\"color:white; \"><h6></h6></a></td>
-			<td style=\"background-color:#005580; color:white;\" style=\"background-color:#005580; color:#005580;\" colspan=\"10\"><a href=".$row[10]." style=\"color:white;\"><h6>lien web vers l'éditeur de l'événement</h6></a></td>
-			<td><img src=\"../image/blanc.png\" style=\"width:1%; height:10%; borders:none;\"></td></tr>
-			</table></div>";
-			}
-			else if(($row[10]==NULL)&&($row[9]==NULL)) {
-			echo"<tr colspan=\"15\">
-			<td><img src=\"../image/blanc.png\" style=\"width:1%; height:10%; borders:none;\"></td>
-			<td style=\"background-color:grey;\"  colspan=\"3\"><a  style=\"color:white; \"><h6><br><br></h6></a></td>
-			<td style=\"background-color:#005580; color:white;\" style=\"background-color:#005580; color:#005580;\" colspan=\"10\"><a  style=\"color:white;\"><h6><br><br></h6></a></td>
-			<td><img src=\"../image/blanc.png\" style=\"width:1%; height:10%; borders:none;\"></td></tr>
-			</table></div>";
-			}
-		}
 	
-		//jour, mois et année identique (évenement d'un jour) une ligne...	
+		//jour, mois et année identique (évenement d'un jour) une ligne:
 		else if (($row[1]==$row[2])&&($row[3]==$row[4])&&($row[5]==$row[6])){
-		echo "<div class=\" ex2\" style=\"margin-top:2%;\" >
-		<table class=\"table-responsive, ex2\" style=\"width:50%; float:left; margin-top:2%; border:none; \">		
-		<tr colspan=\"15\">
-		<td colspan=\"1\"><img src=\"../image/blanc.png\" style=\"width:1%; height:10%; borders:none;\"></td><!-- espace blanc à gauche-->
-		<td style=\"background-color:orange;\" style=\"width:20%;\" colspan=\"3\"><h3>".$row[1]."<br>".$m["$row[3]"]."<br>".$row[5]."<br><br><br><br></td>
-		<td style=\"background-color: #F0F7D4; style=\"width:80%;\" colspan=\"10\"><h6 style=\"text-align:center;\"><strong >".$row[7]."</strong></h6><br><h6>".$row[8]."</h6></td>
-		<td colspan=\"1\"><img src=\"../image/blanc.png\" style=\"width:1%; height:10%; borders:none;\"></td> <!--  espace blanc à droite -->
-		</tr>";
-		// conditions sur presence ou non de fichier attaché à l'actu ($row[9]) et lien vers le promoteur de l'événement ($row[10])... 
-			if(($row[10]!=NULL)&&($row[9]!=NULL)){ //fichier et lien vers promoteur...
-			echo" <tr colspan=\"15\">
-			<td colspan=\"1\"><img src=\"../image/blanc.png\" style=\"width:1%; height:10%; borders:none;\"></td>
-			<td style=\"background-color:grey;\"  colspan=\"3\"><a href=\"www/".$row[9]."\" style=\"color:white; \"><img src=\"../image/logos/telechargement.png\" width=\"20%\"; title=\"Telechargement\" alt=\"Telechargement\" height=\"auto\"; float=\"left\"; ><h6>à télécharger</h6></a></td>
-			<td style=\"background-color:#005580; color:white;\" style=\"background-color:#005580; color:#005580;\" colspan=\"10\"><a href=".$row[10]." style=\"color:white;\"><h6>lien web vers l'éditeur de l'événement</h6></a></td>
-			<td><img src=\"../image/blanc.png\" style=\"width:1%; height:10%; borders:none;\"></td></tr>
-			</table></div>";
-			}
-			else if(($row[10]==NULL)&&($row[9]!=NULL)){
-			echo"<tr colspan=\"15\">
-			<td colspan=\"1\"><img src=\"../image/blanc.png\" style=\"width:1%; height:10%; borders:none;\"></td>
-			<td style=\"background-color:grey;\"  colspan=\"3\"><a href=\"www/".$row[9]."\" style=\"color:white; \"><img src=\"../image/logos/telechargement.png\" width=\"20%\"; title=\"Telechargement\" alt=\"Telechargement\" height=\"auto\"; float=\"left\"; ><h6>à télécharger</h6></a></td>
-			<td style=\"background-color:#005580; color:white;\" style=\"background-color:#005580; color:#005580;\" colspan=\"10\"><a href=".$row[10]." style=\"color:white;\"><h6></h6></a></td>
-			<td colspan=\"1\"><img src=\"../image/blanc.png\" style=\"width:1%; height:10%; borders:none;\"></td>
-			</tr></table></div>";
-			}
-			else if(($row[10]!=NULL)&&($row[9]==NULL)){ 
-			echo"<tr colspan=\"15\">
-			<td><img src=\"../image/blanc.png\" style=\"width:1%; height:10%; borders:none;\"></td>
-			<td style=\"background-color:grey;\"  colspan=\"3\"><a href=\"www/".$row[9]."\" style=\"color:white; \"><h6></h6></a></td>
-			<td style=\"background-color:#005580; color:white;\" style=\"background-color:#005580; color:#005580;\" colspan=\"10\"><a href=".$row[10]." style=\"color:white;\"><h6>lien web vers l'éditeur de l'événement</h6></a></td>
-			<td><img src=\"../image/blanc.png\" style=\"width:1%; height:10%; borders:none;\"></td></tr>
-			</table></div>";
-			}
-			else if(($row[10]==NULL)&&($row[9]==NULL)){ 
-			echo"<tr colspan=\"15\">
-			<td><img src=\"../image/blanc.png\" style=\"width:1%; height:10%; borders:none;\"></td>
-			<td style=\"background-color:grey;\"  colspan=\"3\"><a href=\"www/".$row[9]." \" style=\"color:white; \"><h6><br><br></h6></a></td>
-			<td style=\"background-color:#005580; color:white;\" style=\"background-color:#005580; color:#005580;\" colspan=\"10\"><a href=".$row[10]." style=\"color:white;\"><h6><br><br></h6></a></td>
-			<td><img src=\"../image/blanc.png\" style=\"width:1%; height:10%; borders:none;\"></td></tr>
-			</table></div>";
-			}
 		
-	} 
-
-	
-	}
-
-//echo"<div><br><br><div>";
-		//compter le nombre de ligne de la BD... $num_rows.
-		$i=2;
-		if($num_rows<=$i){ 
-		//echo"<div><br></div>";
-		echo "</div><div><br><br><br><br><br><br><br><br><br><br><br><br><br></div>"; 
-		}
-		else{
-			while($i<$num_rows){
-			//echo "coucou:".$num_rows; // pour le developpement...
-			echo "</div><div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>"; 
-			echo"<div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>"; //saut de ligne en fonction du nombre d'évenements...
-			//echo 2*$i+1; //pour le developpement
-			$i=(2*$i);
-			//echo $num_rows."<br>";
-			//echo $i."<br>";
+		echo"<div class=\"container-fluid\" style=\"margin-left:5%;\" >";		
+		if(($row[11])&&($row[10])){
+			echo"		
+			<div class=\"row\" style=\"height:50px;\"><div class=\"col-2\" style=\"background-color:grey;\">
+			<a href=".$row[10]." style=\"color:white;\"><img src=\"../html/www/".$row[11]."\" width=\"120%\"; height=\"auto;\" title=\"".$pageE."\" alt=\"".$pageE."\" /></a></div>
+			<!--ligne date : -->
+			<br><div class=\"col-8\" style=\"background-color:#005580; color:white;\"><br><h3>".$row[1]." ".$m["$row[4]"]." ".$row[6]."<br><br></div>		
+			</div>";	
 			}
-	}
-	
-mysqli_close($link);
+			
+			else if(($row[11])&& (!$row[10])){		
+			//echo"<tr colspan=\"15\" style=\"height:50px;\">
+			echo"		
+			<div class=\"row\" style=\"height:50px;\"><a><div class=\"col-2\" style=\"background-color:grey;\">
+			<img src=\"../html/www/".$row[11]."\" width=\"120%\"; height=\"auto;\" title=\"".$pageE."\" alt=\"".$pageE."\" /></a></div>			
+			<!--ligne date : -->
+			<div class=\"col-8\" style=\"background-color:#005580; color:white;\"><br><h3>".$row[1]." ".$m["$row[4]"]." ".$row[6]."</div>
+			</div>
+			";
+			}
 
+			else if((!$row[11])&&(!$row[10])){		
+			echo"<div class=\"row\" style=\"height:50px;\">
+			<div class=\"col-2\" style=\"background-color:grey;\"><!-- pas de lien sur une page web --></div>			
+			<!--ligne date : -->
+			<div class=\"col-8\" style=\"background-color:#005580; color:white;\"><br><h3>".$row[1]." ".$m["$row[4]"]." ".$row[6]."</div></div>";
+			}
+
+			else if((!$row[11])&&($row[10])){
+			echo"		
+			<div class=\"row\" style=\"height:50px;\"><div class=\"col-2\" style=\"background-color:grey;\">
+			<a href=".$row[10]." style=\"color:white;\"></a></div>
+			<!--ligne date : -->
+			<br><div class=\"col-8\" style=\"background-color:#005580; color:white;\"><br><h3>".$row[1]." ".$m["$row[4]"]." ".$row[6]."<br><br></div>		
+			</div>";			
+			}
+
+			if($row[9]) {
+			echo"		
+			<div class=\"row\"><div class=\"col-2\" style=\"background-color:#ffad33;\">
+			<a href=\"www/".$row[9]."\" style=\"color:white; \"><img src=\"../image/logos/telechargement.png\" width=\"50%\"; title=\"".$docs."\" alt=\"".$docs."\" height=\"auto\"; float=\"left\"; ></a>
+			</div>
+			<div class=\"col-8\" style=\"background-color:white;height:200px;\"><h6 style=\"text-align:center;\"><strong >".$row[7]."</strong></h6><h6>".$row[8]."</h6>
+			</div>
+			</div></div>";
+			 }		
+			
+			else if(!$row[9]){ 
+				echo"		
+			<div class=\"row\"><div class=\"col-2\" style=\"background-color:#ffad33;\">
+			</div>
+			<div class=\"col-8\" style=\"background-color:white;height:200px;\"><h6 style=\"text-align:center;\"><strong >".$row[7]."</strong></h6><h6>".$row[8]."</h6>
+			</div>
+			</div></div>";
+			 }
+					
+	echo"<br>";
+
+	} 	
+	
 
 
 ?>
