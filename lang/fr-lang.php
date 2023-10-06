@@ -41,7 +41,7 @@
 	
 	 define('TXT_Pied', "<ul><a href=\"html/sitemap.php\" title=\"Plan du site\">Plan du site </a> | <a href=\"html/mentions-legales.php\">Mentions légales</a> | <a target=\"_blank\" href=\"html/coordonnees.php\" title=\"Contact\">Contact</a></ul></h6>");
 	 define('TXT_SSTitre', "Un guichet unique pour amener votre innovation au lit du patient");
-	 define('TXT_Article', "<br>Le CIC-IT de Bordeaux est un service du CHU dédié à l'innovation biomédicale et la recherche translationnelle dans le domaine des Biomatériaux et Dispositifs Médicaux (DM).<br><br>
+	 define('TXT_Article', "<br>Le CIC IT Biomatériaux et Dispositifs Médicaux est une équipe du CIC1401 de Bordeaux.  C’est un service du CHU dédié à l'innovation biomédicale et la recherche translationnelle dans le domaine des Biomatériaux et Dispositifs Médicaux (DM).<br><br>
 			Il est issu de la collaboration entre l'Inserm, le CHU de Bordeaux, l'Institut Bergonié et l'Université de Bordeaux pour structurer efficacement le transfert des innovations technologiques :<br> le CIC-IT aborde de manière intégrée l'évaluation préclinique et clinique des biomatériaux et DM dans un environnement scientifique et clinique de pointe (<plaquette d'information du CIC-IT de Bordeaux style=\"display:inline;\"><a target=\"_blank\" href=\"../image/logos/Plaquette CIC IT.pdf\">plaquette d'information</a></plaquette d'information du CIC-IT de Bordeaux>).");	
 	 define('TXT_IE',"<p><strong>Note:</strong>animation non supportée par Internet Explorer 9 et les précédantes versions.</p>");
 	//---------------------------------------------------------
@@ -148,35 +148,7 @@ Les nouveaux projets soumis au CIC-IT sont présentés au comité technique mens
 	<li style=\"text-align:justify; margin-left:25px;\">De faciliter la collaboration entre les différents acteurs de la recherche clinique au CHU et de favoriser la recherche translationnelle.</li>
 	<li style=\"text-align:justify; margin-left:25px;\">De préparer la réponse aux appels d'offres.</li>
 ");
-	
-	/*
-	define(TXT_A1Fonction,"<h6>Le CIC de Bordeaux (regroupant la gouvernance des 3 modules: IT, P et EC) est géré via un 
-	comité de pilotage annuel, et est l'objet d'une évaluation quinquennale par l'<a target=\"_blank\" href=\"http://www.hceres.fr/\">HCERES</a>.<br> Le CIC dépend directement 
-	de la <a  target=\"_blank\" href=\"https://www.chu-bordeaux.fr/Espace-m%C3%A9dia/Actualit%C3%A9s/La-DRCI-:-toute-1%C3%A8re-structure-de-recherche-publique-%C3%A0-%C3%AAtre-certifi%C3%A9e-ISO-9001*-dans-la-nouvelle-version-2015/\">Direction de la Recherche Clinique et de l'Innovation (DRCI)</a> du CHU de Bordeaux et de la Délégation Régionale 
-	de l'INSERM.<br> 
-Le CIC-IT travaille étroitement avec les modules P et EC du CIC de Bordeaux en particulier pour les essais cliniques, 
-pour lesquels il fait appel aux compétences du <a target=\"_blank\" href=\"https://cic-p.u-bordeaux.fr/\">CIC-P</a> pour le support investigateur et du <a target=\"_blank\" href=\"http://usmr.isped.u-bordeaux2.fr/\">CIC-EC</a> pour la méthodologie, le data management et les statistiques, et sous la direction de la DRCI pour les essais cliniques à promotion académique.</h6>");
-	define(TXT_A2Fonction,"<h6>Le CIC-IT est piloté via un comité stratégique annuel, sous la direction du président du 
-	comité (Pr Fricain), et regroupant le coordinateur médical (Pr Bordenave) et le coordinateur délégué (Dr Durand), 
-	les représentants de ses tutelles, le directeur de la PTIB (Pierre Dos Santos) et les membres scientifiques. Les coordonnateurs 
-	des modules EC et P sont également conviés. Un bilan d'activité y est présenté et les orientations 
-	scientifiques et stratégiques futures y sont déterminées.</h6>
-<h6>Les nouveaux projets soumis au CIC-IT sont présentés au comité technique mensuel regroupant toute l'équipe, 
-le représentant valorisation de la SATT et de l'INSERM, et les porteurs des nouveaux projets si nécessaire.
-Le Comité Technique a pour missions : 
-<ul id=\"puces\"><li style=\"text-align:justify; margin-left:25px;\">
-	
-    D'examiner les protocoles proposés, d'en évaluer la faisabilité méthodologique et logistique, d'en prévoir 
-	l'exécution. La sélection des projets soumis au CIC-IT repose sur la pertinence de la question posée, 
-	l'adéquation de la méthodologie proposée, le respect de l'éthique, de la réglementation et de bonnes pratiques cliniques, 
-	et sur l'adéquation entre le projet et les missions du CIC-IT.</li>   
-		<li style=\"text-align:justify; margin-left:25px;\">De suivre l'exécution des projets acceptés.</li>
-        <li style=\"text-align:justify; margin-left:25px;\">De faciliter la collaboration entre les différents acteurs de la recherche clinique au CHU et la continuité entre la recherche pré-clinique et clinique.</li>
-        <li style=\"text-align:justify; margin-left:25px;\">De préparer la réponse aux appels d'offres.</li>
-           
-        </ul></h6>");
-	*/
-	
+		
 	define('TXT_SSTitreFonction',"L'équipe");
 	define('TXT_imgOrganigramme',"Organigramme CIC-IT Biomatériaux");
 	define('TXT_imgOrganigrammeDRCI',"Organigramme de la DRCI");
@@ -705,10 +677,10 @@ Elles seront automatiquement supprimées de la base de données au bout d'un an.
 //---------------------------------------------------------
 define('TXT_CoordoTitre',"<h1 align=\"center\">Coordonnées</h1>");
 //adresse du CIC-IT
-define('TXT_CoordoAdresse',"<p><strong>CIC-IT Biomatériaux</strong><br>	
-PTIB Hôpital Xavier Arnozan<br>
-Avenue du Haut Lévêque<br>
-33600 Pessac FRANCE</p>");
+define('TXT_CoordoAdresse',"<h2><p><strong>CIC-IT Biomatériaux</strong><br>	
+PTIB Hôpital Xavier Arnozan</h2><br>
+<h3>Avenue du Haut Lévêque<br>
+33600 Pessac FRANCE</h3></p>");
 
 //Marlène 
 define('TXT_CoordoResponsable',"
